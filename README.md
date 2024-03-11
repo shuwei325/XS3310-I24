@@ -19,3 +19,9 @@ este repositorio es para el material de clase.
 
 <a href="https://docs.google.com/spreadsheets/d/1MAGOqFPWk_utN8ucXHEQULb13s6497u2-gBMvLd5IVg/edit?usp=sharing">Cronograma
 y materiales del curso</a>
+
+| Tema             | Clases                        |
+|------------------|-------------------------------|
+| 1\. Introducción | [Clase01](XS3310-I24_01.html) |
+|                  | [Clase02](XS3310-I24_02.html) |
+| —————–           | ———————————-                  |
