@@ -33,7 +33,6 @@ La información del curso está en [Mediación Virtual](https://mv1.mediacionvir
 |-----------------|----------------------------------|
 | 1. Introducción |  [Clase01](XS3310-I24_01.html)   |       
 |                 |  [Clase02](XS3310-I24_02.html)   |   
-|-----------------|----------------------------------|            
 | 2. Estimación Puntual |                            |       
 |                 |                                  |  
 
