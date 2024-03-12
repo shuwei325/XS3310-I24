@@ -434,7 +434,7 @@ Prof.&nbsp;Shu Wei Chou Chen
 <section id="hasta-ahora-en-la-carrera-de-estadística" class="title-slide slide level1 center">
 <h1>Hasta ahora en la carrera de Estadística:</h1>
 <p>¿Qué vimos en modelos probabilísticos discretos y contínuos?</p>
-<p><a href="https://seeing-theory.brown.edu">https://seeing-theory.brown.edu</a></p>
+<p><a href="https://seeing-theory.brown.edu" class="uri">https://seeing-theory.brown.edu</a></p>
 </section>
 <section id="hasta-ahora-en-la-carrera-de-estadística-1" class="slide level2">
 <h2>Hasta ahora en la carrera de Estadística:</h2>
@@ -489,7 +489,7 @@ Prof.&nbsp;Shu Wei Chou Chen
 <section id="variable-aleatoria-1" class="slide level2">
 <h2>Variable Aleatoria</h2>
 <ul>
-<li><p>Denote con <span class="math inline">\(Y\)</span> cualquier variable aleatoria. La <strong>función de distribución de <span class="math inline">\(Y\)</span></strong>, denotada por <span class="math inline">\(F(y)\)</span>, es tal que <span class="math inline">\(F(y)=P(Y \leq y)\)</span> para <span class="math inline">\(-\infty&lt;y&lt;\infty\)</span>.</p></li>
+<li><p>Denote con <span class="math inline">\(Y\)</span> cualquier variable aleatoria. La <strong>función de distribución de</strong> <span class="math inline">\(Y\)</span>, denotada por <span class="math inline">\(F(y)\)</span>, es tal que <span class="math inline">\(F(y)=P(Y \leq y)\)</span> para <span class="math inline">\(-\infty&lt;y&lt;\infty\)</span>.</p></li>
 <li><p><strong>Propiedades de una función de distribución:</strong> Si <span class="math inline">\(F(y)\)</span> es una función de distribución, entonces</p>
 <ol type="1">
 <li><span class="math inline">\(F(-\infty) \equiv \lim\limits _{y \rightarrow-\infty} F(y)=0\)</span>.</li>
@@ -634,170 +634,6 @@ B(\alpha, \beta)=\int_0^1 y^{\alpha-1}(1-y)^{\beta-1} d y=\frac{\Gamma(\alpha) \
 <li><span class="math inline">\(\hat{\theta}_2=\frac{X_{(1)}+X_{(n)}}{2}\)</span> es un estimador de <span class="math inline">\(\mu\)</span></li>
 <li>¿Cuál es la diferencia entre <span class="math inline">\(\hat{\theta}_1\)</span> y <span class="math inline">\(\hat{\theta}_2\)</span>?</li>
 </ul>
-</section>
-<section id="modelos-estadísticos-y-familias-de-modelos" class="slide level2">
-<h2>Modelos estadísticos y familias de modelos</h2>
-<p><strong>Ejemplo:</strong></p>
-<p>Una empresa produce componentes eléctricos y el interés es medir la vida útil del componente (en años). Suponemos que la vida útil de los componentes sigue una distribución exponencial con parámetro <span class="math inline">\(\beta&gt;0\)</span>.</p>
-<p><span class="math display">\[f(y)= \begin{cases}\frac{1}{\beta} e^{-y/\beta}, &amp; 0 &lt; y &lt; \infty, \\ 0, &amp; y \leq 0, \end{cases}\]</span> - Si <span class="math inline">\(\beta\)</span> fuera conocida, conocemos el comportamiento de la vida útil del componente, por ende, podemos calcular diferentes medidas y probabilidades.</p>
-<ul>
-<li>¿Si no conocemos <span class="math inline">\(\beta\)</span>?</li>
-</ul>
-</section>
-<section id="modelos-estadísticos-y-familias-de-modelos-1" class="slide level2">
-<h2>Modelos estadísticos y familias de modelos</h2>
-<ul>
-<li>¿Si no conocemos <span class="math inline">\(\beta\)</span>? (pero sabemos que <span class="math inline">\(\beta&gt;0\)</span>)</li>
-<li>La idea es estimarlo bajo algunos “supuestos”.</li>
-<li>Si <span class="math inline">\(Y_1,Y_2,...,Y_n\)</span> es una secuencia de observaciones de vidas útiles de <span class="math inline">\(n\)</span> componentes.</li>
-<li><strong>Supuestos:</strong>
-<ol type="1">
-<li>Suponga que <span class="math inline">\(Y_1,Y_2,...,Y_n\)</span> consiste en <span class="math inline">\(n\)</span> variables aleatorias i.i.d. con distribución exponencial con parámetro <span class="math inline">\(\beta\)</span>.</li>
-<li>Sabemos que <span class="math inline">\(E(Y)=\beta\)</span>.</li>
-<li>Con las observaciones disponibles <span class="math inline">\(Y_1,Y_2,...,Y_n\)</span>, podríamos calcular una media muestral: <span class="math inline">\(\bar{Y}=\sum\limits_{i=1}^n \frac{Y_i}{n}\)</span>.</li>
-</ol></li>
-<li><strong>Ejercicio:</strong></li>
-</ul>
-<ol type="1">
-<li>Analice si <span class="math inline">\(\bar{Y}\)</span> puede aproximarse a <span class="math inline">\(\beta\)</span>.</li>
-<li>Identifique los supuestos.</li>
-</ol>
-</section>
-<section id="modelos-estadísticos-y-familias-de-modelos-2" class="slide level2">
-<h2>Modelos estadísticos y familias de modelos</h2>
-<p><strong>Definición:</strong> Un <em>modelo estadístico</em> consiste en una identificación de variables aleatorias de interés, la especificación de una distribución conjunta, o una familia de posibles distribuciones conjuntas para unas variables aleatorias observables, la identificación de uno o varios parámetros de dichas distribuciones son desconocidas.</p>
-<p><strong>Ejemplos:</strong> Para el caso de componentes eléctricos, se tienen las variables aleatorias <span class="math inline">\(Y_1,...,Y_n\)</span> cuya <strong>distribución conjunta</strong> es:</p>
-<p><span class="math display">\[f(y_1,...,y_n|\beta)= \prod_{i=1}^n f(y_i|\beta),\]</span></p>
-<p>en donde <span class="math inline">\(f(y_i)\)</span> es la densidad de la distribución exponencial con parámetro <span class="math inline">\(\beta&gt;0\)</span>, <em>i.e.</em></p>
-<p><span class="math display">\[f(y)= \begin{cases}\frac{1}{\beta} e^{-y/\beta}, &amp; 0 &lt; y &lt; \infty, \\ 0, &amp; y \leq 0. \end{cases}\]</span></p>
-<p>La familia de posibles distribuciones conjuntas es <span class="math display">\[
-\left\lbrace  f(y_1,...,y_n|\beta), \beta &gt;0 \right\rbrace.
-\]</span></p>
-</section>
-<section id="modelos-estadísticos-y-familias-de-modelos-3" class="slide level2">
-<h2>Modelos estadísticos y familias de modelos</h2>
-<p><strong>Ejercicio (caso discreto):</strong></p>
-<p>En una urna con <span class="math inline">\(120\)</span> bolas se encuentran bolas de color rojo y azul únicamente. El interés es conocer la proporción (desconocida) de bolas rojas, denotada por <span class="math inline">\(p\)</span>.</p>
-<ul>
-<li><p>Sabemos que <span class="math inline">\(p \in [0,1]\)</span>.</p></li>
-<li><p>Sea <span class="math inline">\(Y_1,Y_2,...,Y_n\)</span>, una secuencia de observaciones con reemplazo que denote 1 como roja y 0 como azul.</p></li>
-<li><p>Identifique el modelo estadístico.</p></li>
-</ul>
-</section>
-<section id="estadística-paramétrica-y-no-paramétrica" class="slide level2">
-<h2>Estadística paramétrica y no paramétrica</h2>
-<p><strong>Definición:</strong> La <em>inferencia estadística</em> es el procedimiento de producir afirmaciones probabilísticas sobre alguna (o toda) parte del modelo estadístico.</p>
-<p><strong>Definición:</strong> La <em>estadística paramétrica</em> consiste en realizar inferencia cuando el modelo estadístico puede ser representado por medio de uno o varios (finitos) parámetros desconocidos de una distribución.</p>
-<p><strong>Definición:</strong> dos definiciones informales de la <em>estadística no paramétrica</em>:</p>
-<ol type="1">
-<li>Inferencia en modelos estadísticos que son de dimensión infinita.</li>
-<li>Conjunto de herramientas cuyo objetivo es realizar inferencia usando los menos supuestos posibles.</li>
-</ol>
-</section>
-<section id="estadística-paramétrica-y-no-paramétrica-1" class="slide level2">
-<h2>Estadística paramétrica y no paramétrica</h2>
-<p><strong>Ejemplos:</strong></p>
-<div>
-<p>-El ejemplo de componentes eléctricos corresponde a estadística paramétrica.</p>
-<ul>
-<li class="fragment">Sea <span class="math inline">\(X_1,...,X_n\)</span> una muestra aleatoria de una población con función de distribución <span class="math inline">\(F\)</span>. Realizar inferencia sobre la función de distribución <span class="math inline">\(F(x)=P(X\leq x)\)</span> y la función de densidad <span class="math inline">\(f(x)=F'(x)\)</span>.
-<ul>
-<li class="fragment">Como <span class="math inline">\(F\)</span> y <span class="math inline">\(f\)</span> no puede ser representada por medio de un conjunto finito de parámetros, la inferencia es no paramétrica.</li>
-</ul></li>
-<li class="fragment">Sea <span class="math inline">\((Y_1, X_1), ... ,(Y_n,X_n)\)</span> una muestra aleatoria de dos variables aleatorias. Realizar inferencia sobre un modelo de regresión lineal <span class="math inline">\(Y_i=\beta X_i+\epsilon_i\)</span>, <span class="math inline">\(\epsilon_i \sim N(0,\sigma^2)\)</span>.
-<ul>
-<li class="fragment">La inferencia es paramétrica, pues el modelo estadístico puede ser representado por <span class="math inline">\(\theta=(\beta,\sigma^2)\)</span>.</li>
-</ul></li>
-<li class="fragment">Sea <span class="math inline">\((Y_1, X_1), ... ,(Y_n,X_n)\)</span> una muestra aleatoria de dos variables aleatorias. Realizar inferencia sobre un modelo de regresión <span class="math inline">\(Y_i=f(X_i)+\epsilon_i\)</span>.
-<ul>
-<li class="fragment">La inferencia es no paramétrica.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral" class="slide level2">
-<h2>Propiedades de la media y variancia muestral</h2>
-<p>Sea <span class="math inline">\(X_{1}, \ldots, X_{n}\)</span> una m.a. cuya distribución poblacional tiene media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^{2}\)</span>. Definan la <em>media muestral</em> y la <em>Varianza muestral</em>:</p>
-<p><span class="math display">\[\bar{X}_{n}=\bar {X}=\sum_{i=1}^n \frac{X_i}{n}, ~~~\text{y}~~~  S^{2} = \frac{\sum_{i=1}^n{\left(X_{j}-\bar{X}\right)^2}}{n-1}.\]</span></p>
-<div>
-<p>Entonces,</p>
-<ul>
-<li class="fragment"><p><span class="math inline">\(E\left(\overline{X}_{n}\right)=\mu\)</span> y <span class="math inline">\(\operatorname{Var}\left(\bar{X}_{n}\right)=\frac{\sigma^{2}}{n}\)</span></p></li>
-<li class="fragment"><p>¿Qué se sabe sobre la variancia muestral?</p>
-<ul>
-<li class="fragment"><span class="math inline">\(E\left(S^2\right)=\sigma^2\)</span>.</li>
-</ul></li>
-</ul>
-</div>
-</section>
-<section id="modos-de-convergencia" class="slide level2">
-<h2>Modos de convergencia</h2>
-<h3 id="desigualdad-de-markov">Desigualdad de Markov</h3>
-<p>Si <span class="math inline">\(X\)</span> es una v.a. tal que <span class="math inline">\(\operatorname{Pr}(X \geq 0)=1\)</span>. Entonces para cada número real <span class="math inline">\(t&gt;0\)</span>, se tiene que</p>
-<p><span class="math display">\[\begin{equation}
-\operatorname{Pr}(X \geq t) \leq \frac{E(X)}{t}.
-\end{equation}\]</span></p>
-<h3 id="desigualdad-de-chebyshev">Desigualdad de Chebyshev</h3>
-<p>Si <span class="math inline">\(X\)</span> es una v.a. que cumple que <span class="math inline">\(\operatorname{Var}(X)\)</span> existe. Entonces para cada número <span class="math inline">\(t&gt;0\)</span></p>
-<p><span class="math display">\[
-\operatorname{Pr}(|X-E(X)| \geq t) \leq \frac{\operatorname{Var}(X)}{t^{2}}.
-\]</span></p>
-</section>
-<section id="modos-de-convergencia-1" class="slide level2">
-<h2>Modos de convergencia</h2>
-<h3 id="convergencia-en-probabilidad">Convergencia en probabilidad</h3>
-<p>Decimos que una secuencia de v.a. <span class="math inline">\(Z_{1}, Z_{2}, \ldots\)</span> converge a <span class="math inline">\(b\)</span> <em>en probabilidad</em> si para cada número <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
-<p><span class="math display">\[\lim _{n \rightarrow \infty} \operatorname{Pr}\left(\left|Z_{n}-b\right|&lt;\varepsilon\right)=1\]</span></p>
-<p>Esta propiedad se denota como</p>
-<p><span class="math display">\[
-Z_{n} \stackrel{p}{\longrightarrow} b.
-\]</span></p>
-</section>
-<section id="propiedades-de-la-media-muestral" class="slide level2">
-<h2>Propiedades de la media muestral</h2>
-<h3 id="ley-de-los-grandes-números">Ley de los grandes números</h3>
-<p>Suponga que <span class="math inline">\(X_{1}, \ldots, X_{n}\)</span> es una muestra de una distribución con media <span class="math inline">\(\mu\)</span> y varianza finita. Sea <span class="math inline">\(\bar{X}_{n}\)</span> la media muestral. Entonces, <span class="math display">\[\begin{equation*}
-\bar{X}_{n} \stackrel{p}{\longrightarrow} \mu
-\end{equation*}\]</span></p>
-<p>¿Cómo se puede probar este resultado usando la desigualdad de Chebyshev?</p>
-</section>
-<section id="propiedades-de-la-media-muestral-1" class="slide level2">
-<h2>Propiedades de la media muestral</h2>
-<h3 id="convergencia-en-distribución">Convergencia en distribución</h3>
-<p>Suponga que se tienen una secuencia de funciones de distribución <span class="math inline">\(F_1, \ldots, F_n, \ldots\)</span> para la muestra <span class="math inline">\(X_1,\ldots,X_n,\ldots\)</span>. Se dice que la secuencia de v.a. <span class="math inline">\(X_1,\ldots,X_n,\ldots\)</span> converge <em>en distribución</em> a <span class="math inline">\(X^*\)</span>, cuya función de distribución es <span class="math inline">\(F^*\)</span>, si</p>
-<p><span class="math display">\[\begin{equation*}
-\lim _{n \rightarrow \infty} F_{n}(x)=F^{*}(x).
-\end{equation*}\]</span> Se denota también como <span class="math display">\[\begin{equation*}
-X_n \stackrel{d}{\longrightarrow} X^*.
-\end{equation*}\]</span></p>
-</section>
-<section id="propiedades-de-la-media-muestral-2" class="slide level2">
-<h2>Propiedades de la media muestral</h2>
-<h3 id="teorema-del-límite-central">Teorema del límite central</h3>
-<p>Si <span class="math inline">\(X_1,\ldots, X_n\)</span> es una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, y la distribución tiene media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(0&lt;\sigma^2&lt; \infty\)</span>. Entonces se cumple que</p>
-<p><span class="math display">\[Z_{n} = \frac{\overline{X}_n-\mu}{\frac{\sigma}{\sqrt{n}}} \stackrel{d}{\longrightarrow} N\left(0,1\right) \quad si\quad n \rightarrow \infty\]</span> o lo que es equivalente <span class="math display">\[\overline{X}_n \xrightarrow{\text{d}} N\left(\mu, \frac{\sigma^2}{n}\right) \quad si\quad n \rightarrow \infty.\]</span></p>
-</section>
-<section id="propiedades-de-la-media-muestral-3" class="slide level2">
-<h2>Propiedades de la media muestral</h2>
-<h3 id="relaciones-entre-los-modos-de-convergencia">Relaciones entre los modos de convergencia</h3>
-<p>Se puede probar que <span class="math display">\[\begin{equation*}
-\text{Convergencia en Probabilidad} \implies \text{Convergencia en distribución}
-\end{equation*}\]</span></p>
-<p>Para un resumen más detallado, les dejo este video donde se explica mucho mejor</p>
-<p><a href="https://www.youtube.com/watch?v=bTMnnrw0v2Y">https://www.youtube.com/watch?v=bTMnnrw0v2Y</a></p>
-</section>
-<section id="ejercicios" class="slide level2">
-<h2>Ejercicios</h2>
-<ol type="1">
-<li><p>Se desea estimar la media <span class="math inline">\(\mu\)</span> de una variable aleatoria <span class="math inline">\(X\)</span>. Para ello se toman <span class="math inline">\(10\)</span> datos y se calcula su media muestral <span class="math inline">\(\bar{X}\)</span> y la varianza de dichos datos <span class="math inline">\(\sigma^2_X\)</span>. Comente si son verdaderas o falsas las siguientes afirmaciones:</p>
-<ol type="a">
-<li>Por el teorema central del límite sabemos que <span class="math inline">\(\mu\)</span> será una variable aleatoria normal.</li>
-<li>La media muestral con un conjunto de datos es un número y no una variable aleatoria.</li>
-<li>La media muestral <span class="math inline">\(\bar{X}\)</span> tiene siempre una distribución muestral normal.</li>
-<li>Para disminuir la varianza de <span class="math inline">\(\bar{X}\)</span> a la mitad habría que tomar al menos 100 datos.</li>
-<li>Como la media muestral es un estimador insesgado, tenemos asegurado que <span class="math inline">\(\bar{X} = \mu\)</span></li>
-</ol></li>
-</ol>
 <div class="footer footer-default">
 
 </div>
