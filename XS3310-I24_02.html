@@ -503,6 +503,12 @@ Prof.&nbsp;Shu Wei Chou Chen
 </ul>
 </div>
 </section>
+<section id="estimador-insesgado" class="slide level2">
+<h2>Estimador Insesgado</h2>
+<p><span class="math display">\[\begin{eqnarray*}
+E\left(S^2\right)&amp;=&amp; E\left[\frac{\sum{\left(X_{j}-\overline{X}\right)^2}}{n-1}\right] = \frac{1}{n-1}E\left[\sum{\left[\left(X_{j}-\mu\right)-\left(\overline{X}-\mu\right)\right]^2}\right] \\ &amp;=&amp; \frac{1}{n-1}E\left[\sum{\left[\left(X_{j}-\mu\right)^{2}-2\left(X_{j}-\mu\right)\left(\overline{X}-\mu\right) + \left(\overline{X}-\mu\right)^{2} \right]}\right] \\ &amp;=&amp;\frac{1}{n-1}E\left[\sum{\left(X_{j}-\mu\right)^{2}}-2\left(\overline{X}-\mu\right)\sum{\left(X_{j}-\mu\right)} + \sum{\left(\overline{X}-\mu\right)^{2}}\right] \\ &amp;=&amp;\frac{1}{n-1}E\left[\sum{\left(X_{j}-\mu\right)^{2}}-2n\left(\overline{X}-\mu\right)^2 + n\left(\overline{X}-\mu\right)^{2}\right] \\ &amp;=&amp; \frac{1}{n-1}\left[\sum{E\left[\left(X_{j}-\mu\right)^{2}\right]}-nE\left[\left(\overline{X}-\mu\right)^2\right]\right] \\ &amp;=&amp; \frac{1}{n-1}\left(n\sigma^{2} - n\frac{\sigma^2}{n}\right)=\frac{1}{n-1}\left(n\sigma^{2} - \sigma^{2}\right)=\frac{\sigma^{2}\left(n-1\right)}{n-1}=\sigma^2
+\end{eqnarray*}\]</span></p>
+</section>
 <section id="modos-de-convergencia" class="slide level2">
 <h2>Modos de convergencia</h2>
 <h3 id="desigualdad-de-markov">Desigualdad de Markov</h3>
@@ -704,16 +710,20 @@ X_n \stackrel{d}{\longrightarrow} X^*.
 <section id="ejercicios" class="slide level2">
 <h2>Ejercicios</h2>
 <ol type="1">
-<li><p>Se desea estimar la media <span class="math inline">\(\mu\)</span> de una variable aleatoria <span class="math inline">\(X\)</span>. Para ello se toman <span class="math inline">\(10\)</span> datos y se calcula su media muestral <span class="math inline">\(\bar{X}\)</span> y la varianza de dichos datos <span class="math inline">\(\sigma^2_X\)</span>. Comente si son verdaderas o falsas las siguientes afirmaciones:</p>
+<li>Se desea estimar la media <span class="math inline">\(\mu\)</span> de una variable aleatoria <span class="math inline">\(X\)</span>. Para ello se toman <span class="math inline">\(10\)</span> datos y se calcula su media muestral <span class="math inline">\(\bar{X}\)</span> y la varianza de dichos datos <span class="math inline">\(\sigma^2_X\)</span>. Comente si son verdaderas o falsas las siguientes afirmaciones:</li>
+</ol>
 <ol type="a">
 <li>Por el teorema central del límite sabemos que <span class="math inline">\(\mu\)</span> será una variable aleatoria normal.</li>
 <li>La media muestral con un conjunto de datos es un número y no una variable aleatoria.</li>
 <li>La media muestral <span class="math inline">\(\bar{X}\)</span> tiene siempre una distribución muestral normal.</li>
 <li>Para disminuir la varianza de <span class="math inline">\(\bar{X}\)</span> a la mitad habría que tomar al menos 100 datos.</li>
 <li>Como la media muestral es un estimador insesgado, tenemos asegurado que <span class="math inline">\(\bar{X} = \mu\)</span></li>
-</ol></li>
 </ol>
-<div class="footer footer-default">
+</section>
+<section id="ejercicios-1" class="slide level2">
+<h2>Ejercicios</h2>
+
+<img data-src="figs/ejercicios_estat_orden.png" class="r-stretch"><div class="footer footer-default">
 
 </div>
 </section>
