@@ -340,8 +340,8 @@ Prof.&nbsp;Shu Wei Chou Chen
 </div>
 
 </section>
-<section id="consistencia" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
+<section id="consistencia" class="slide level2">
+<h2>Consistencia</h2>
 <p><strong>Ejemplo.</strong></p>
 <p>Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Unif(0,\theta)\)</span> y sean <span class="math inline">\(\overline{X}\)</span> y <span class="math inline">\(X_{(n)}\)</span> estimadores de <span class="math inline">\(\theta\)</span>.</p>
 <p>Podemos encontrar que <span class="math inline">\(E(\overline{X}) = \frac{\theta}{2}\)</span> y <span class="math inline">\(E(X_{(n)}) = \frac{n\theta}{n+1}\)</span>, por lo que <span class="math inline">\(\overline{X}\)</span> y <span class="math inline">\(X_{(n)}\)</span> son estimadores sesgados. No obstante podemos construir estimadores insesgados a partir de ellos que queden de la forma <span class="math inline">\(\hat{\theta}_{1} = 2\overline{X}\)</span> y <span class="math inline">\(\hat{\theta}_{2} = \frac{n+1}{n}X_{(n)}\)</span>, respectivamente.</p>
@@ -349,82 +349,73 @@ Prof.&nbsp;Shu Wei Chou Chen
 <p><span class="math inline">\(Var(\hat{\theta}_{1}) = \frac{\theta^2}{3n} \qquad Var(\hat{\theta}_{2}) = \frac{\theta^2}{n(n+2)}\)</span></p>
 <p>El interés ahora yace en ver si estos estimadores se aproximan cada vez más al valor verdadero de <span class="math inline">\(\theta\)</span> conforme aumentamos el tamaño de muestra y obtenemos más información. Y si ambos cumplen esto también nos podría interesar cuál lo hace de manera más rápida.</p>
 </section>
-
-<section id="consistencia-1" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
+<section id="consistencia-1" class="slide level2">
+<h2>Consistencia</h2>
 <p>Haciendo una simulación, con <span class="math inline">\(\theta\)</span> = 5, podemos observar que ambos estimadores convergen a <span class="math inline">\(\theta\)</span> conforme el tamaño de muestra va aumentando. Podemos decir que <span class="math inline">\(\hat{\theta}_{1}\)</span> y <span class="math inline">\(\hat{\theta}_{2}\)</span> son estimadores consistentes para estimar <span class="math inline">\(\theta\)</span>.</p>
 
-<img data-src="figs/consistencia.jpg" style="width:80.0%" class="r-stretch quarto-figure-center"><p class="caption">Figura 1. Consistencia para dos estimadores insesgados de <span class="math inline">\(\theta\)</span></p></section>
-
-<section id="consistencia-2" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
-<blockquote>
-<p><strong>Definición 3.1. Consistencia.</strong> Se dice que un estimador <span class="math inline">\(\hat{\theta}\)</span> es consistente para estimar <span class="math inline">\(\theta\)</span> ( <span class="math inline">\(\hat{\theta}\)</span> converge en probabilidad a <span class="math inline">\(\theta\)</span> ) si <span class="math inline">\(\forall \varepsilon&gt;0\)</span> se cumple que: <span class="math inline">\(\lim_{n \to +\infty}P\left(\left|\hat{\theta}-\theta\right|\leq \varepsilon\right) = 1\)</span></p>
-</blockquote>
-<p>O lo que es equivalente: <span class="math inline">\(\lim_{n \to +\infty} P\left(\left|\hat{\theta}-\theta\right|&gt; \varepsilon\right) = 0\)</span></p>
+<img data-src="XS3310-I24_05_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"></section>
+<section id="consistencia-2" class="slide level2">
+<h2>Consistencia</h2>
+<p><strong>Definición:</strong> Se dice que un estimador <span class="math inline">\(\hat{\theta}\)</span> es <em>consistente</em> para estimar <span class="math inline">\(\theta\)</span> ( <span class="math inline">\(\hat{\theta}\)</span> converge en probabilidad a <span class="math inline">\(\theta\)</span> ) si <span class="math inline">\(\forall \varepsilon&gt;0\)</span> se cumple que: <span class="math inline">\(\lim_{n \to +\infty}P\left(\left|\hat{\theta}-\theta\right|\leq \varepsilon\right) = 1\)</span></p>
+<p>O lo que es equivalente: <span class="math display">\[\lim_{n \to +\infty} P\left(\left|\hat{\theta}-\theta\right|&gt; \varepsilon\right) = 0\]</span></p>
 <p>Se puede denotar con la definición de la convergencia en probabilidad,</p>
 <p><span class="math display">\[\hat{\theta} \stackrel{p}{\longrightarrow} \theta.\]</span></p>
 </section>
-
-<section id="consistencia-3" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
-<blockquote>
-<p><strong>Teorema:</strong> Si <span class="math inline">\(\lim_{n \to +\infty} \mathrm{MSE}(\hat{\theta})=0\)</span> entonces <span class="math inline">\(\hat{\theta}\)</span> es consistente para estimar <span class="math inline">\(\theta\)</span>.</p>
-</blockquote>
+<section id="consistencia-3" class="slide level2">
+<h2>Consistencia</h2>
+<p><strong>Teorema 2.3:</strong> Si <span class="math inline">\(\lim\limits_{n \to +\infty} \mathrm{MSE}(\hat{\theta})=0\)</span> entonces <span class="math inline">\(\hat{\theta}\)</span> es consistente para estimar <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Prueba:</strong></p>
-<p>Recuerde que la <em>Desigualdad de Chebyshev</em> establece que si <span class="math inline">\(X\)</span> es una v.a. con <span class="math inline">\(\mathbb{E}[X^{2}] &lt; \infty\)</span>, entonces para cualquier <span class="math inline">\(\varepsilon&gt;0\)</span>, se tiene que</p>
-<p><span class="math display">\[\mathrm{P}(\vert X\vert &gt; \varepsilon) \leq \frac{\mathbb{E}[X^2]}{\varepsilon^2}.\]</span></p>
-<p>Tome <span class="math inline">\(X=\hat{\theta}-\theta\)</span>. Si <span class="math inline">\(\hat{\theta}\)</span> es una v.a. que cumple que <span class="math inline">\(\operatorname{Var}(\hat{\theta})\)</span> existe. Entonces para cada número <span class="math inline">\(\varepsilon&gt;0\)</span></p>
-<p><span class="math display">\[\operatorname{P}(|\hat{\theta}-\theta| \geq \varepsilon) \leq  \frac{\mathbb{E}[(\hat{\theta}-\theta)^2]}{\varepsilon^2}=\frac{\operatorname{MSE}(\hat{\theta})}{\varepsilon^{2}}.\]</span> Finalmente, se tiene que</p>
-<p><span class="math display">\[\lim_{n \to +\infty}\operatorname{P}(|\hat{\theta}-\theta| \geq \varepsilon) \leq  \frac{1}{\varepsilon^{2}} \cdot \lim_{n\to\infty}\operatorname{MSE}(\hat{\theta})=\frac{1}{\varepsilon^{2}} \cdot 0=0\]</span></p>
+<p>La <em>Desigualdad de Markov</em> establece que si <span class="math inline">\(X\)</span> es una v.a. tal que <span class="math inline">\(\operatorname{Pr}(X \geq 0)=1\)</span>. Entonces para cada número real <span class="math inline">\(t&gt;0\)</span>, se tiene que</p>
+<span class="math display">\[\begin{equation}
+\operatorname{Pr}(X \geq t) \leq \frac{E(X)}{t}.
+\end{equation}\]</span>
+<p>Tome <span class="math inline">\(X=|\hat{\theta}-\theta|^2\)</span>. Si <span class="math inline">\(\hat{\theta}\)</span> es una v.a. que cumple que <span class="math inline">\(\operatorname{Var}(\hat{\theta})\)</span> existe. Entonces para cada <span class="math inline">\(\varepsilon&gt;0\)</span></p>
+<p><span class="math display">\[\operatorname{P}(|\hat{\theta}-\theta| \geq \varepsilon) = \operatorname{P}(|\hat{\theta}-\theta|^2 \geq \varepsilon^2)  \leq  \frac{\mathbb{E}[(\hat{\theta}-\theta)^2]}{\varepsilon^2}=\frac{\operatorname{MSE}(\hat{\theta})}{\varepsilon^{2}}.\]</span> Finalmente, se tiene que</p>
+<p><span class="math display">\[\lim_{n \to +\infty}\operatorname{P}(|\hat{\theta}-\theta| \geq \varepsilon) \leq  \frac{1}{\varepsilon^{2}} \cdot \lim_{n\to\infty}\operatorname{MSE}(\hat{\theta})=\frac{1}{\varepsilon^{2}} \cdot 0=0.\]</span></p>
 </section>
-
-<section id="consistencia-con-estimadores-insesgados" class="title-slide slide level1 center">
-<h1>Consistencia con estimadores insesgados</h1>
-<blockquote>
-<p><strong>Teorema 3.1</strong> Si <span class="math inline">\(\hat{\theta}\)</span> es un estimador de <span class="math inline">\(\theta\)</span> entonces <span class="math inline">\(\hat{\theta}\)</span> es un estimador consistente si:</p>
-</blockquote>
+<section id="consistencia-con-estimadores-insesgados" class="slide level2">
+<h2>Consistencia con estimadores insesgados</h2>
+<p><strong>Teorema 2.4</strong> Si <span class="math inline">\(\hat{\theta}\)</span> es un estimador de <span class="math inline">\(\theta\)</span> entonces <span class="math inline">\(\hat{\theta}\)</span> es un estimador consistente si:</p>
 <ol type="a">
-<li class="fragment"><span class="math inline">\(\hat{\theta}\)</span> es insesgado para <span class="math inline">\(\theta\)</span>, y</li>
-</ol>
-<ol start="2" type="a">
-<li class="fragment"><span class="math inline">\(\lim_{n \to +\infty} Var(\hat{\theta}) = 0\)</span>.</li>
+<li><span class="math inline">\(\hat{\theta}\)</span> es insesgado para <span class="math inline">\(\theta\)</span>, y<br>
+</li>
+<li><span class="math inline">\(\lim\limits_{n \to +\infty} Var(\hat{\theta}) = 0\)</span>.</li>
 </ol>
 <p><strong>Prueba:</strong> Ejercicio.</p>
 </section>
-
-<section id="consistencia-4" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
+<section id="consistencia-4" class="slide level2">
+<h2>Consistencia</h2>
 <p><strong>Ejemplo.</strong></p>
 <p>Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Unif(0,\theta)\)</span> y sean <span class="math inline">\(\hat{\theta}_{1} = 2\overline{X}\)</span> y <span class="math inline">\(\hat{\theta}_{2} = \frac{n+1}{n}X_{(n)}\)</span> dos estimadores de <span class="math inline">\(\theta\)</span>. Demuestre que estos estimadores son consistentes para estimar <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Solución.</strong></p>
-<p>Ya sabemos que <span class="math inline">\(\hat{\theta}_{1}\)</span> y <span class="math inline">\(\hat{\theta}_{2}\)</span> son estimadores insesgados de <span class="math inline">\(\theta\)</span>, por lo que se cumple la primera condición del Teorema anterior; solo nos hace falta demostrar la segunda propiedad:</p>
+<p>Ya sabemos que <span class="math inline">\(\hat{\theta}_{1}\)</span> y <span class="math inline">\(\hat{\theta}_{2}\)</span> son estimadores insesgados de <span class="math inline">\(\theta\)</span>, por lo que se cumple la primera condición del Teorema 2.4.; solo nos hace falta demostrar la segunda propiedad:</p>
 <p><span class="math display">\[\lim_{n \to +\infty}Var(\hat{\theta}_{1}) = \lim_{n \to +\infty}\frac{\theta^2}{3n} = 0\]</span></p>
 <p><span class="math display">\[\lim_{n \to +\infty}Var(\hat{\theta}_{2}) = \lim_{n \to +\infty}\frac{\theta^2}{n(n+2)} = 0\]</span></p>
 <p>Ambos estimadores son insesgados, con varianza que tiende a cero. Por lo tanto son consistentes para estimar <span class="math inline">\(\theta\)</span>.</p>
 </section>
-
-<section id="consistencia-5" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
+<section id="consistencia-5" class="slide level2">
+<h2>Consistencia</h2>
 <p><strong>OJO:</strong> ¿ El estadístico <span class="math inline">\(X_{(n)}\)</span> es consistente?</p>
 <p><strong>Respuesta:</strong> Si, pero es sesgado.</p>
 <p><span class="math display">\[B(X_{(n)}) =  \frac{n\theta }{n+1} - \theta\]</span> <span class="math display">\[Var(X_{(n)}) = \frac{n }{n+2}\theta^2 - \frac{n^2}{(n+1)^2} \theta^2 \]</span></p>
 <p><strong>Tarea:</strong> Pruebe que <span class="math inline">\(\displaystyle \lim_{n \to +\infty} \operatorname{MSE}(X_{(n)})=0\)</span></p>
-<p>Si observamos el gráfico de <span class="math inline">\(X_{(n)}\)</span> notamos su consistencia pero sin ser insesgado. Esto significa que existen estimadores sesgados y consistentes. <img data-src="figs/max_consist.jpg" alt="Figura 2. Consistencia para el máximo de una Unif(0,\theta)"></p>
 </section>
+<section id="consistencia-6" class="slide level2">
+<h2>Consistencia</h2>
+<p>Si observamos el gráfico de <span class="math inline">\(X_{(n)}\)</span> notamos su consistencia pero sin ser insesgado. Esto significa que existen estimadores sesgados y consistentes.</p>
 
-<section id="consistencia-6" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
+<img data-src="XS3310-I24_05_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="consistencia-7" class="slide level2">
+<h2>Consistencia</h2>
 <p>A continuación demostraremos que <span class="math inline">\(X_{(n)}\)</span> es consistente para <span class="math inline">\(\theta\)</span> por medio de la definición.</p>
 <p><strong>Ejemplo.</strong></p>
 <p>Sean <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Unif(0,\theta)\)</span> y <span class="math inline">\(X_{(n)}\)</span> un estimador de <span class="math inline">\(\theta\)</span>. Demuestre que <span class="math inline">\(X_{(n)}\)</span> es consistente para estimar <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Solución.</strong></p>
-<p>Como <span class="math inline">\(X_{(n)}\)</span> es un estimador sesgado para <span class="math inline">\(\theta\)</span> no podemos hacer uso del Teorema 3.1 por lo que debemos usar la definición de consistencia. Como esta nos pide encontrar probabilidades y sabemos que <span class="math inline">\(X_{(n)}\sim Potencial(n,\theta)\)</span> vamos a recordar la función de distribución de <span class="math inline">\(X_{(n)}\)</span>:</p>
+<p>Como <span class="math inline">\(X_{(n)}\)</span> es un estimador sesgado para <span class="math inline">\(\theta\)</span> no podemos hacer uso del Teorema 2.4. Sin embargo, podemos mostrar con el teorema 2.3 o bien por la definición de consistencia. Como esta nos pide encontrar probabilidades y sabemos que <span class="math inline">\(X_{(n)}\sim Potencial(n,\theta)\)</span> vamos a recordar la función de distribución de <span class="math inline">\(X_{(n)}\)</span>:</p>
 <p><span class="math inline">\(F_{X_{(n)}}(x) = \begin{cases} 0\quad si \quad x \leq 0 \\ \left(\frac{x}{\theta}\right)^{n} \quad si\quad 0&lt;x&lt;\theta \\ 1\quad si\quad x \geq \theta \end{cases}\)</span></p>
 </section>
-
-<section id="consistencia-7" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
+<section id="consistencia-8" class="slide level2">
+<h2>Consistencia</h2>
 <p>Con esto podemos desarrollar la probabilidad en la definición:</p>
 <p><span class="math inline">\(P\left(\left|X_{(n)}-\theta\right|\leq \varepsilon\right) = P\left(-\varepsilon \leq X_{(n)}-\theta\leq \varepsilon\right) = P\left(\theta - \varepsilon \leq X_{(n)} \leq \theta + \varepsilon\right) =\)</span> <span class="math inline">\(F_{X_{(n)}}(\theta + \varepsilon) - F_{X_{(n)}}(\theta - \varepsilon)\)</span></p>
 <p>Sabemos que <span class="math inline">\(F_{X_{(n)}}(\theta + \varepsilon) = 1 \quad \forall \varepsilon &gt; 0\)</span> ya que <span class="math inline">\(\theta + \varepsilon &gt; \theta\)</span>. No obstante, dependiendo del valor de <span class="math inline">\(\varepsilon\)</span> puede que <span class="math inline">\(\theta - \varepsilon\)</span> sea menor a 0 o esté entre 0 y <span class="math inline">\(\theta\)</span>, por lo que <span class="math inline">\(F_{X_{(n)}}(\theta - \varepsilon)\)</span> puede tomar distintos valores dependiendo de <span class="math inline">\(\varepsilon\)</span>:</p>
@@ -433,30 +424,19 @@ Prof.&nbsp;Shu Wei Chou Chen
 <p><span class="math inline">\(\lim_{n \to +\infty} P\left(\left|X_{(n)}-\theta\right|\leq \varepsilon\right) = \lim_{n \to +\infty}\left(F_{X_{(n)}}(\theta + \varepsilon) - F_{X_{(n)}}(\theta - \varepsilon)\right)\)</span></p>
 <p><span class="math inline">\(= 1 - \lim_{n \to +\infty}F_{X_{(n)}}(\theta - \varepsilon) =\begin{cases} 1 - \lim_{n \to +\infty}\left(\frac{\theta - \varepsilon}{\theta}\right)^{n} \quad si \quad 0 &lt; \varepsilon &lt; \theta \\ 1 \quad si \quad \varepsilon \geq \theta \end{cases} = 1 \quad \forall \varepsilon &gt; 0\)</span></p>
 </section>
-
-<section id="consistencia-8" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
+<section id="consistencia-9" class="slide level2">
+<h2>Consistencia</h2>
 <p>Como se cumple la definición entonces concluimos que <span class="math inline">\(X_{(n)}\)</span> es un estimador consistente para <span class="math inline">\(\theta\)</span>.</p>
-<blockquote>
-<p><strong>Teorema 3.2.</strong> Suponga que <span class="math inline">\(\hat{\theta}\)</span> es un estimador consistente para estimar <span class="math inline">\(\theta\)</span> y que <span class="math inline">\(\hat{\phi}\)</span> es un estimador consistente para <span class="math inline">\(\phi\)</span>, entonces:</p>
-</blockquote>
-<blockquote>
-<p><span class="math inline">\(\hat{\theta} \pm \hat{\phi}\)</span> es consistente para estimar <span class="math inline">\(\theta \pm \phi\)</span></p>
-</blockquote>
-<blockquote>
-<p><span class="math inline">\(\hat{\theta} \cdot \hat{\phi}\)</span> es consistente para estimar <span class="math inline">\(\theta \cdot \phi\)</span></p>
-</blockquote>
-<blockquote>
-<p><span class="math inline">\(\frac{\hat{\theta}}{\hat{\phi}}\)</span> es consistente para estimar <span class="math inline">\(\frac{\theta}{\phi}\)</span></p>
-</blockquote>
-<blockquote>
-<p>Si <span class="math inline">\(g(\cdot)\)</span> es una función continua en <span class="math inline">\(\theta\)</span> entonces <span class="math inline">\(g(\hat{\theta})\)</span> es consistente para estimar <span class="math inline">\(g(\theta)\)</span></p>
-</blockquote>
-<p><strong>Es decir, si <span class="math inline">\(\hat{\theta} \stackrel{p}{\longrightarrow} \theta\)</span> entonces <span class="math inline">\(g(\hat{\theta}) \stackrel{p}{\longrightarrow} g(\theta)\)</span></strong></p>
+<p><strong>Teorema 2.5</strong> Suponga que <span class="math inline">\(\hat{\theta}\)</span> es un estimador consistente para estimar <span class="math inline">\(\theta\)</span> y que <span class="math inline">\(\hat{\phi}\)</span> es un estimador consistente para <span class="math inline">\(\phi\)</span>, entonces:</p>
+<ol type="1">
+<li><p><span class="math inline">\(\hat{\theta} \pm \hat{\phi}\)</span> es consistente para estimar <span class="math inline">\(\theta \pm \phi\)</span></p></li>
+<li><p><span class="math inline">\(\hat{\theta} \cdot \hat{\phi}\)</span> es consistente para estimar <span class="math inline">\(\theta \cdot \phi\)</span></p></li>
+<li><p><span class="math inline">\(\frac{\hat{\theta}}{\hat{\phi}}\)</span> es consistente para estimar <span class="math inline">\(\frac{\theta}{\phi}\)</span></p></li>
+<li><p>Si <span class="math inline">\(g(\cdot)\)</span> es una función continua en <span class="math inline">\(\theta\)</span> entonces <span class="math inline">\(g(\hat{\theta})\)</span> es consistente para estimar <span class="math inline">\(g(\theta)\)</span>, es decir, si <span class="math inline">\(\hat{\theta} \stackrel{p}{\longrightarrow} \theta\)</span> entonces <span class="math inline">\(g(\hat{\theta}) \stackrel{p}{\longrightarrow} g(\theta)\)</span>.</p></li>
+</ol>
 </section>
-
-<section id="consistencia-9" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
+<section id="consistencia-10" class="slide level2">
+<h2>Consistencia</h2>
 <p><strong>Ejemplo.</strong></p>
 <p>Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Normal con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>.</p>
 <ol type="a">
@@ -468,96 +448,79 @@ Prof.&nbsp;Shu Wei Chou Chen
 </ol>
 <p><strong>Solución:</strong> Sea <span class="math inline">\(g(x) = \sqrt{x}\)</span> una función continua si <span class="math inline">\(x \geq 0\)</span>, por lo tanto: <span class="math inline">\(g(S^2) = S\)</span> es consistente para estimar <span class="math inline">\(g(\sigma^2) = \sigma\)</span></p>
 </section>
-
-<section id="consistencia-10" class="title-slide slide level1 center">
-<h1>Consistencia</h1>
-<blockquote>
-<p><strong>Teorema 1.25. Teorema de Slutsky.</strong> Suponga que <span class="math inline">\(U_n\)</span> es una variable aleatoria que tiene distribución que converge a una <span class="math inline">\(N(0,1)\)</span> cuando <span class="math inline">\(n \to +\infty\)</span>. Además <span class="math inline">\(W_n\)</span> es una variable aleatoria que converge en probabilidad a 1. Se cumple, entonces, que la variable aleatoria <span class="math inline">\(\frac{U_n}{W_n}\)</span> tiene distribución que converge a una <span class="math inline">\(N(0,1)\)</span>, cuando <span class="math inline">\(n \to +\infty\)</span>.</p>
-</blockquote>
+<section id="consistencia-11" class="slide level2">
+<h2>Consistencia</h2>
+<p><strong>Teorema 2.6.:</strong> <em>Teorema de Slutsky.</em> Suponga que <span class="math inline">\(U_n\)</span> es una variable aleatoria que tiene distribución que converge a una <span class="math inline">\(N(0,1)\)</span> cuando <span class="math inline">\(n \to +\infty\)</span>. Además <span class="math inline">\(W_n\)</span> es una variable aleatoria que converge en probabilidad a 1. Se cumple, entonces, que la variable aleatoria <span class="math inline">\(\frac{U_n}{W_n}\)</span> tiene distribución que converge a una <span class="math inline">\(N(0,1)\)</span>, cuando <span class="math inline">\(n \to +\infty\)</span>.</p>
 <p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>. Demuestre que <span class="math inline">\(V = \frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}}\)</span> converge a una <span class="math inline">\(N(0,1)\)</span> cuando <span class="math inline">\(n \to +\infty\)</span>.</p>
 <p><strong>Solución.</strong> Sea <span class="math inline">\(U_n = \frac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}}\)</span>. Sabemos que por el Teorema del Límite Central <span class="math inline">\(U_n\)</span> converge en distribución a una <span class="math inline">\(N(0,1)\)</span> cuando <span class="math inline">\(n \to +\infty\)</span>.</p>
 <p>Sea <span class="math inline">\(W_n = \frac{S}{\sigma}\)</span>. Podemos demostrar que <span class="math inline">\(S\)</span> es consistente para estimar <span class="math inline">\(\sigma\)</span> para cualquier población, por lo que <span class="math inline">\(\frac{S}{\sigma}\)</span> converge en probabilidad a 1 (“es consistente para estimar 1”).</p>
 <p>Entonces se cumple que <span class="math inline">\(V = \frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}} \xrightarrow{\text{d}} N(0,1)\)</span> cuando <span class="math inline">\(n \to +\infty\)</span>.</p>
 </section>
-
-<section id="suficiencia" class="title-slide slide level1 center">
-<h1>Suficiencia</h1>
+<section id="suficiencia" class="slide level2">
+<h2>Suficiencia</h2>
 <p>Hasta el momento la selección de estimadores ha sido intuitiva, sin embargo en esta sección utilizaremos la propiedad de suficiencia para determinar estimadores a partir de ciertos estadísticos. Se dice que un estadístico es suficiente si <strong>hace uso de toda la información de la muestra</strong>. Ejemplos: <span class="math inline">\(\overline{X}, S^{2}, X_{(n)}\)</span>.</p>
-<blockquote>
-<p><strong>Definición 4.1. Suficiencia mínima.</strong> Si <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> es una muestra aleatoria sobre una población con parámetro desconocido <span class="math inline">\(\theta\)</span> y función de densidad/probabilidad <span class="math inline">\(f_{X}(x|\theta)\)</span>. Se dice que un estadístico <span class="math inline">\(U = g(X_{1}, X_{2}, ... , X_{n})\)</span> es <strong>suficiente mínimo</strong> para estimar <span class="math inline">\(\theta\)</span> si la distribución condicional de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> dado <span class="math inline">\(U=u\)</span> es independiente de <span class="math inline">\(\theta\)</span>.</p>
-</blockquote>
-<blockquote>
-<p>Es decir, <span class="math inline">\(P(X_{1}, X_{2}, ... , X_{n} \vert U =u)\)</span> no depende de <span class="math inline">\(\theta\)</span>.</p>
-</blockquote>
+<p><strong>Definición 2.1.</strong> <em>Suficiencia.</em> Si <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> es una muestra aleatoria sobre una población con parámetro desconocido <span class="math inline">\(\theta\)</span> y función de densidad/probabilidad <span class="math inline">\(f_{X}(x|\theta)\)</span>. Se dice que un estadístico <span class="math inline">\(U = g(X_{1}, X_{2}, ... , X_{n})\)</span> es <em>suficiente </em> para estimar <span class="math inline">\(\theta\)</span> si la distribución condicional de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> dado <span class="math inline">\(U=u\)</span> es independiente de <span class="math inline">\(\theta\)</span>. Es decir, <span class="math inline">\(P(X_{1}, X_{2}, ... , X_{n} \vert U =u)\)</span> no depende de <span class="math inline">\(\theta\)</span>.</p>
 </section>
-
-<section id="suficiencia-1" class="title-slide slide level1 center">
-<h1>Suficiencia</h1>
-<p>De otra forma, se puede decir que un estadístico <span class="math inline">\(U = T(X_{1}, X_{2}, ... , X_{n})\)</span>, de una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span>, es suficiente mínimo para estimar <span class="math inline">\(\theta\)</span> si no se puede encontrar otro estadístico que realice una mejor reducción de los datos que la que realiza <span class="math inline">\(U\)</span>. Es decir, el estadístico suficiente mínimo logra <strong>explicar toda la información del parámetro que se presenta en la muestra aleatoria</strong>.</p>
-<p>Ejemplo. Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Bernoulli(p)\)</span>. Pruebe que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es suficiente para estimar <span class="math inline">\(p\)</span>.</p>
-<p>Solución. Sabemos que la función de probabilidad de una Bernoulli viene dada por la siguiente expresión:</p>
+<section id="suficiencia-1" class="slide level2">
+<h2>Suficiencia</h2>
+<p>De otra forma, se puede decir que un estadístico <span class="math inline">\(U = T(X_{1}, X_{2}, ... , X_{n})\)</span>, de una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span>, es suficiente para estimar <span class="math inline">\(\theta\)</span> si no se puede encontrar otro estadístico que realice una mejor reducción de los datos que la que realiza <span class="math inline">\(U\)</span>. Es decir, el estadístico suficiente mínimo logra <strong>explicar toda la información del parámetro que se presenta en la muestra aleatoria</strong>.</p>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Bernoulli(p)\)</span>. Pruebe que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es suficiente para estimar <span class="math inline">\(p\)</span>.</p>
+<p><strong>Solución:</strong> Sabemos que la función de probabilidad de una Bernoulli viene dada por la siguiente expresión:</p>
 <p><span class="math inline">\(f_{X}(x|p) = \begin{cases} p^{x}\left(1-p\right)^{1-x} \quad si \quad x \in \left\lbrace 0,1\right\rbrace \\ 0 \quad en \quad otros \quad casos \end{cases}\)</span></p>
 <p>También sabemos de antemano que la suma de Bernoulli es una Binomial, por lo que <span class="math inline">\(U \sim Bin(n,p)\)</span>, por lo que tiene la siguiente función de probabilidad:</p>
 <p><span class="math inline">\(f_{U}(u|p) = \begin{cases} \binom{n}{u}p^{u}\left(1-p\right)^{n-u} \quad si \quad u \in \left\lbrace0,1,2,...,n\right\rbrace \\ 0 \quad en \quad otros \quad casos \end{cases}\)</span></p>
 </section>
-
-<section id="suficiencia-2" class="title-slide slide level1 center">
-<h1>Suficiencia</h1>
+<section id="suficiencia-2" class="slide level2">
+<h2>Suficiencia</h2>
 <p>Ahora tenemos que encontrar la función de probabilidad condicional de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> dado <span class="math inline">\(U=u\)</span>, que por lo visto en cursos anteriores sabemos que es:</p>
 <p><span class="math display">\[f(x_{1}, ... , x_{n} | U = u) = \frac{f(x_{1}, ... , x_{n}, u)}{f_{U}(u)}\]</span></p>
 <p>En este caso el numerador es la función de probabilidad conjunta de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> y <span class="math inline">\(U\)</span>, pero al estar este en términos de toda la muestra aleatoria entonces quedamos con solo la función de probabilidad conjunta de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span>, <span class="math inline">\(f(x_{1}, ... , x_{n})\)</span>. Recordemos que bajo independencia <span class="math inline">\(f(x_{1}, ... , x_{n}) = \prod_{j=1}^{n}f_{X_{j}}(x_{j}|p)\)</span>. Esta función también lleva el nombre de <strong>función de verosimilitud</strong> y se denota como <span class="math inline">\(\mathcal{L}(x_{1}, ... , x_{n}|p)\)</span> o también solo como <span class="math inline">\(\mathcal{L}(p)\)</span>.</p>
 <p><span class="math display">\[\mathcal{L}(x_{1}, ... , x_{n}|p) =  \prod_{j=1}^{n} p^{x_{j}}\left(1-p\right)^{1-x_{j}}= p^{\sum_{j=1}^{n}x_{j}}\left(1-p\right)^{n-\sum_{j=1}^{n}x_{j}} = p^{u}\left(1-p\right)^{n-u}.\]</span></p>
 </section>
-
-<section id="suficiencia-3" class="title-slide slide level1 center">
-<h1>Suficiencia</h1>
+<section id="suficiencia-3" class="slide level2">
+<h2>Suficiencia</h2>
 <p>Por lo tanto, <span class="math inline">\(f(x_{1}, ... , x_{n} | U = u) = \frac{p^{u}\left(1-p\right)^{n-u}}{\binom{n}{u}p^{u}\left(1-p\right)^{n-u}} = \frac{1}{\binom{n}{u}}\)</span></p>
 <p>Como vemos, esta función condicional no depende de <span class="math inline">\(p\)</span>, por lo que decimos que <span class="math inline">\(U\)</span> es suficiente para estimar <span class="math inline">\(p\)</span>.</p>
-<p>Ejemplo. Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Uniforme en el intervalo <span class="math inline">\((0,\theta)\)</span>. Demuestre que el máximo muestral es un estimador suficiente para <span class="math inline">\(\theta\)</span>.</p>
-<p>Solución. Ya habiamos demostrado con anterioridad que para este caso <span class="math inline">\(U = X_{(n)} \sim Potencial(n,\theta)\)</span>, por lo que conocemos su función de densidad:</p>
+</section>
+<section id="suficiencia-4" class="slide level2">
+<h2>Suficiencia</h2>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Uniforme en el intervalo <span class="math inline">\((0,\theta)\)</span>. Demuestre que el máximo muestral es un estimador suficiente para <span class="math inline">\(\theta\)</span>.</p>
+<p><strong>Solución:</strong> Ya habiamos demostrado con anterioridad que para este caso <span class="math inline">\(U = X_{(n)} \sim Potencial(n,\theta)\)</span>, por lo que conocemos su función de densidad:</p>
 <p><span class="math inline">\(f_{U}(u) = \frac{nu^{n-1}}{\theta^n}\)</span></p>
 <p>Con esto podemos encontrar la función de densidad marginal:</p>
 <p><span class="math inline">\(f(x_{1}, ... , x_{n} | U = u) = \frac{\theta^{-n}}{\frac{nu^{n-1}}{\theta^n}} = \frac{1}{nu^{n-1}}\)</span></p>
 <p>Como esta expresión no depende de <span class="math inline">\(\theta\)</span> entonces decimos que el máximo muestral es suficiente para estimar <span class="math inline">\(\theta\)</span>.</p>
 </section>
-
-<section id="técnicas-para-demostrar-suficiencia" class="title-slide slide level1 center">
-<h1>Técnicas para demostrar suficiencia</h1>
+<section id="técnicas-para-demostrar-suficiencia" class="slide level2">
+<h2>Técnicas para demostrar suficiencia</h2>
 <ol type="1">
 <li>Técnica de factorización</li>
 <li>Técnica de la familia exponencial.</li>
 </ol>
-<blockquote>
-<p><strong>Teorema 4.1. Técnica de factorización.</strong> Si <span class="math inline">\(U\)</span> es un estadístico definido sobre una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> de una población con parámetro desconocido <span class="math inline">\(\theta\)</span> y <span class="math inline">\(\mathcal{L}(X_{1}, X_{2}, ... , X_{n}|\theta) = \mathcal{L}(\theta)\)</span> es la función de verosimilitud entonces <span class="math inline">\(U\)</span> es suficiente para <span class="math inline">\(\theta\)</span> si y solo si existen funciones <span class="math inline">\(g(u,\theta)\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n})\)</span> tal que <span class="math inline">\(\mathcal{L}(\theta) = g(u,\theta) \cdot h(x_{1}, x_{2}, ... , x_{n})\)</span> donde <span class="math inline">\(g(\cdot)\)</span> depende de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> solo por medio de <span class="math inline">\(U\)</span> y <span class="math inline">\(h(\cdot)\)</span> no depende de <span class="math inline">\(\theta\)</span>.</p>
-</blockquote>
+<p><strong>Teorema 2.7:</strong> <em>Técnica de factorización.</em> Si <span class="math inline">\(U\)</span> es un estadístico definido sobre una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> de una población con parámetro desconocido <span class="math inline">\(\theta\)</span> y <span class="math inline">\(\mathcal{L}(X_{1}, X_{2}, ... , X_{n}|\theta) = \mathcal{L}(\theta)\)</span> es la función de verosimilitud entonces <span class="math inline">\(U\)</span> es suficiente para <span class="math inline">\(\theta\)</span> si y solo si existen funciones <span class="math inline">\(g(u,\theta)\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n})\)</span> tal que <span class="math inline">\(\mathcal{L}(\theta) = g(u,\theta) \cdot h(x_{1}, x_{2}, ... , x_{n})\)</span> donde <span class="math inline">\(g(\cdot)\)</span> depende de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> solo por medio de <span class="math inline">\(U\)</span> y <span class="math inline">\(h(\cdot)\)</span> no depende de <span class="math inline">\(\theta\)</span>.</p>
 </section>
-
-<section id="suficiencia-4" class="title-slide slide level1 center">
-<h1>Suficiencia</h1>
-<p>Ejemplo. Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Bernoulli(p)\)</span>. Pruebe que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo para <span class="math inline">\(p\)</span>.</p>
-<p>Solución. En el caso de una muestra aleatoria Bernoulli, su función de verosimilitud viene dada por</p>
+<section id="suficiencia-5" class="slide level2">
+<h2>Suficiencia</h2>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Bernoulli(p)\)</span>. Pruebe que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo para <span class="math inline">\(p\)</span>.</p>
+<p><strong>Solución:</strong> En el caso de una muestra aleatoria Bernoulli, su función de verosimilitud viene dada por</p>
 <p><span class="math display">\[\mathcal{L}(p) = \prod_{j=1}^{n} p^{x_{j}}\left(1-p\right)^{1-x_{j}} = p^{\sum x_{j}}\left(1-p\right)^{n-\sum x_{j}} = p^{u}\left(1-p\right)^{n-u}\]</span></p>
 <p>Si tomamos <span class="math inline">\(g(u,p) = p^{u}\left(1-p\right)^{n-u}\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n}) = 1\)</span> podemos ver que se cumple el teorema anterior por lo que queda demostrado que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo para <span class="math inline">\(p\)</span>.</p>
 </section>
-
-<section id="suficiencia-5" class="title-slide slide level1 center">
-<h1>Suficiencia</h1>
-<p>Ejemplo. Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Poisson con media <span class="math inline">\(\lambda\)</span>. Encuentre un estadístico suficiente mínimo para <span class="math inline">\(\lambda\)</span>.</p>
-<p>Solución. Primero debemos encontrar la función de verosimilitud para una muestra aleatoria Poisson,</p>
+<section id="suficiencia-6" class="slide level2">
+<h2>Suficiencia</h2>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Poisson con media <span class="math inline">\(\lambda\)</span>. Encuentre un estadístico suficiente mínimo para <span class="math inline">\(\lambda\)</span>.</p>
+<p><strong>Solución:</strong> Primero debemos encontrar la función de verosimilitud para una muestra aleatoria Poisson,</p>
 <p><span class="math display">\[\mathcal{L}(\lambda) = \prod_{j=1}^{n} \frac{\lambda^{x_{j}}e^{-\lambda}}{x_{j}!} = \frac{\lambda^{\sum x_{j}}e^{-n\lambda}}{\prod x_{j}! }\]</span></p>
 <p>Si tomamos <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> entonces podemos observar que <span class="math inline">\(g(u,\lambda) = \lambda^{u} e^{-n\lambda}\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n}) = \frac{1}{\prod x_{j}! }\)</span> cumplen que su producto sea igual a la verosimilitud, por lo que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo.</p>
 </section>
-
-<section id="ejercicios-grupales" class="title-slide slide level1 center">
-<h1>Ejercicios grupales</h1>
+<section id="ejercicios-grupales" class="slide level2">
+<h2>Ejercicios grupales</h2>
 <ul>
 <li><p><strong>9.17</strong> (Mendenhall) Suponga que <span class="math inline">\(X_1, X_2, ..., X_n\)</span> y <span class="math inline">\(Y_1, Y_2, ..., Y_n\)</span> son muestras aleatorias independientes provenientes de dos poblaciones con medias <span class="math inline">\(\mu_1\)</span> y <span class="math inline">\(\mu_2\)</span> y variancias <span class="math inline">\(\sigma_1^2\)</span> y <span class="math inline">\(\sigma_2^2\)</span>, respectivamente. Demuestre que <span class="math inline">\(\bar{X}-\bar{Y}\)</span> es un estimador consistente de <span class="math inline">\(\mu_1-\mu_2\)</span>.</p></li>
 <li><p><strong>9.18</strong> (Mendenhall) Con los mismos supuestos del ejercicios 9.17 + asumiendo que las dos poblaciones son normales con <span class="math inline">\(\sigma_1^2 = \sigma_2^2 = \sigma^2\)</span>. Demuestre que:</p></li>
 </ul>
 <p><span class="math display">\[\frac{\sum_{i=1}^n(x_i-\bar{x})^2+\sum_{i=1}^n(y_i-\bar{y})^2}{2n-2}\]</span> es un estimador consistente de <span class="math inline">\(\sigma^2\)</span>.</p>
-<p>class: center, middle</p>
 </section>
-
 <section id="qué-discutimos-hoy" class="title-slide slide level1 center">
 <h1>¿Qué discutimos hoy?</h1>
 <p>ECM y propiedades de los estimadores: consistente y suficiente.</p>
