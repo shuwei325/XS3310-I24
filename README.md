@@ -24,5 +24,7 @@ y ejercicios</a>
 |------------------------|-------------------------------|
 | 1\. Introducción       | [Clase01](XS3310-I24_01.html) |
 |                        | [Clase02](XS3310-I24_02.html) |
-| 2\. Estimación Puntual | [Clase03](XS3310-I24_03.html) |
+|                        | [Clase03](XS3310-I24_03.html) |
+| 2\. Estimación Puntual | [Clase04](XS3310-I24_04.html) |
+|                        | [Clase05](XS3310-I24_05.html) |
 |                        |                               |

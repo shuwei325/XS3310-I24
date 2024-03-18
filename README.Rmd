@@ -29,10 +29,11 @@ La información del curso está en [Mediación Virtual](https://mv1.mediacionvir
 <a href="https://docs.google.com/spreadsheets/d/1MAGOqFPWk_utN8ucXHEQULb13s6497u2-gBMvLd5IVg/edit?usp=sharing">Cronograma y ejercicios</a>
 
 
-| Tema            |  Clases                                     |
-|-----------------|---------------------------------------------|
+| Tema                  |  Clases                               |
+|-----------------------|---------------------------------------|
 | 1. Introducción       |       [Clase01](XS3310-I24_01.html)   |       
 |                       |       [Clase02](XS3310-I24_02.html)   |   
-| 2. Estimación Puntual |       [Clase03](XS3310-I24_03.html)   |       
+|                       |       [Clase03](XS3310-I24_03.html)   |       
+| 2. Estimación Puntual |       [Clase04](XS3310-I24_04.html)   |  
+|                       |       [Clase05](XS3310-I24_05.html)   |       
 |                       |                                       |  
-
