@@ -501,11 +501,11 @@ f_{X_{\left(1\right)}}\left(x\right) = n\left[1-F_{X}\left(x\right)\right]^{n-1}
 </div>
 </div>
 
-<img data-src="XS3310-I24_04_files/figure-revealjs/unnamed-chunk-1-1.png" style="width:100.0%" class="r-stretch"></section>
+<img data-src="XS3310-I24_04_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:100.0%" class="r-stretch"></section>
 <section id="sesgo-asintótico" class="slide level2">
 <h2>Sesgo asintótico</h2>
 
-<img data-src="XS3310-I24_04_files/figure-revealjs/unnamed-chunk-2-1.png" width="1440" class="r-stretch"></section>
+<img data-src="XS3310-I24_04_files/figure-revealjs/unnamed-chunk-3-1.png" width="1440" class="r-stretch"></section>
 <section id="error-cuadrático-medio-ecm" class="slide level2">
 <h2>Error Cuadrático Medio (ECM)</h2>
 <p><strong>Definicion:</strong> Error cuadrático medio. Supongamos que <span class="math inline">\(\hat{\theta}\)</span> es un estimador de un parámetro <span class="math inline">\(\theta\)</span>, se define el <em>error cuadrático medio</em> de <span class="math inline">\(\hat{\theta}\)</span>, denotado por <span class="math inline">\(ECM(\hat{\theta}) = E\left[\left(\hat{\theta}-\theta\right)^2\right]\)</span></p>
@@ -582,9 +582,9 @@ Var(\hat{\theta}_{2}) &amp;= Var\left(\frac{5n+1}{5n}X_{(n)}\right) = \frac{\lef
 </section>
 <section id="eficiencia-5" class="slide level2">
 <h2>Eficiencia</h2>
-<p>Podemos apreciar la eficiencia relativa de estos dos estimadores en la Figura 2. Los puntos negros vacios representan a <span class="math inline">\(\hat{\theta}_1\)</span> mientras que los puntos azules rellenos representan a <span class="math inline">\(\hat{\theta}_2\)</span>. Podemos observar como estos segundos tienen puntos en general más próximos al verdadero valor de <span class="math inline">\(\theta\)</span> que los primeros, por lo tanto son relativamente más eficientes.</p>
+<p>En la siguiente figura, se observa <span class="math inline">\(\hat{\theta}_1\)</span> y <span class="math inline">\(\hat{\theta}_2\)</span> calculados de 100 muestras independientes. En dicha simnulación, se supone que <span class="math inline">\(\theta=5\)</span> y <span class="math inline">\(n=45\)</span>. Podemos observar como la eficiencia de los dos estimadores.</p>
 
-<img data-src="figs/eficienciarelativa.jpg" class="r-stretch"></section>
+<img data-src="XS3310-I24_04_files/figure-revealjs/unnamed-chunk-4-1.png" width="672" class="r-stretch"></section>
 <section id="eficiencia-6" class="slide level2">
 <h2>Eficiencia</h2>
 <p>En general, para buscar la eficiencia al estimar un parámetro se requiere determinar el estimador insesgado <span class="math inline">\(\hat{\theta}\)</span> que tiene variancia mínima.</p>
@@ -620,7 +620,7 @@ Var(\hat{\theta}_{2}) &amp;= Var\left(\frac{5n+1}{5n}X_{(n)}\right) = \frac{\lef
 <ol start="2" type="1">
 <li>Sean <span class="math inline">\(X_1, . . . , X_n, X_{n + 1}, . . . , X_{n+m}\)</span> variables aleatorias independientes e idénticamente distribuidas con densidad Normal de media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2_X\)</span>. Se desea estimar <span class="math inline">\(\mu\)</span>, pero los valores individuales de las variables se han extraviado y se dispone sólo de las medias:</li>
 </ol>
-<p><span class="math inline">\(\bar{X_1}=\frac{1}{n}\sum_{i=1}^{n}X_i\)</span>, <span class="math inline">\(\bar{X_2}=\frac{1}{m}\sum_{i=n+1}^{n+m}X_i\)</span></p>
+<p><span class="math display">\[\bar{X_1}=\frac{1}{n}\sum_{i=1}^{n}X_i,~~~ \bar{X_2}=\frac{1}{m}\sum_{i=n+1}^{n+m}X_i\]</span></p>
 <p>Para integrar las dos fuentes de información se utiliza un estimador de la forma <span class="math inline">\(\hat{X} = \lambda \bar{X_1} + (1 − \lambda)\bar{X_2}\)</span>, donde <span class="math inline">\(0 \leq \lambda \leq 1\)</span>. Probar que un estimador de este tipo es insesgado para <span class="math inline">\(\mu\)</span> indicando además qué valor define el mejor <span class="math inline">\(\lambda\)</span> de todos ellos.</p>
 </section>
 <section id="ejercicios-2" class="slide level2">
