@@ -474,17 +474,17 @@ Prof.&nbsp;Shu Wei Chou Chen
 <section id="estimadores-de-máxima-verosimilitud-5" class="slide level2">
 <h2>Estimadores de máxima verosimilitud</h2>
 <p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim N(\mu, \sigma^2)\)</span>. Encuentre los estimadores máximo-verosímiles para <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span>.</p>
-<p><strong>Solución.</strong> Empezemos por obtener la función de verosimilitud:</p>
-<p><span class="math display">\[\mathcal{L}(\mu, \sigma^2) = \prod_{j=1}^{n} \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x_{j}-\mu)^2}{2\sigma^2}}= (2\pi)^{-\frac{n}{2}} (\sigma^2)^{-\frac{n}{2}} e^{-\frac{\sum(x_{j} -\mu)^2}{2\sigma^2}}\]</span></p>
+<p><strong>Solución.</strong> Para no confunidr la notación, tome <span class="math inline">\(\omega=\sigma^2\)</span>. Empezemos por obtener la función de verosimilitud:</p>
+<p><span class="math display">\[\mathcal{L}(\mu, \omega) = \prod_{j=1}^{n} \frac{1}{\sqrt{2\pi\omega}} e^{-\frac{(x_{j}-\mu)^2}{2\omega}}= (2\pi)^{-\frac{n}{2}} (\omega)^{-\frac{n}{2}} e^{-\frac{\sum(x_{j} -\mu)^2}{2\omega}}\]</span></p>
 <p>Obtenindo la log-verosimilitud:</p>
-<p><span class="math display">\[\ell(\mu, \sigma^2) = -\frac{n}{2} \ln(2\pi) -\frac{n}{2} \ln(\sigma^2) -\frac{\sum(x_{j} -\mu)^2}{2\sigma^2}\]</span></p>
-<p>Derivando con respecto a <span class="math inline">\(\mu\)</span>:</p>
-<p><span class="math display">\[\frac{\partial \ell(\mu,\sigma^2)}{\partial \mu} = \frac{\sum(x_{j} -\mu)}{\sigma^2} = 0 \Rightarrow \sum(x_{j} -\mu) = 0 \Rightarrow \hat{\mu} = \overline{X}\]</span></p>
-<p><span class="math display">\[\frac{\partial^{2} \ell(\mu,\sigma^2)}{\partial \mu^{2}} = -\frac{n}{\sigma^2} &lt; 0\]</span></p>
+<p><span class="math display">\[\ell(\mu, \omega) = -\frac{n}{2} \ln(2\pi) -\frac{n}{2} \ln(\omega) -\frac{\sum(x_{j} -\mu)^2}{2\omega}\]</span></p>
 </section>
 <section id="estimadores-de-máxima-verosimilitud-6" class="slide level2">
 <h2>Estimadores de máxima verosimilitud</h2>
-<p>Ahora procedemos a derivar con respecto a <span class="math inline">\(\sigma^2\)</span>. Para no confundirnos llamemos <span class="math inline">\(\omega = \sigma^2\)</span>.</p>
+<p>Derivando con respecto a <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[\frac{\partial \ell(\mu,\omega)}{\partial \mu} = \frac{\sum(x_{j} -\mu)}{\omega} = 0 \Rightarrow \sum(x_{j} -\mu) = 0 \Rightarrow \hat{\mu} = \overline{X}\]</span></p>
+<p>Su segunda deivada es <span class="math inline">\(\frac{\partial^{2} \ell(\mu,\omega)}{\partial \mu^{2}} = -\frac{n}{\omega} &lt; 0\)</span></p>
+<p>Ahora procedemos a derivar con respecto a <span class="math inline">\(\omega\)</span>.</p>
 <p><span class="math display">\[\frac{\partial \ell(\mu,\omega)}{\partial \omega} = -\frac{n}{2\omega} + \frac{\sum(x_{j} -\mu)^2}{2\omega^2} = \frac{-n\omega + \sum(x_{j} -\mu)^2}{2\omega^2} = 0\]</span></p>
 <p><span class="math display">\[\Rightarrow \sum(x_{j} -\mu)^2 = n\omega \Rightarrow \hat{\omega} = \hat{\sigma}^{2} = \frac{\sum(x_{j} -\mu)^2}{n}\]</span></p>
 <p><span class="math display">\[\frac{\partial^{2} \ell(\mu,\sigma^2)}{\partial \omega^{2}} = \frac{n}{2\omega^2} - \frac{\sum(x_{j} -\mu)^2}{\omega^3} &lt; 0 \quad \text{, cuando} \quad \omega = \frac{\sum(x_{j} -\mu)^2}{n}\]</span></p>
@@ -496,6 +496,24 @@ Prof.&nbsp;Shu Wei Chou Chen
 </section>
 <section id="estimadores-de-máxima-verosimilitud-8" class="slide level2">
 <h2>Estimadores de máxima verosimilitud</h2>
+<p>Otra posibilidad es considerar la función de verosimilitud con dos parámetros desconocidos (<span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span>), es decir una función bivariada.</p>
+<p>Tenemos que <span class="math display">\[\frac{\partial^{2} \ell(\mu,\omega)}{\partial \mu^{2}} = -\frac{n}{\sigma^2},~~~~~~~~~~~\frac{\partial^{2} \ell(\mu,\omega)}{\partial \omega^{2}} = \frac{n}{2\omega^2} - \frac{\sum(x_{j} -\mu)^2}{\omega^3}\]</span></p>
+<p><span class="math display">\[\text{y}~~~\frac{\partial^{2} \ell(\mu,\omega)}{\partial \mu \partial \omega} =  - \frac{\sum(x_{j} -\mu)}{\omega^2}\]</span> La matriz hessiana es</p>
+<p><span class="math display">\[ \begin{bmatrix}
+   -\frac{n}{\sigma^2} &amp; - \frac{\sum(x_{j} -\mu)}{\omega^2} \\
+   - \frac{\sum(x_{j} -\mu)}{\omega^2} &amp; \frac{n}{2\omega^2} - \frac{\sum(x_{j} -\mu)^2}{\omega^3}
+   \end{bmatrix}  \]</span></p>
+</section>
+<section id="estimadores-de-máxima-verosimilitud-9" class="slide level2">
+<h2>Estimadores de máxima verosimilitud</h2>
+<p>El determinante de la matriz hessiana evaluada en <span class="math inline">\((\mu=\hat{\mu},~\omega=\hat{\omega})\)</span> es:</p>
+<p><span class="math display">\[ \left| \begin{bmatrix}
+   -\frac{n}{\sigma^2} &amp; - \frac{\sum(x_{j} -\mu)}{\omega^2} \\
+   - \frac{\sum(x_{j} -\mu)}{\omega^2} &amp; \frac{n}{2\omega^2} - \frac{\sum(x_{j} -\mu)^2}{\omega^3}
+   \end{bmatrix}  \right|_{(\mu=\hat{\mu},~\omega=\hat{\omega})}\]</span> <span class="math display">\[=\left. \frac{1}{\omega^3}\left[ \frac{-n^2}{2} + \frac{n}{\omega}\sum_{i=1}^n (x_i-\mu)^2 - \frac{1}{\omega}\left( \sum_{i=1}^n (x_i-\mu) \right)^2 \right]\right|_{(\mu=\hat{\mu},~\omega=\hat{\omega})}\]</span> <span class="math display">\[=\frac{1}{\hat{\omega}^3} \left[  \frac{-n^2}{2} + n^2 \right]= \frac{n^2}{2\hat{ \omega}^3}&gt;0.\]</span> El determinante de la matriz hessiana es positivo, entonces el punto crítico encontrado es máximo o mínimo (no es punto de silla). Luego, para mostrar que es un máximo local, basta mostrar que las segundas derivadas parciales son negativas (ya se mostró anteriormente).</p>
+</section>
+<section id="estimadores-de-máxima-verosimilitud-10" class="slide level2">
+<h2>Estimadores de máxima verosimilitud</h2>
 <p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Unif(0, \theta)\)</span>. Encuentre el estimador de máxima verosimilitud de <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Solución.</strong> Empezemos por obtener la función de verosimilitud y log-verosimilitud:</p>
 <p><span class="math display">\[\mathcal{L}(\theta) = \prod_{j=1}^{n} \frac{1}{\theta} = \theta^{-n}\]</span></p>
@@ -503,11 +521,11 @@ Prof.&nbsp;Shu Wei Chou Chen
 <p>Derivando con respecto a <span class="math inline">\(\theta\)</span>:</p>
 <p><span class="math display">\[\frac{\partial \ell (\theta)}{\partial \theta} = \frac{-n}{\theta} &lt; 0\]</span></p>
 </section>
-<section id="estimadores-de-máxima-verosimilitud-9" class="slide level2">
+<section id="estimadores-de-máxima-verosimilitud-11" class="slide level2">
 <h2>Estimadores de máxima verosimilitud</h2>
 <p>Esto significa que <span class="math inline">\(\ell (\theta)\)</span> no tiene puntos críticos pero sí podemos encontrar un máximo local. Como es una función decreciente sabemos que el máximo se encuentra en el valor mínimo que <span class="math inline">\(\theta\)</span> puede tomar. Recordemos que la verosimilitud es una función de <span class="math inline">\(\theta\)</span> para un resultado específico de la muestra aleatoria, por lo que los valores de <span class="math inline">\(\theta\)</span> van a depender de los valores de la muestra aleatoria. Siendo <span class="math inline">\(\theta\)</span> el máximo poblacional es lógico pensar que para una muestra aleatoria dada lo mínimo que puede ser este valor es el máximo muestral <span class="math inline">\(X_{(n)}\)</span>. Por lo tanto, concluimos que el estimador de máxima verosimilitud de <span class="math inline">\(\theta\)</span> es <span class="math inline">\(X_{(n)}\)</span>.</p>
 </section>
-<section id="estimadores-de-máxima-verosimilitud-10" class="slide level2">
+<section id="estimadores-de-máxima-verosimilitud-12" class="slide level2">
 <h2>Estimadores de máxima verosimilitud</h2>
 
 <img data-src="figs/maxvero.jpg" class="r-stretch quarto-figure-center"><p class="caption">Figura 4. Verosimilitud de una <span class="math inline">\(Unif(0,\theta)\)</span> a partir de una muestra aleatoria.</p></section>
