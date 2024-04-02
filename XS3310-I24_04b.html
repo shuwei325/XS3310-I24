@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="XS3310-I24_03_files/libs/clipboard/clipboard.min.js"></script>
-<script src="XS3310-I24_03_files/libs/quarto-html/tabby.min.js"></script>
-<script src="XS3310-I24_03_files/libs/quarto-html/popper.min.js"></script>
-<script src="XS3310-I24_03_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="XS3310-I24_03_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="XS3310-I24_03_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="XS3310-I24_03_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="XS3310-I24_03_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="XS3310-I24_04b_files/libs/clipboard/clipboard.min.js"></script>
+<script src="XS3310-I24_04b_files/libs/quarto-html/tabby.min.js"></script>
+<script src="XS3310-I24_04b_files/libs/quarto-html/popper.min.js"></script>
+<script src="XS3310-I24_04b_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="XS3310-I24_04b_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="XS3310-I24_04b_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="XS3310-I24_04b_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="XS3310-I24_04b_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Prof.&nbsp;Shu Wei Chou Chen">
-  <title>Introducción-3</title>
+  <title>Estimación Puntual-1b</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="XS3310-I24_03_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="XS3310-I24_03_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="XS3310-I24_04b_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="XS3310-I24_04b_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -29,77 +29,12 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="XS3310-I24_03_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="XS3310-I24_03_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="XS3310-I24_03_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="XS3310-I24_03_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="XS3310-I24_03_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="XS3310-I24_04b_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="XS3310-I24_04b_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="XS3310-I24_04b_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="XS3310-I24_04b_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="XS3310-I24_04b_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -390,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Introducción-3</h1>
+  <h1 class="title">Estimación Puntual-1b</h1>
   <p class="subtitle">XS3310 Teoría Estadística <br> I Semestre 2024</p>
 
 <div class="quarto-title-authors">
@@ -405,224 +340,155 @@ Prof.&nbsp;Shu Wei Chou Chen
 </div>
 
 </section>
-<section class="slide level2">
+<section>
+<section id="qué-vamos-a-discutir-hoy" class="title-slide slide level1 center">
+<h1>¿Qué vamos a discutir hoy?</h1>
+<ul>
+<li>Hemos estudiado Insesgamiento, Sesgo, Error y Insesgamiento Asintótico.</li>
+<li>Introdujimos el concepto de Error cuadrático medio (ECM).</li>
+<li>Vamos a enfocar en sus propiedades del ECM y suficiencia.</li>
+</ul>
+</section>
+<section id="error-cuadrático-medio-ecm" class="slide level2">
+<h2>Error Cuadrático Medio (ECM)</h2>
+<p><strong>Definicion 2.4:</strong> Error cuadrático medio. Supongamos que <span class="math inline">\(\hat{\theta}\)</span> es un estimador de un parámetro <span class="math inline">\(\theta\)</span>, se define el <em>error cuadrático medio</em> de <span class="math inline">\(\hat{\theta}\)</span>, denotado por <span class="math inline">\(ECM(\hat{\theta}) = E\left[\left(\hat{\theta}-\theta\right)^2\right]\)</span></p>
+<p><strong>Teorema 2.1:</strong> Si <span class="math inline">\(\hat{\theta}\)</span> es un estimador de <span class="math inline">\(\theta\)</span>, entonces <span class="math inline">\(ECM(\hat{\theta}) = Var(\hat{\theta}) + \left[B(\hat{\theta})\right]^2\)</span></p>
+<p><strong>NOTA:</strong> Si un estimador <span class="math inline">\(\hat{\theta}\)</span> es insesgado para <span class="math inline">\(\theta\)</span> se cumple que <span class="math inline">\(ECM(\hat{\theta}) = Var(\hat{\theta})\)</span>.</p>
+</section>
+<section id="error-cuadrático-medio" class="slide level2">
+<h2>Error Cuadrático Medio</h2>
+<p><strong>Ejemplo:</strong></p>
+<p>Si <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> es una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Pareto \left(2,\beta\right)\)</span> y <span class="math inline">\(X_{\left(1\right)}\)</span> es un estimador de <span class="math inline">\(\beta\)</span>, determine el error cuadrático medio de <span class="math inline">\(X_{\left(1\right)}\)</span>.</p>
+<p><strong>Solución:</strong></p>
+<p>Se demostró que <span class="math inline">\(X_{(1)} \sim Pareto\left(2n,\beta\right)\)</span> y que <span class="math inline">\(B\left(X_{\left(1\right)}\right) = \frac{\beta}{2n-1}\)</span>. También sabemos que <span class="math inline">\(Var\left(X_{\left(1\right)}\right) = \frac{2n\beta^{2}}{\left(2n-1\right)^{2}\left(2n-2\right)}\)</span>. Por lo tanto,</p>
+<p><span class="math inline">\(ECM(X_{\left(1\right)}) = Var(X_{\left(1\right)}) + B(X_{\left(1\right)})^{2}\)</span></p>
+<p><span class="math inline">\(~~~~~~~~~~~~~~~~~~~~~=\frac{2n\beta^{2}}{\left(2n-1\right)^{2}\left(2n-2\right)} + \frac{\beta^2}{\left(2n-1\right)^2} = \frac{4n\beta^{2} - 2\beta^{2}}{\left(2n-1\right)^{2}\left(2n-2\right)} = \frac{\beta^2}{\left(2n-1\right)\left(n-1\right)}\)</span></p>
+</section>
+<section id="eficiencia" class="slide level2">
+<h2>Eficiencia</h2>
+<p>La eficiencia de un estimador está relacionada con la variabilidad de dicho estimador, la cual se ve representada por el error cuadrático medio. Empezaremos con un ejemplo que compare la variabilidad entre dos estimadores:</p>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que</p>
+<p><span class="math inline">\(F_{X}(x) = \begin{cases} 0 \quad si \quad x &lt; 0 \\ \left(\frac{x}{\theta}\right)^{5} \quad si \quad 0 \leq x \leq \theta \\ 1 \quad si \quad x &gt; \theta \end{cases}\)</span></p>
+<p><span class="math inline">\(i.\)</span> Sean <span class="math inline">\(\overline{X}\)</span> y <span class="math inline">\(X_{(n)}\)</span> dos estimadores de <span class="math inline">\(\theta\)</span>. ¿Cuál de ellos tiene el menor error cuadrático medio?</p>
+<p><strong>Solución:</strong> Podemos reconocer que <span class="math inline">\(X_{j} \sim Potencial\left(5,\theta\right)\)</span>. Sabemos que para una variable aleatoria <span class="math inline">\(Y\)</span> tal que <span class="math inline">\(Y \sim Potencial\left(\alpha, \beta\right)\)</span> su valor esperado y varianza vienen dados por</p>
+<p><span class="math inline">\(E(Y) = \frac{\alpha\beta}{\alpha+1} \qquad Var(Y) = \frac{\alpha \beta^{2}}{\left(\alpha+1\right)^{2}\left(\alpha+2\right)}\)</span></p>
+</section>
+<section id="eficiencia-1" class="slide level2">
+<h2>Eficiencia</h2>
+<p>Empezando por <span class="math inline">\(\overline{X}\)</span> tenemos lo siguiente,</p>
+<p><span class="math inline">\(E(\overline{X}) = E(X) = \frac{5\theta}{6}\)</span></p>
+<p><span class="math inline">\(\Rightarrow B(\overline{X}) = \frac{5\theta}{6} - \theta = \frac{-\theta}{6}\)</span></p>
+<p><span class="math inline">\(Var(\overline{X}) = \frac{Var(X)}{n} = \frac{5\theta^{2}}{252n}\)</span></p>
+<p><span class="math inline">\(\Rightarrow ECM(\overline{X}) = Var(\overline{X}) + B(\overline{X})^{2} = \frac{5\theta^{2}}{252n} + \frac{\theta^2}{36} = \frac{\theta^{2}\left(5+7n\right)}{252n}\)</span></p>
+<p>Procedemos a obtener el error cuadrático medio de <span class="math inline">\(X_{(n)}\)</span> pero, primero hay que encontrar cómo se distribuye este estimador,</p>
+<p><span class="math inline">\(F_{X_{\left(n\right)}}\left(x\right) = \left[F_{X}\left(x\right)\right]^{n} = \left[\left(\frac{x}{\theta}\right)^{5}\right]^{n} = \left(\frac{x}{\theta}\right)^{5n}\)</span></p>
+</section>
+<section id="eficiencia-2" class="slide level2">
+<h2>Eficiencia</h2>
+<p>Podemos reconocer con esto que <span class="math inline">\(X_{(n)} \sim Potencial\left(5n,\theta\right)\)</span>. Ya con esto podemos proceder a obtener la información que necesitamos para el error cuadrático medio:</p>
+<p><span class="math display">\[E(X_{(n)}) = \frac{5n\theta}{5n+1}\]</span></p>
+<p><span class="math inline">\(\Rightarrow B(X_{(n)}) = \frac{5n\theta}{5n+1} - \theta = \frac{-\theta}{5n+1}\)</span></p>
+<p><span class="math inline">\(Var(X_{(n)}) = \frac{5n\theta^2}{\left(5n+1\right)^{2}\left(5n+2\right)}\)</span></p>
+<p><span class="math inline">\(\Rightarrow ECM(X_{(n)}) = \frac{5n\theta^2}{\left(5n+1\right)^{2}\left(5n+2\right)} + \frac{\theta^2}{\left(5n+1\right)^{2}} = \frac{10n\theta^{2} + 2\theta^{2}}{\left(5n+1\right)^{2}\left(5n+2\right)} = \frac{2\theta^2}{\left(5n+1\right)\left(5n+2\right)}\)</span></p>
+<p>Observando ambos resultados concluimos que <span class="math inline">\(ECM(\overline{X}) &gt; ECM(X_{(n)}), \quad \forall n &gt; 1\)</span>.</p>
+</section>
+<section id="eficiencia-3" class="slide level2">
+<h2>Eficiencia</h2>
+<p><span class="math inline">\(ii.\)</span> Encontrar dos estimadores insesgados, <span class="math inline">\(\hat{\theta}_{1}\)</span> y <span class="math inline">\(\hat{\theta}_{2}\)</span>, a partir de <span class="math inline">\(\overline{X}\)</span> y <span class="math inline">\(X_{(n)}\)</span> respectivamente. ¿Cuál de ellos tiene menor variabilidad?</p>
+<p>Solución: Podemos notar que los estimadores insesgados serían los siguientes:</p>
+<p><span class="math inline">\(\hat{\theta}_{1} = \frac{6\overline{X}}{5} \qquad \qquad \hat{\theta}_{2} = \frac{5n+1}{5n}X_{(n)}\)</span></p>
+<p><span class="math inline">\(Var(\hat{\theta}_{1}) = Var\left(\frac{6\overline{X}}{5}\right) = \frac{36}{25}Var(\overline{X}) = \frac{36}{25} \cdot \frac{5\theta^{2}}{252n} = \frac{\theta^2}{35n}\)</span></p>
+<p><span class="math display">\[\begin{align*}
+Var(\hat{\theta}_{2}) &amp;= Var\left(\frac{5n+1}{5n}X_{(n)}\right) = \frac{\left(5n+1\right)^2}{25n^2}Var(X_{(n)}) \\
+&amp;= \frac{\left(5n+1\right)^2}{25n^2} \cdot \frac{5n\theta^2}{\left(5n+1\right)^{2}\left(5n+2\right)} = \frac{\theta^2}{5n\left(5n+2\right)}
+\end{align*}\]</span></p>
+</section>
+<section id="eficiencia-4" class="slide level2">
+<h2>Eficiencia</h2>
+<p>En este caso <span class="math inline">\(\frac{\theta^2}{5n\left(5n+2\right)} &lt; \frac{\theta^2}{35n} \forall n &gt; 1\)</span>.</p>
+<p>Se dice que <span class="math inline">\(\hat{\theta}_{2}\)</span> es relativamente más eficiente que <span class="math inline">\(\hat{\theta}_{1}\)</span>.</p>
+<p><strong>NOTA:</strong> En general, si se tienen dos estimadores insesgados de un parámetro <span class="math inline">\(\theta\)</span>, es más eficiente aquel que tiene menor varianza. Si se comparan estimadores sesgados se comparan los errores cuadráticos medios en lugar de las variancias.</p>
+<p><strong>Definicion 2.5:</strong> <em>Eficiencia relativa.</em> Si <span class="math inline">\(\hat{\theta}_{1}\)</span> y <span class="math inline">\(\hat{\theta}_{2}\)</span> son estimadores insesgados de un parámetro <span class="math inline">\(\theta\)</span>, se define la <em>eficiencia relativa</em> de <span class="math inline">\(\hat{\theta}_{1}\)</span> con respecto a <span class="math inline">\(\hat{\theta}_{2}\)</span>: <span class="math inline">\(eff(\hat{\theta}_{1},\hat{\theta}_{2}) = \frac{Var(\hat{\theta}_{2})}{Var(\hat{\theta}_{1})}\)</span></p>
+<p>En el ejemplo anterior:</p>
+<p><span class="math inline">\(eff(\hat{\theta}_{1},\hat{\theta}_{2}) = \frac{\frac{\theta^2}{5n\left(5n+2\right)}}{\frac{\theta^2}{35n}} = \frac{7}{5n+2} &lt; 1 \quad \forall n&gt;1\)</span></p>
+<p>Esto significa que <span class="math inline">\(\hat{\theta}_{2}\)</span> es más eficiente que <span class="math inline">\(\hat{\theta}_{1}\)</span>.</p>
+</section>
+<section id="eficiencia-5" class="slide level2">
+<h2>Eficiencia</h2>
+<p>En la siguiente figura, se observa <span class="math inline">\(\hat{\theta}_1\)</span> y <span class="math inline">\(\hat{\theta}_2\)</span> calculados de 100 muestras independientes. En dicha simnulación, se supone que <span class="math inline">\(\theta=5\)</span> y <span class="math inline">\(n=45\)</span>. Podemos observar como la eficiencia de los dos estimadores.</p>
 
-<div class="cell">
-<style type="text/css">
-code {
-  font-size: 2em;
-  /* or try font-size: xx-large; */
-}
-</style>
-</div>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral" class="slide level2">
-<h2>Propiedades de la media y variancia muestral</h2>
-<p>Sea <span class="math inline">\(X_{1}, \ldots, X_{n}\)</span> una m.a. cuya distribución poblacional tiene media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^{2}\)</span>. Definan la <em>media muestral</em> y la <em>Varianza muestral</em>:</p>
-<p><span class="math display">\[\bar{X}_{n}=\bar {X}=\sum_{i=1}^n \frac{X_i}{n}, ~~~\text{y}~~~  S^{2} = \frac{\sum_{i=1}^n{\left(X_{j}-\bar{X}\right)^2}}{n-1}.\]</span></p>
-<p>Entonces,</p>
+<img data-src="XS3310-I24_04b_files/figure-revealjs/unnamed-chunk-2-1.png" width="672" class="r-stretch"></section>
+<section id="eficiencia-6" class="slide level2">
+<h2>Eficiencia</h2>
+<p>En general, para buscar la eficiencia al estimar un parámetro se requiere determinar el estimador insesgado <span class="math inline">\(\hat{\theta}\)</span> que tiene variancia mínima.</p>
+<p><strong>Teorema 2.2:</strong>. <em>Desigualdad de Cramer-Rao.</em> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con parámetro desconocido <span class="math inline">\(\theta\)</span> con función de densidad <span class="math inline">\(f_{X}(x|\theta)\)</span>, cuyo dominio no depende de <span class="math inline">\(\theta\)</span>. Si <span class="math inline">\(\hat{\theta}\)</span> es un estimador insesgado para <span class="math inline">\(\theta\)</span>, entonces en general: <span class="math display">\[Var(\hat{\theta}) \geq \frac{1}{I(\theta)},\]</span> donde <span class="math inline">\(I(\theta)\)</span> se llama la <em>información de Fisher</em> y se define como <span class="math inline">\(I(\theta) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x))}{\partial \theta^{2}}\right)\right]\)</span>.</p>
 <ul>
-<li><span class="math inline">\(E\left(\overline{X}_{n}\right)=\mu\)</span>, y <span class="math inline">\(\operatorname{Var}\left(\bar{X}_{n}\right)=\frac{\sigma^{2}}{n}\)</span></li>
-<li><span class="math inline">\(E\left(S^2\right)=\sigma^2\)</span>.</li>
+<li>Si <span class="math inline">\(Var(\hat{\theta}) = 1/I(\theta)\)</span> entonces <span class="math inline">\(\hat{\theta}\)</span> es un estimador insesgado de variancia mínima para <span class="math inline">\(\theta\)</span>.</li>
 </ul>
 </section>
-<section id="propiedades-de-la-media-muestral" class="slide level2">
-<h2>Propiedades de la media muestral</h2>
-<h3 id="ley-de-los-grandes-números">Ley de los grandes números</h3>
-<p>Suponga que <span class="math inline">\(X_{1}, \ldots, X_{n}\)</span> es una muestra de una distribución con media <span class="math inline">\(\mu\)</span> y varianza finita. Sea <span class="math inline">\(\bar{X}_{n}\)</span> la media muestral. Entonces, <span class="math display">\[\begin{equation*}
-\bar{X}_{n} \stackrel{p}{\longrightarrow} \mu
-\end{equation*}\]</span></p>
-<h3 id="teorema-del-límite-central">Teorema del límite central</h3>
-<p>Si <span class="math inline">\(X_1,\ldots, X_n\)</span> es una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, y la distribución tiene media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(0&lt;\sigma^2&lt; \infty\)</span>. Entonces se cumple que</p>
-<p><span class="math display">\[Z_{n} = \frac{\overline{X}_n-\mu}{\frac{\sigma}{\sqrt{n}}} \stackrel{d}{\longrightarrow} N\left(0,1\right) \quad si\quad n \rightarrow \infty\]</span> o lo que es equivalente <span class="math display">\[\overline{X}_n \xrightarrow{\text{d}} N\left(\mu, \frac{\sigma^2}{n}\right) \quad si\quad n \rightarrow \infty.\]</span></p>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<p><strong>Teorema:</strong> Si <span class="math inline">\(\bar{X}_n\)</span> es la media muestral de una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> de una distribución normal de media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>, entonces <span class="math inline">\(\bar{X}_n\)</span> tiene una distribución normal con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2/n\)</span>, es decir, <span class="math inline">\(\bar{X}_n \thicksim N(\mu,\sigma^2/n)\)</span></p>
-<p>Aplicación más común: valores de la tabla z (normal estándar).</p>
-<h3 id="ejemplo">Ejemplo:</h3>
-<p>Si <span class="math inline">\(X\)</span> es una variable aleatoria con distribución normal con media 15 y variancia 16. Se toman muestras aleatorias de tamaño 9. Calcular <span class="math inline">\(P(12 &lt; \bar{X}_n &lt; 17)\)</span>.</p>
-<p><span class="math display">\[ P(12 &lt; \bar{X}_n &lt; 17) = P\left(\frac{ 12-15 }{ 4/3 }&lt;Z&lt;\frac{ 17-15 }{ 4/3 }\right)\]</span> <span class="math display">\[ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ = P(-2.25 &lt; Z &lt;1.5) = 0.9210\]</span></p>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-1" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">pnorm</span>(<span class="dv">17</span>,<span class="at">mean=</span><span class="dv">15</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">16</span><span class="sc">/</span><span class="dv">9</span>))<span class="sc">-</span><span class="fu">pnorm</span>(<span class="dv">12</span>,<span class="at">mean=</span><span class="dv">15</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">16</span><span class="sc">/</span><span class="dv">9</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9209683</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># lo cual es equivalente a </span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">pnorm</span>(<span class="fl">1.5</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="sc">-</span><span class="fl">2.25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9209683</code></pre>
-</div>
-</div>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-2" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<p><strong>Teorema:</strong> Si <span class="math inline">\(X_1, X_2, ..., X_n\)</span> es una muestra aleatoria con distribución normal con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>, entonces:</p>
-<ol type="a">
-<li><span class="math inline">\(\bar{X}\)</span> y <span class="math inline">\(S^2\)</span> son estocásticamente independientes.</li>
-<li>La variable <span class="math inline">\(U = \frac{(n-1)S^2}{\sigma^2}\)</span> tiene distribución <span class="math inline">\(\chi^2\)</span> con <span class="math inline">\(n-1\)</span> grados de libertad.</li>
-<li>La densidad de <span class="math inline">\(S^2\)</span> es la densidad gamma.</li>
-</ol>
-<p>La prueba de este teorema está fuera de los contenidos de este curso.</p>
-<p><strong>Nota:</strong> Se puede usar para probar que <span class="math inline">\(Var(S^2) = \frac{2\sigma^4}{n-1}\)</span> cuando asumimos que <span class="math inline">\(X_1, X_2, ..., X_n\)</span> es una muestra aleatoria con distribución normal con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>.</p>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-3" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><span class="math display">\[E \left ( \frac{(n-1)S^2}{\sigma^2} \right )=n-1\]</span> <span class="math display">\[\Rightarrow E \left ( S^2 \right )=\sigma^2.\]</span></p>
-</div><div class="column" style="width:50%;">
-<p><span class="math display">\[Var \left ( \frac{(n-1)S^2}{\sigma^2} \right )= 2(n-1)\]</span> <span class="math display">\[\Rightarrow\frac{(n-1)^2}{\sigma^4} \cdot Var(S^2)  = 2(n-1)\]</span> <span class="math display">\[\Rightarrow Var(S^2) = \frac{2\sigma^4(n-1)}{(n-1)^2}\]</span> <span class="math display">\[\Rightarrow Var(S^2) = \frac{2\sigma^4}{n-1}.\]</span></p>
-</div>
-</div>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-4" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<p><strong>Teorema:</strong> Si <span class="math inline">\(X_1, X_2, ..., X_n\)</span> es una muestra aleatoria con distribución normal con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>, entonces la variable aleatoria: <span class="math inline">\(t = \frac{ (\bar{ X }-\mu) } { S/\sqrt{ n } }\)</span> se distribuye como una <span class="math inline">\(t\)</span> de Student con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-5" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<p><em>Prueba</em>:</p>
-<p>Sabemos que <span class="math inline">\(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\)</span> se distribuye como una <span class="math inline">\(N(0,1)\)</span>. Por teorema anterior sabemos que <span class="math inline">\(U = \frac{(n-1)S^2}{\sigma^2}\sim \chi^2_{n-1}\)</span>. Del mismo teorema, sabemos que <span class="math inline">\(\bar{X}\)</span> y <span class="math inline">\(S^2\)</span> son independientes, y por los teorema (vistos en la clase de contínuos), sabemos que la definición de una variable <span class="math inline">\(t\)</span> de Student es <span class="math inline">\(Y = \frac{N(0,1)}{\sqrt{\chi^2/k}}\)</span>.</p>
-<p>Por todo lo anterior:</p>
-<p><span class="math display">\[
-\frac{ \frac{ \bar{X}-\mu } { \sigma/\sqrt{ n } } } { \sqrt{\frac{ \frac{ (n-1)S^2 } { \sigma^2 }}{(n-1)} } }=\frac{ \bar{ X }-\mu } { S/\sqrt{ n } }
-\]</span></p>
-<p>es una <span class="math inline">\(t\)</span> de Student con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-6" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<p><strong>Teorema:</strong> Si <span class="math inline">\(X_1, X_2, ..., X_m\)</span> es una muestra aleatoria con distribución normal con media <span class="math inline">\(\mu_X\)</span> y variancia <span class="math inline">\(\sigma^2_X\)</span>. Sea <span class="math inline">\(Y_1, Y_2, ..., Y_n\)</span> es una muestra aleatoria con distribución normal con media <span class="math inline">\(\mu_Y\)</span> y variancia <span class="math inline">\(\sigma^2_Y\)</span>. Si ambas poblaciones son independientes entonces: <span class="math inline">\(\frac{S^2_X/\sigma^2_X}{S^2_Y/\sigma^2_Y}\)</span> tiene una distribución <span class="math inline">\(F_{m-1, n-1}\)</span>.</p>
-<p><em>Prueba:</em></p>
-<p>Por teorema sabemos que <span class="math inline">\(U = \frac{(n-1)S^2}{\sigma^2}\)</span> tiene distribución <span class="math inline">\(\chi^2\)</span> con <span class="math inline">\(n-1\)</span> grados de libertad. Usando la definición de la distribución F podemos reescribir la división como la división de dos variables distribuidas como <span class="math inline">\(\chi^2\)</span> con distintos grados de libertad:</p>
-<p><span class="math display">\[ \frac{ \frac{ (m-1)S^2_X } { \sigma^2_X } /(m-1)} { \frac{ (n-1)S^2_Y } { \sigma^2_Y }/(n-1) } =  \frac{ S^2_X/\sigma^2_X } { S^2_Y/\sigma^2_Y }
-\]</span></p>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-7" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<p><strong>Teorema:</strong> Si <span class="math inline">\(X_1, X_2, ..., X_n\)</span> es una muestra aleatoria con distribución normal con media <span class="math inline">\(\mu_X\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>. Sea <span class="math inline">\(Y_1, Y_2, ..., Y_m\)</span> es una muestra aleatoria con distribución normal con media <span class="math inline">\(\mu_Y\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>. Si ambas poblaciones son independientes entonces:</p>
-<p><span class="math display">\[ \frac{ (\bar{ X }-\bar{ Y })-(\mu_X-\mu_Y) } { S_p \sqrt{ \frac{1}{n}+\frac{1}{m} } }\]</span></p>
-<p>se distribuye como una <span class="math inline">\(t\)</span> de Student con <span class="math inline">\(n+m-2\)</span> grados de libertad, donde</p>
-<p><span class="math display">\[ S_p = \sqrt{ \frac{ (n-1)S^2_X+(m-1)S^2_Y } { n+m-2 } }.\]</span></p>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-8" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<p><em>Prueba:</em></p>
-<p>Se sabe que:</p>
-<ol type="a">
-<li><p><span class="math inline">\(\frac{(\bar{X}-\bar{Y})-(\mu_X-\mu_Y)}{\sigma \sqrt{\frac{1}{n}+\frac{1}{m}}} \sim N(0,1)\)</span>. Como <span class="math inline">\(\bar{X} \sim N(\mu_X,\sigma^2/n)\)</span> y <span class="math inline">\(\bar{Y} \sim N(\mu_Y,\sigma^2/m)\)</span> y por lo tanto, <span class="math inline">\((\bar{X}-\bar{Y}) \sim N(\mu_X-\mu_Y,\sigma^2/n+\sigma^2/m)\)</span>.</p></li>
-<li><p>Además, <span class="math inline">\(\frac{(n-1)S^2_X}{\sigma^2}+\frac{(m-1)S^2_Y}{\sigma^2}\)</span> es una <span class="math inline">\(\chi^2_{(n+m-2)}\)</span> por teorema.</p></li>
-</ol>
-<p>Por definición de una variable <span class="math inline">\(t\)</span> de student, el cociente entre la <span class="math inline">\(N(0,1)\)</span> de la parte a) y la raíz cuadrada de la parte b) dividida entre sus grados de libertad, es una <span class="math inline">\(t\)</span> de student con <span class="math inline">\(n+m-2\)</span> grados de libertad. Se se calcula el cociente y se simplifica, se obtiene la variable aleatoria del Teorema.</p>
-</section>
-<section id="propiedades-de-la-media-y-variancia-muestral-caso-normal-9" class="slide level2">
-<h2>Propiedades de la media y variancia muestral (Caso Normal)</h2>
-<p><span class="math display">\[\begin{eqnarray*} \frac{\frac{(\bar{X}-\bar{Y})-(\mu_X-\mu_Y)}{\sigma\sqrt{\frac{1}{n}+\frac{1}{m}}}}{\sqrt{\frac{\frac{(n-1)S^2_X+(m-1)S^2_Y}{\sigma^2}}{n+m-2}}} &amp;=&amp; \frac{\frac{(\bar{X}-\bar{Y})-(\mu_X-\mu_Y)}{\sigma\sqrt{\frac{1}{n}+\frac{1}{m}}}}{\frac{1}{\sigma}\sqrt{\frac{(n-1)S^2_X+(m-1)S^2_Y}{n+m-2}}}\\ &amp;=&amp; \frac{(\bar{X}-\bar{Y})-(\mu_X-\mu_Y)}{\sqrt{\frac{(n-1)S^2_X+(m-1)S^2_Y}{n+m-2}}\cdot\sqrt{\frac{1}{n}+\frac{1}{m}}} \\  \\ &amp;=&amp; \frac{(\bar{X}-\bar{Y})-(\mu_X-\mu_Y)}{S_p\sqrt{\frac{1}{n}+\frac{1}{m}}} \end{eqnarray*}\]</span></p>
-</section>
-<section id="estadísticos-de-orden" class="slide level2">
-<h2>Estadísticos de orden</h2>
-<ul>
-<li><p>Supongamos que se tiene una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> de una población infinita que tiene una función de densidad <span class="math inline">\(f(x)\)</span> y función de distribución <span class="math inline">\(F(x)\)</span>.</p></li>
-<li><p>Si los valores de estas variables aleatorias se ordenan de manera que al valor más bajo de las <span class="math inline">\(x\)</span> se le asigna la variable <span class="math inline">\(X_{(1)}\)</span>, al siguiente valor de <span class="math inline">\(x\)</span> se le asigna la variable <span class="math inline">\(X_{(2)}\)</span> y de esta forma se continúa hasta que al mayor valor de <span class="math inline">\(x\)</span> se le asigna la variable <span class="math inline">\(X_{(n)}\)</span>, esto genera un ordenamiento de la muestra aleatoria <span class="math inline">\(X_1, X_2, ..., X_n\)</span> de manera que <span class="math inline">\(X_{(1)} &lt; X_{(2)} &lt; ... &lt; X_{(n)}\)</span>.</p></li>
-<li><p>Estas variables denotan los denominados estadísticos de orden. De este análisis surge la siguiente pregunta: ¿Cuál es la distribución del estadístico <span class="math inline">\(X_{(1)}\)</span>?</p></li>
-</ul>
-</section>
-<section id="estadísticos-de-orden-1" class="slide level2">
-<h2>Estadísticos de orden</h2>
-<h3 id="distribución-del-mínimo-x_1">Distribución del mínimo <span class="math inline">\(X_{(1)}\)</span></h3>
-<p>Sean las variables aleatorias <span class="math inline">\(X_{1},X_{2},...,X_{n}\)</span> independientes e idénticamente distribuidas con función de distribución <span class="math inline">\(F_X(x)\)</span> y función de densidad <span class="math inline">\(f_X(x)\)</span>. Sea también la variable <span class="math inline">\(X_{(1)}\)</span> definida por: <span class="math inline">\(X_{(1)}=\min(X_{1},X_{2},...,X_{n})\)</span>, Entonces, la función de distribución del mínimo de la muestra está dada por: <span class="math display">\[F_{X_{(1)}}(x)=1-[1-F_X(x)]^{n},\]</span></p>
-<p>y su función de densidad: <span class="math display">\[f_{X_{(1)}}(x)=n[1-F_X(x)]^{n-1}f_X(x).\]</span></p>
-</section>
-<section id="estadísticos-de-orden-2" class="slide level2">
-<h2>Estadísticos de orden</h2>
-<p><em>Prueba:</em></p>
-<p><span class="math inline">\(F_{X_{(1)}}(x) = P(X_{(1)}\leq x)\)</span></p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =P(\min(X_{1},...,X_{n})\leq x)\)</span></p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =1-P(\min(X_{1},...,X_{n})&gt;x)\)</span> (Complemento)</p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =1-P(X_{1}&gt;x,X_{2}&gt;x,...,X_{n}&gt;x)\)</span></p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =1-P(X_{1}&gt;x)\cdot P(X_{2}&gt;x) \cdots P(X_{n}&gt;x)\)</span> (Independencia)</p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =1-[P(X_{1}&gt;x)]^{n}\)</span> (Distribución idéntica)</p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =1-[1-F_X(x)]^{n}\)</span></p>
-<p>Del mismo modo, la función de densidad de <span class="math inline">\(X_{(1)}\)</span> sería:</p>
-<p><span class="math inline">\(f_{X_{(1)}}(x)=F_{X_{(1)}}(x)'=(1-[1-F_X(x)]^{n})'= n[1-F_X(x)]^{n-1}f_X(x)\)</span></p>
-</section>
-<section id="estadísticos-de-orden-3" class="slide level2">
-<h2>Estadísticos de orden</h2>
-<h3 id="distribución-del-máximo-x_n">Distribución del máximo <span class="math inline">\(X_{(n)}\)</span></h3>
-<p>Sean las variables aleatorias <span class="math inline">\(X_{1},X_{2},...,X_{n}\)</span> independientes e idénticamente distribuidas con función de distribución <span class="math inline">\(F_X(x)\)</span> y función de densidad <span class="math inline">\(f_X(x)\)</span>. Sea también la variable <span class="math inline">\(X_{(n)}\)</span> definida por: <span class="math inline">\(X_{(n)}=\max(X_{1},X_{2},...,X_{n})\)</span>, Entonces, la función de distribución del máximo de la muestra está dada por: <span class="math display">\[F_{X_{(n)}}(x)=[F_X(x)]^{n},\]</span> y su función de densidad: <span class="math display">\[f_{X_{(n)}}(x)=n[F_X(x)]^{n-1}f_X(x).\]</span></p>
-</section>
-<section id="estadísticos-de-orden-4" class="slide level2">
-<h2>Estadísticos de orden</h2>
-<h3 id="distribución-del-máximo-x_n-1">Distribución del máximo <span class="math inline">\(X_{(n)}\)</span></h3>
-<p><span class="math inline">\(F_{X_{(n)}}(x) = P(X_{(n)}\leq x)\)</span></p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =P(\max(X_{1},...,X_{n})\leq x)\)</span></p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =P(X_{1}\leq x,X_{2}\leq x,...,X_{n}\leq x)\)</span></p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =P(X_{1}\leq x)\cdot P(X_{2}\leq x) \cdots P(X_{n}\leq x)\)</span> (Independencia)</p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =[P(X_{1}\leq x)]^{n}\)</span> (Distribución idéntica)</p>
-<p><span class="math inline">\(\ \ \ \ \ \ \ \ =[F_{X}(x)]^{n}\)</span></p>
-<p>Del mismo modo, la función de densidad de <span class="math inline">\(X_{(n)}\)</span> sería:</p>
-<p><span class="math inline">\(f_{X_{(n)}}(x)=F_{X_{(n)}}(x)'=([F_X(x)]^{n})'= n[F_X(x)]^{n-1}f_X(x)\)</span></p>
-</section>
-<section id="estadísticos-de-orden-5" class="slide level2">
-<h2>Estadísticos de orden</h2>
-<p><strong>Teorema:</strong> Sea <span class="math inline">\(X_1, X_2, ..., X_n\)</span> una muestra aleatoria de una población infinita con función de densidad <span class="math inline">\(f_X(x)\)</span> y función de distribución <span class="math inline">\(F_X(x)\)</span>. Si <span class="math inline">\(X_{(k)}\)</span> representa el <span class="math inline">\(k\)</span>-ésimo estadístico de orden, entonces la función de densidad viene dada por:</p>
-<p><span class="math display">\[f_{X_{(k)}}(x)= \frac{ n! } { (k-1)!(n-k)! }[F_X(x)]^{ k-1 }[1-F_X(x)]^{ n-k }f_X(x)\]</span></p>
-<p><strong>Nota:</strong></p>
-<p>En particular se tiene que <span class="math inline">\(X_{(1)} = \min\{X_1, X_2, ..., X_n\}\)</span> y <span class="math inline">\(X_{(n)} = \max\{X_1, X_2, ..., X_n\}\)</span>. Además si <span class="math inline">\(n = 2m + 1\)</span>, la mediana de la muestra corresponde al estadístico de orden <span class="math inline">\(X_{(m+1)}\)</span>. Si <span class="math inline">\(n=2m\)</span>, la mediana es <span class="math inline">\(\frac{1}{2}(X_{m}+X_{m+1})\)</span>.</p>
-<p><strong>Teorema:</strong> Para <span class="math inline">\(n\)</span> grande, la distribución de muestreo de la mediana para muestras aleatorias de tamaño <span class="math inline">\(2n + 1\)</span> es aproximadamente normal con media <span class="math inline">\(\mu\)</span> (mediana poblacional) y variancia <span class="math inline">\(\frac{1}{8n[f(\mu)]^2}\)</span>.</p>
-</section>
-<section id="propiedades-deseadas-de-un-buen-estimador" class="slide level2">
-<h2>Propiedades deseadas de un “buen” estimador</h2>
-<ul>
-<li>¿Cuáles son las propiedades deseadas de un buen estimador?</li>
-</ul>
-<p>Básicamente se resume en la esperanza y la variancia del estimador.</p>
-
-<img data-src="figs/bias.jpg" class="r-stretch quarto-figure-center"><p class="caption">Figura 1. Sesgo y Variancia. Fuente: https://www.slideshare.net/Stratio/lunchlearn-combinacin-de-modelos</p></section>
-<section id="lab01" class="slide level2">
-<h2>Lab01</h2>
-<p><a href="lab01.html">Lab01</a></p>
+<section id="eficiencia-7" class="slide level2">
+<h2>Eficiencia</h2>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Normal con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^{2}\)</span>. Demuestre que <span class="math inline">\(\overline{X}\)</span> es un estimador insesgado de variancia mínima (EIVM) para <span class="math inline">\(\mu\)</span>.</p>
+<p><strong>Solución:</strong> Ya sabemos de ejemplos anteriores que <span class="math inline">\(\overline{X}\)</span> es insesgado para <span class="math inline">\(\mu\)</span>. Hay que demostrar que es de variancia mínima utilizando la desigualdad de Cramer-Rao.</p>
+<p>Sabemos que en este caso <span class="math inline">\(f_{X}(x) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\)</span>.</p>
+<p><span class="math inline">\(\Rightarrow \ln(f_{X}(x)) = \ln\left(\frac{1}{\sqrt{2\pi}\sigma}\right) - \frac{(x-\mu)^2}{2\sigma^2} \Rightarrow \frac{\partial\ln(f_{X}(x))}{\partial\mu} = \frac{x-\mu}{\sigma^{2}}\)</span></p>
+<p><span class="math inline">\(\Rightarrow \frac{\partial^{2}\ln(f_{X}(x))}{\partial\mu^{2}} = \frac{-1}{\sigma^2} \Rightarrow -\frac{\partial^{2}\ln(f_{X}(x))}{\partial\mu^{2}} = \frac{1}{\sigma^2}\)</span></p>
+<p><span class="math inline">\(\Rightarrow I^{-1}(\mu) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x))}{\partial \mu^{2}}\right)\right]^{-1} = \left[ \frac{n}{\sigma^2}\right]^{-1} = \frac{\sigma^2}{n}\)</span></p>
+<p>De antemano ya sabiamos que <span class="math inline">\(Var(\overline{X}) = \frac{\sigma^2}{n}\)</span> que como vemos es igual a la información de Fisher para <span class="math inline">\(\mu\)</span>, por lo que podemos concluir que <span class="math inline">\(\overline{X}\)</span> es un estimador insesgado de variancia mínima para <span class="math inline">\(\mu\)</span>.</p>
 </section>
 <section id="ejercicios" class="slide level2">
 <h2>Ejercicios</h2>
 <ol type="1">
-<li>Se desea estimar la media <span class="math inline">\(\mu\)</span> de una variable aleatoria <span class="math inline">\(X\)</span>. Para ello se toman <span class="math inline">\(10\)</span> datos y se calcula su media muestral <span class="math inline">\(\bar{X}\)</span> y la varianza de dichos datos <span class="math inline">\(\sigma^2_X\)</span>. Comente si son verdaderas o falsas las siguientes afirmaciones:</li>
+<li>Sea <span class="math inline">\(X_1, . . . , X_n\)</span> denote una variable aleatoria que se distribuye como Uniforme <span class="math inline">\((0, \theta)\)</span>, con <span class="math inline">\(\theta &gt;0\)</span> es un parámetro desconocido. Denote <span class="math inline">\(\bar{X}\)</span> como la media muestral.</li>
 </ol>
 <ol type="a">
-<li>Por el teorema central del límite sabemos que <span class="math inline">\(\mu\)</span> será una variable aleatoria normal.</li>
-<li>La media muestral con un conjunto de datos es un número y no una variable aleatoria.</li>
-<li>La media muestral <span class="math inline">\(\bar{X}\)</span> tiene siempre una distribución muestral normal.</li>
-<li>Para disminuir la varianza de <span class="math inline">\(\bar{X}\)</span> a la mitad habría que tomar al menos 100 datos.</li>
-<li>Como la media muestral es un estimador insesgado, tenemos asegurado que <span class="math inline">\(\bar{X} = \mu\)</span></li>
+<li><p>¿Es <span class="math inline">\(\bar{X}\)</span> un estimador insesgado para <span class="math inline">\(\theta\)</span>? Explique su respuesta.</p></li>
+<li><p>Encuentre un estimador insesgado para <span class="math inline">\(\theta\)</span>.</p></li>
+<li><p>Encuentre la variancia del estimador de la parte anterior.</p></li>
+<li><p>Sugiera un estimador alternativo para <span class="math inline">\(\theta\)</span>.</p></li>
 </ol>
 </section>
 <section id="ejercicios-1" class="slide level2">
 <h2>Ejercicios</h2>
-
-<img data-src="figs/ejercicios_estat_orden.png" class="r-stretch"><div class="footer footer-default">
+<ol start="2" type="1">
+<li>Sean <span class="math inline">\(X_1, . . . , X_n, X_{n + 1}, . . . , X_{n+m}\)</span> variables aleatorias independientes e idénticamente distribuidas con densidad Normal de media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2_X\)</span>. Se desea estimar <span class="math inline">\(\mu\)</span>, pero los valores individuales de las variables se han extraviado y se dispone sólo de las medias:</li>
+</ol>
+<p><span class="math display">\[\bar{X_1}=\frac{1}{n}\sum_{i=1}^{n}X_i,~~~ \bar{X_2}=\frac{1}{m}\sum_{i=n+1}^{n+m}X_i\]</span></p>
+<p>Para integrar las dos fuentes de información se utiliza un estimador de la forma <span class="math inline">\(\hat{X} = \lambda \bar{X_1} + (1 − \lambda)\bar{X_2}\)</span>, donde <span class="math inline">\(0 \leq \lambda \leq 1\)</span>. Probar que un estimador de este tipo es insesgado para <span class="math inline">\(\mu\)</span> indicando además qué valor define el mejor <span class="math inline">\(\lambda\)</span> de todos ellos.</p>
+</section>
+<section id="ejercicios-2" class="slide level2">
+<h2>Ejercicios</h2>
+<p>Sea <span class="math inline">\(X_1,\dots, X_n\sim \text{Poisson}(\theta)\)</span>. Muestre que <span class="math inline">\(\bar X_n\)</span> es un estimador eficiente de <span class="math inline">\(\theta\)</span>. Es decir, compruebe que la varianza de <span class="math inline">\(\bar X_n\)</span> es igual a su Cota de Cramer-Rao</p>
+<p><span class="math display">\[\begin{equation*}
+f(x \vert \lambda)=\operatorname{Pr}(X=x)=\frac{\lambda^{x} e^{-\lambda}}{x !}
+\end{equation*}\]</span></p>
+</section>
+<section id="qué-discutimos-hoy" class="slide level2">
+<h2>¿Qué discutimos hoy?</h2>
+<p>ECM y propiedades de los estimadores: insesgado, eficiente.</p>
+<p>Práctica en grupos.</p>
+<p>Próxima clase: consistente y suficiente.</p>
+<div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="XS3310-I24_03_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="XS3310-I24_03_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="XS3310-I24_04b_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
