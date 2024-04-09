@@ -357,7 +357,7 @@ Prof.&nbsp;Shu Wei Chou Chen
 <section id="suficiencia" class="slide level2">
 <h2>Suficiencia</h2>
 <p>En la clase pasada:</p>
-<p>Introducimos el concepto de suficiencia de un estadístico y vimos dos ejemplos: población con distribución Bernoulli y Uniforme.</p>
+<p>Introducimos el concepto de suficiencia de un estadístico y la técnica de factorización.</p>
 <p><strong>Definición 2.7.</strong> <em>Suficiencia.</em> Si <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> es una muestra aleatoria sobre una población con parámetro desconocido <span class="math inline">\(\theta\)</span> y función de densidad/probabilidad <span class="math inline">\(f_{X}(x|\theta)\)</span>. Se dice que un estadístico <span class="math inline">\(U = g(X_{1}, X_{2}, ... , X_{n})\)</span> es <em>suficiente </em> para estimar <span class="math inline">\(\theta\)</span> si la distribución condicional de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> dado <span class="math inline">\(U=u\)</span> es independiente de <span class="math inline">\(\theta\)</span>. Es decir, <span class="math inline">\(P(X_{1}, X_{2}, ... , X_{n} \vert U =u)\)</span> no depende de <span class="math inline">\(\theta\)</span>.</p>
 </section>
 <section id="técnicas-para-demostrar-suficiencia" class="slide level2">
@@ -367,20 +367,6 @@ Prof.&nbsp;Shu Wei Chou Chen
 <li>Técnica de la familia exponencial.</li>
 </ol>
 <p><strong>Teorema 2.7:</strong> <em>Técnica de factorización.</em> Si <span class="math inline">\(U\)</span> es un estadístico definido sobre una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> de una población con parámetro desconocido <span class="math inline">\(\theta\)</span> y <span class="math inline">\(\mathcal{L}(X_{1}, X_{2}, ... , X_{n}|\theta) = \mathcal{L}(\theta)\)</span> es la función de verosimilitud entonces <span class="math inline">\(U\)</span> es suficiente para <span class="math inline">\(\theta\)</span> si y solo si existen funciones <span class="math inline">\(g(u,\theta)\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n})\)</span> tal que <span class="math inline">\(\mathcal{L}(\theta) = g(u,\theta) \cdot h(x_{1}, x_{2}, ... , x_{n})\)</span> donde <span class="math inline">\(g(\cdot)\)</span> depende de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> solo por medio de <span class="math inline">\(U\)</span> y <span class="math inline">\(h(\cdot)\)</span> no depende de <span class="math inline">\(\theta\)</span>.</p>
-</section>
-<section id="suficiencia-1" class="slide level2">
-<h2>Suficiencia</h2>
-<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Bernoulli(p)\)</span>. Pruebe que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo para <span class="math inline">\(p\)</span>.</p>
-<p><strong>Solución:</strong> En el caso de una muestra aleatoria Bernoulli, su función de verosimilitud viene dada por</p>
-<p><span class="math display">\[\mathcal{L}(p) = \prod_{j=1}^{n} p^{x_{j}}\left(1-p\right)^{1-x_{j}} = p^{\sum x_{j}}\left(1-p\right)^{n-\sum x_{j}} = p^{u}\left(1-p\right)^{n-u}\]</span></p>
-<p>Si tomamos <span class="math inline">\(g(u,p) = p^{u}\left(1-p\right)^{n-u}\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n}) = 1\)</span> podemos ver que se cumple el teorema anterior por lo que queda demostrado que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo para <span class="math inline">\(p\)</span>.</p>
-</section>
-<section id="suficiencia-2" class="slide level2">
-<h2>Suficiencia</h2>
-<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Poisson con media <span class="math inline">\(\lambda\)</span>. Encuentre un estadístico suficiente mínimo para <span class="math inline">\(\lambda\)</span>.</p>
-<p><strong>Solución:</strong> Primero debemos encontrar la función de verosimilitud para una muestra aleatoria Poisson,</p>
-<p><span class="math display">\[\mathcal{L}(\lambda) = \prod_{j=1}^{n} \frac{\lambda^{x_{j}}e^{-\lambda}}{x_{j}!} = \frac{\lambda^{\sum x_{j}}e^{-n\lambda}}{\prod x_{j}! }\]</span></p>
-<p>Si tomamos <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> entonces podemos observar que <span class="math inline">\(g(u,\lambda) = \lambda^{u} e^{-n\lambda}\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n}) = \frac{1}{\prod x_{j}! }\)</span> cumplen que su producto sea igual a la verosimilitud, por lo que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo.</p>
 </section>
 <section id="suficiencia-para-familias-exponenciales" class="slide level2">
 <h2>Suficiencia para familias exponenciales</h2>
@@ -398,7 +384,7 @@ v(U,\theta) &amp;= c(\theta)^{n} e^{-d(\theta)U}
 \end{align}\]</span></p>
 <p>entonces, por la técnica de factorización, se cumple que <span class="math inline">\(U\)</span> es suficiente para <span class="math inline">\(\theta\)</span>.</p>
 </section>
-<section id="suficiencia-3" class="slide level2">
+<section id="suficiencia-1" class="slide level2">
 <h2>Suficiencia</h2>
 <p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_1,X_2,...,X_n\)</span> una m.a. tal que <span class="math inline">\(X_i \sim Poisson(\lambda)\)</span>, encuentre el estadístico suficiente utilizando la técnica de la familia exponencial.</p>
 <p><strong>Solución.</strong> Lo primero consiste en demostrar que la función de probabilidad de una Poisson tiene la forma de la familia exponencial. Viendo la función de probabilidad de una Poisson, <span class="math inline">\(f(x|\lambda) = \frac{\lambda^{x}e^{-\lambda}}{x!}\)</span>, esta pareciera no cumplir la forma de la familia exponencial, no obstante podemos realizar algunas operaciones algebraicas para alcanzar esa forma:</p>
@@ -407,7 +393,7 @@ f(x|\lambda) &amp;= \frac{\lambda^{x}e^{-\lambda}}{x!} = e^{\ln\left(\frac{\lamb
 &amp;= e^{x\ln(\lambda) - \lambda - \ln(x!)} = e^{-\lambda}e^{x\ln(\lambda)}\frac{1}{x!}
 \end{align*}\]</span></p>
 </section>
-<section id="suficiencia-4" class="slide level2">
+<section id="suficiencia-2" class="slide level2">
 <h2>Suficiencia</h2>
 <p>Podemos ver que esta expresión tiene la forma de la familia exponencial con</p>
 <p><span class="math inline">\(\begin{matrix} a(x)=x &amp; c(\lambda )={ e }^{ -\lambda } \\ b(x)=\frac { 1 }{ x! } &amp; d(\lambda )=-\ln { (\lambda ) } \end{matrix}\)</span></p>
@@ -416,7 +402,7 @@ f(x|\lambda) &amp;= \frac{\lambda^{x}e^{-\lambda}}{x!} = e^{\ln\left(\frac{\lamb
 <p><span class="math inline">\(f_{X}(x) = \begin{cases}\frac{\alpha x^{\alpha-1}}{\theta} e^{-\frac{x^{\alpha}}{\theta}} \quad si \quad x &gt; 0 \\ 0 \quad si \quad x \leq 0 \end{cases}\)</span></p>
 <p>Encuentre un estadístico suficiente para <span class="math inline">\(\theta\)</span>.</p>
 </section>
-<section id="suficiencia-5" class="slide level2">
+<section id="suficiencia-3" class="slide level2">
 <h2>Suficiencia</h2>
 <p><strong>Solución.</strong> Podemos apreciar de la función de densidad anterior lo siguiente:</p>
 <p><span class="math inline">\(\begin{matrix} a(x) = x^{\alpha} &amp; c(\theta) = \frac{1}{\theta} \\ b(x) = \alpha x^{\alpha-1} &amp; d(\theta) = \frac{1}{\theta} \end{matrix}\)</span></p>
@@ -458,14 +444,14 @@ f(x|\lambda) &amp;= \frac{\lambda^{x}e^{-\lambda}}{x!} = e^{\ln\left(\frac{\lamb
 <h2>Estimadores Rao-Blackwell</h2>
 <p><strong>Ejemplo:</strong> Suponga que una operadora de llamadas recibe llamadas de acuerdo a un proceso Poisson con promedio de llamadas por minuto, <span class="math inline">\(\lambda\)</span>. Se obtiene una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> de las llamadas telefónicas que llegaron en <span class="math inline">\(n\)</span> periodos sucesivos de un minuto. Para estimar la probabilidad de que el siguiente periodo de un minuto pase sin llamadas ( <span class="math inline">\(e^{-\lambda}\)</span> ) se utiliza el siguiente estimador:</p>
 <p><span class="math display">\[\hat{\lambda} = \begin{cases} 1 \quad si \quad X_{1} = 0 \\0 \quad en \quad otros \quad casos \end{cases}\]</span></p>
-<p>Es decir, se estima la probabilidad en 1 si no se recibieron llamadas en el primer minuto y cero en el caso contrario. Con base en esto, obtenga el estimador de Rao-Blacwell.</p>
+<p>Es decir, se estima la probabilidad en 1 si no se recibieron llamadas en el primer minuto y cero en el caso contrario. Con base en esto, obtenga el estimador de Rao-Blackwell.</p>
 </section>
 <section id="estimadores-rao-blackwell-2" class="slide level2">
 <h2>Estimadores Rao-Blackwell</h2>
-<p><strong>Solución:</strong> <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente minimal para <span class="math inline">\(\lambda\)</span>, por lo que encontramos el estimador de Rao-Blackwell a partir de este estadístico:</p>
+<p><strong>Solución:</strong> <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente para <span class="math inline">\(\lambda\)</span>, por lo que encontramos el estimador de Rao-Blackwell a partir de este estadístico:</p>
 <p><span class="math display">\[\begin{align*}
-\hat{\lambda}^{*} = E(\hat{\lambda}|U = u)
-&amp;= P\left(X_{1} = 0 | \sum_{j=1}^{n} X_{j} = u\right) \\
+\hat{\lambda}^{*} = E\left(\hat{\lambda}\mid U = u \right)
+&amp;= P\left(X_{1} = 0 \mid \sum_{j=1}^{n} X_{j} = u\right) \\
 &amp;=\frac{P\left(X_{1} = 0 , \sum_{j=1}^{n} X_{j} = u\right)}{P\left(\sum_{j=1}^{n} X_{j} = u\right)}
 =\frac{P\left(\sum_{j=2}^{n} X_{j} = u\right)}{P\left(\sum_{j=1}^{n} X_{j} = u\right)} \\
 &amp;= \dfrac{e^{-\lambda}\frac{((n-1)\lambda)^{u}e^{-(n-1)\lambda}}{u!} }{\frac{(n\lambda)^{u}e^{-n\lambda}}{u!}}\\
@@ -477,20 +463,18 @@ f(x|\lambda) &amp;= \frac{\lambda^{x}e^{-\lambda}}{x!} = e^{\ln\left(\frac{\lamb
 <h2>Teorema de Lehmann-Scheffé</h2>
 <p><strong>Teorema 2.10.</strong>: <em>Teorema de Lehmann-Scheffé</em>. Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población con función de densidad/probabilidad <span class="math inline">\(f_{X}(x|\theta)\)</span>. Si <span class="math inline">\(U = T(X_{1}, X_{2}, ... , X_{n})\)</span> es un estadístico suficiente y <em>completo</em><sup>1</sup> para <span class="math inline">\(\theta\)</span> y además se cumple que <span class="math inline">\(E(h(U))\)</span> es insesgado para estimar <span class="math inline">\(\theta\)</span> entonces <span class="math inline">\(h(U)\)</span> es el único estimador insesgado de varianza mínima para <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Prueba:</strong></p>
-<p>Sabemos por el Teorema de Rao-Blackwell que si <span class="math inline">\(\hat{\theta}\)</span> es un estimador insesgado de <span class="math inline">\(\theta\)</span> entonces <span class="math inline">\(\hat{\theta}^{*} = E(\hat{\theta}|U)\)</span> es un estimador insesgado de varianza mínima para <span class="math inline">\(\theta\)</span>.</p>
+<p>Se omite.</p>
+<!-- Sabemos por el Teorema de Rao-Blackwell que si $\hat{\theta}$ es un estimador insesgado de $\theta$ entonces $\hat{\theta}^{*} = E(\hat{\theta}|U)$ es un estimador insesgado de varianza mínima para $\theta$. -->
+<!-- Para demostrar unicidad supongamos que tenemos otro estimador $\hat{\phi}^{*}$ que es insesgado y de varianza mínima para $\theta$. Por lo tanto se debe cumplir lo siguiente: -->
+<!-- $$E(\hat{\theta}^{*}) = E(\hat{\phi}^{*}) = \theta \Rightarrow E(\hat{\theta}^{*}) - E(\hat{\phi}^{*}) = E(\hat{\theta}^{*} - \hat{\phi}^{*}) = E(g(U))= 0$$ -->
+<!-- Como se cumple que $f_{X}(x|\theta)$ es una familia completa en el estadístico suficiente $U$ entonces se cumple que $g(U) = 0$, es decir $\hat{\theta}^{*} - \hat{\phi}^{*} = 0$, que es equivalente a decir $\hat{\theta}^{*} = \hat{\phi}^{*}$. Por lo tanto concluimos que solo existe un único estimador insesgado de varianza mínima.  -->
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Asumimos que todos los estadísticos que usamos en este curso son completos.</p></li></ol></aside></section>
-<section id="teorema-de-lehmann-scheffé-1" class="slide level2">
-<h2>Teorema de Lehmann-Scheffé</h2>
-<p>Para demostrar unicidad supongamos que tenemos otro estimador <span class="math inline">\(\hat{\phi}^{*}\)</span> que es insesgado y de varianza mínima para <span class="math inline">\(\theta\)</span>. Por lo tanto se debe cumplir lo siguiente:</p>
-<p><span class="math display">\[E(\hat{\theta}^{*}) = E(\hat{\phi}^{*}) = \theta \Rightarrow E(\hat{\theta}^{*}) - E(\hat{\phi}^{*}) = E(\hat{\theta}^{*} - \hat{\phi}^{*}) = E(g(U))= 0\]</span></p>
-<p>Como se cumple que <span class="math inline">\(f_{X}(x|\theta)\)</span> es una familia completa en el estadístico suficiente <span class="math inline">\(U\)</span> entonces se cumple que <span class="math inline">\(g(U) = 0\)</span>, es decir <span class="math inline">\(\hat{\theta}^{*} - \hat{\phi}^{*} = 0\)</span>, que es equivalente a decir <span class="math inline">\(\hat{\theta}^{*} = \hat{\phi}^{*}\)</span>. Por lo tanto concluimos que solo existe un único estimador insesgado de varianza mínima.</p>
-</section>
 <section id="estimadores-insesgados-de-varianza-mínima-eivm" class="slide level2">
 <h2>Estimadores Insesgados de Varianza Mínima (EIVM)</h2>
-<p>Con los resultados anteriores, para distribuciones completas, si tenemos un estadístico <span class="math inline">\(U\)</span> que es suficiente minimal para estimar <span class="math inline">\(\theta\)</span> entonces solo debemos encontrar una función <span class="math inline">\(h(\cdot)\)</span> que sea insesgada y por lo tanto obtendremos un <strong>estimador insesgado de varianza mínima</strong>, el cual es único.</p>
+<p>Con los resultados anteriores, para distribuciones completas, si tenemos un estadístico <span class="math inline">\(U\)</span> que es suficiente para estimar <span class="math inline">\(\theta\)</span> entonces solo debemos encontrar una función <span class="math inline">\(h(\cdot)\)</span> que sea insesgada y por lo tanto obtendremos un <strong>estimador insesgado de varianza mínima</strong>, el cual es único.</p>
 <p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Bernoulli(p)\)</span>. Encuentre un EIVM para <span class="math inline">\(p\)</span>.</p>
 <p><strong>Solución.</strong> Ya habiamos demostrado con anterioridad que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente minimal y completo en una distribución Bernoulli. Para encontrar el EIVM solo debemos encontrar una función de <span class="math inline">\(U\)</span> que sea insesgada para <span class="math inline">\(p\)</span>.</p>
-<p><span class="math display">\[E(U) = E\left(\sum_{j=1}^{n} X_{j}\right) = np \Rightarrow \hat{p} = \frac{U}{n} = \frac{\sum_{j=1}^{n} X_{j}}{n}\]</span></p>
+<p><span class="math display">\[E(U) = E\left(\sum_{j=1}^{n} X_{j}\right) = np \Rightarrow \hat{p} = \frac{U}{n} = \frac{\sum\limits_{j=1}^{n} X_{j}}{n}\]</span></p>
 <p>es un EIVM para <span class="math inline">\(p\)</span>.</p>
 </section>
 <section id="estimadores-insesgados-de-varianza-mínima-eivm-1" class="slide level2">
@@ -526,7 +510,7 @@ f(y|\theta)= \left\lbrace
 <section id="ejercicios-1" class="slide level2">
 <h2>Ejercicios</h2>
 <h3 id="por-qué-demostrar-que-un-estimador-es-eivm-es-importante">¿Por qué demostrar que un estimador es EIVM es importante?</h3>
-<h3 id="práctica-hasta-9.68-de-mendenhall.">Práctica hasta 9.68 de Mendenhall.</h3>
+<h3 id="práctica-hasta-eivm.">Práctica hasta EIVM.</h3>
 </section></section>
 <section id="qué-discutimos-hoy" class="title-slide slide level1 center">
 <h1>¿Qué discutimos hoy?</h1>

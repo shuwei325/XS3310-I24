@@ -363,7 +363,6 @@ Prof.&nbsp;Shu Wei Chou Chen
 </section>
 <section id="consistencia-1" class="slide level2">
 <h2>Consistencia</h2>
-<p>Como se cumple la definición entonces concluimos que <span class="math inline">\(X_{(n)}\)</span> es un estimador consistente para <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Teorema 2.5</strong> Suponga que <span class="math inline">\(\hat{\theta}\)</span> es un estimador consistente para estimar <span class="math inline">\(\theta\)</span> y que <span class="math inline">\(\hat{\phi}\)</span> es un estimador consistente para <span class="math inline">\(\phi\)</span>, entonces:</p>
 <ol type="1">
 <li><p><span class="math inline">\(\hat{\theta} \pm \hat{\phi}\)</span> es consistente para estimar <span class="math inline">\(\theta \pm \phi\)</span></p></li>
@@ -441,14 +440,14 @@ Prof.&nbsp;Shu Wei Chou Chen
 <p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Bernoulli(p)\)</span>. Pruebe que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo para <span class="math inline">\(p\)</span>.</p>
 <p><strong>Solución:</strong> En el caso de una muestra aleatoria Bernoulli, su función de verosimilitud viene dada por</p>
 <p><span class="math display">\[\mathcal{L}(p) = \prod_{j=1}^{n} p^{x_{j}}\left(1-p\right)^{1-x_{j}} = p^{\sum x_{j}}\left(1-p\right)^{n-\sum x_{j}} = p^{u}\left(1-p\right)^{n-u}\]</span></p>
-<p>Si tomamos <span class="math inline">\(g(u,p) = p^{u}\left(1-p\right)^{n-u}\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n}) = 1\)</span> podemos ver que se cumple el teorema anterior por lo que queda demostrado que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo para <span class="math inline">\(p\)</span>.</p>
+<p>Si tomamos <span class="math inline">\(g(u,p) = p^{u}\left(1-p\right)^{n-u}\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n}) = 1\)</span> podemos ver que se cumple el teorema anterior por lo que queda demostrado que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente para <span class="math inline">\(p\)</span>.</p>
 </section>
 <section id="suficiencia-6" class="slide level2">
 <h2>Suficiencia</h2>
-<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Poisson con media <span class="math inline">\(\lambda\)</span>. Encuentre un estadístico suficiente mínimo para <span class="math inline">\(\lambda\)</span>.</p>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Poisson con media <span class="math inline">\(\lambda\)</span>. Encuentre un estadístico suficiente para <span class="math inline">\(\lambda\)</span>.</p>
 <p><strong>Solución:</strong> Primero debemos encontrar la función de verosimilitud para una muestra aleatoria Poisson,</p>
 <p><span class="math display">\[\mathcal{L}(\lambda) = \prod_{j=1}^{n} \frac{\lambda^{x_{j}}e^{-\lambda}}{x_{j}!} = \frac{\lambda^{\sum x_{j}}e^{-n\lambda}}{\prod x_{j}! }\]</span></p>
-<p>Si tomamos <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> entonces podemos observar que <span class="math inline">\(g(u,\lambda) = \lambda^{u} e^{-n\lambda}\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n}) = \frac{1}{\prod x_{j}! }\)</span> cumplen que su producto sea igual a la verosimilitud, por lo que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo.</p>
+<p>Si tomamos <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> entonces podemos observar que <span class="math inline">\(g(u,\lambda) = \lambda^{u} e^{-n\lambda}\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n}) = \frac{1}{\prod x_{j}! }\)</span> cumplen que su producto sea igual a la verosimilitud, por lo que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente.</p>
 </section>
 <section id="ejercicios-grupales" class="slide level2">
 <h2>Ejercicios grupales</h2>
