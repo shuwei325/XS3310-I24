@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="XS3310-I24_06_files/libs/clipboard/clipboard.min.js"></script>
-<script src="XS3310-I24_06_files/libs/quarto-html/tabby.min.js"></script>
-<script src="XS3310-I24_06_files/libs/quarto-html/popper.min.js"></script>
-<script src="XS3310-I24_06_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="XS3310-I24_06_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="XS3310-I24_06_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="XS3310-I24_06_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="XS3310-I24_06_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="XS3310-I24_08_files/libs/clipboard/clipboard.min.js"></script>
+<script src="XS3310-I24_08_files/libs/quarto-html/tabby.min.js"></script>
+<script src="XS3310-I24_08_files/libs/quarto-html/popper.min.js"></script>
+<script src="XS3310-I24_08_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="XS3310-I24_08_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="XS3310-I24_08_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="XS3310-I24_08_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="XS3310-I24_08_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.450">
 
   <meta name="author" content="Prof.&nbsp;Shu Wei Chou Chen">
-  <title>Estimación Puntual-3</title>
+  <title>Estimación Puntual-5</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="XS3310-I24_06_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="XS3310-I24_06_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="XS3310-I24_08_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="XS3310-I24_08_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -30,11 +30,11 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="XS3310-I24_06_files/libs/revealjs/dist/theme/quarto.css">
-  <link href="XS3310-I24_06_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="XS3310-I24_06_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="XS3310-I24_06_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="XS3310-I24_06_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="XS3310-I24_08_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="XS3310-I24_08_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="XS3310-I24_08_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="XS3310-I24_08_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="XS3310-I24_08_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -325,7 +325,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Estimación Puntual-3</h1>
+  <h1 class="title">Estimación Puntual-5</h1>
   <p class="subtitle">XS3310 Teoría Estadística <br> I Semestre 2024</p>
 
 <div class="quarto-title-authors">
@@ -343,210 +343,145 @@ Prof.&nbsp;Shu Wei Chou Chen
 <section>
 <section id="qué-vamos-a-discutir-hoy" class="title-slide slide level1 center">
 <h1>¿Qué vamos a discutir hoy?</h1>
+<!-- - Algoritmo Esperanza-Maximización.  -->
 <ul>
-<li>Suficiencia
-<ul>
-<li>Técnica de suficiencia</li>
-<li>Técnica de la familia exponencial</li>
-</ul></li>
-<li>Teorema Rao-Blackwell</li>
-<li>Teorema de Lehmann-Scheffé</li>
-<li>Estimadores Insesgados de Varianza Mínima (EIVM)</li>
+<li>Distribución de EMV en muestras grandes.</li>
+<li>Método delta y aplicaciones.</li>
 </ul>
+<!-- ## Algoritmo Esperanza-Maximización.  -->
 </section>
-<section id="suficiencia" class="slide level2">
-<h2>Suficiencia</h2>
-<p>En la clase pasada:</p>
-<p>Introducimos el concepto de suficiencia de un estadístico y la técnica de factorización.</p>
-<p><strong>Definición 2.7.</strong> <em>Suficiencia.</em> Si <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> es una muestra aleatoria sobre una población con parámetro desconocido <span class="math inline">\(\theta\)</span> y función de densidad/probabilidad <span class="math inline">\(f_{X}(x|\theta)\)</span>. Se dice que un estadístico <span class="math inline">\(U = g(X_{1}, X_{2}, ... , X_{n})\)</span> es <em>suficiente </em> para estimar <span class="math inline">\(\theta\)</span> si la distribución condicional de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> dado <span class="math inline">\(U=u\)</span> es independiente de <span class="math inline">\(\theta\)</span>. Es decir, <span class="math inline">\(P(X_{1}, X_{2}, ... , X_{n} \vert U =u)\)</span> no depende de <span class="math inline">\(\theta\)</span>.</p>
+<section id="teorema-del-límite-central" class="slide level2">
+<h2>Teorema del límite central</h2>
+<p>Si <span class="math inline">\(X_1,\ldots, X_n\)</span> es una muestra aleatoria de tamaño <span class="math inline">\(n\)</span>, y la distribución tiene media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(0&lt;\sigma^2&lt; \infty\)</span>. Entonces se cumple que</p>
+<p><span class="math display">\[Z_{n} = \frac{\overline{X}_n-\mu}{\frac{\sigma}{\sqrt{n}}} \stackrel{d}{\longrightarrow} N\left(0,1\right) \quad si\quad n \rightarrow \infty\]</span> o lo que es equivalente <span class="math display">\[\overline{X}_n \xrightarrow{\text{d}} N\left(\mu, \frac{\sigma^2}{n}\right) \quad si\quad n \rightarrow \infty.\]</span></p>
 </section>
-<section id="técnicas-para-demostrar-suficiencia" class="slide level2">
-<h2>Técnicas para demostrar suficiencia</h2>
-<ol type="1">
-<li>Técnica de factorización</li>
-<li>Técnica de la familia exponencial.</li>
-</ol>
-<p><strong>Teorema 2.7:</strong> <em>Técnica de factorización.</em> Si <span class="math inline">\(U\)</span> es un estadístico definido sobre una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> de una población con parámetro desconocido <span class="math inline">\(\theta\)</span> y <span class="math inline">\(\mathcal{L}(X_{1}, X_{2}, ... , X_{n}|\theta) = \mathcal{L}(\theta)\)</span> es la función de verosimilitud entonces <span class="math inline">\(U\)</span> es suficiente para <span class="math inline">\(\theta\)</span> si y solo si existen funciones <span class="math inline">\(g(u,\theta)\)</span> y <span class="math inline">\(h(x_{1}, x_{2}, ... , x_{n})\)</span> tal que <span class="math inline">\(\mathcal{L}(\theta) = g(u,\theta) \cdot h(x_{1}, x_{2}, ... , x_{n})\)</span> donde <span class="math inline">\(g(\cdot)\)</span> depende de <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> solo por medio de <span class="math inline">\(U\)</span> y <span class="math inline">\(h(\cdot)\)</span> no depende de <span class="math inline">\(\theta\)</span>.</p>
+<section id="información-de-fisher." class="slide level2">
+<h2>Información de Fisher.</h2>
+<p><strong>Definición:</strong> La información de Fisher de una muestra aleatoria <span class="math inline">\(X_1,...,X_n\)</span> se define como <span class="math display">\[I(\theta) = \left[nE\left(\frac{\partial\ln f_{X}(x)}{\partial \theta}\right)^2\right].\]</span> Bajo el supuesto de que la segunda derivada de <span class="math inline">\(\ln f_{X}(x)\)</span> existe y que se puede intercambiar el orden de las derivadas con las integrales<sup>1</sup>, entonces <span class="math inline">\(I(\theta)\)</span> se puede expresar como:</p>
+<p><span class="math display">\[I(\theta) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x))}{\partial \theta^{2}}\right)\right].\]</span></p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Condición de regularidades.</p></li></ol></aside></section>
+<section id="información-de-fisher.-1" class="slide level2">
+<h2>Información de Fisher.</h2>
+<p><strong>Ejemplo:</strong> Encuentre la información de Fisher de una muestra aleatoria cuya población es Bernoulli con parámetro <span class="math inline">\(p\)</span>.</p>
+<p><strong>Solución:</strong></p>
+<p><span class="math display">\[\ln f_{X}(x)= x \ln p + (1-x) \ln (1-p)\]</span> <span class="math display">\[\frac{\partial\ln f_{X}(x)}{\partial \theta}=\frac{x}{p}-\frac{1-x}{1-p}\]</span></p>
+<p><span class="math display">\[\frac{\partial^{2}\ln(f_{X}(x))}{\partial \theta^{2}}=-\left[\frac{x}{p^2}+\frac{1-x}{(1-p)^2} \right]\]</span></p>
+<p><span class="math display">\[\Rightarrow I(\theta) = \left[nE\left(\frac{\partial\ln f_{X}(x)}{\partial \theta}\right)^2\right]=n E \left[\frac{x}{p^2}+\frac{1-x}{(1-p)^2} \right]=\frac{1}{p}+\frac{1}{1-p}=\frac{1}{p(1-p)}.\]</span></p>
 </section>
-<section id="suficiencia-para-familias-exponenciales" class="slide level2">
-<h2>Suficiencia para familias exponenciales</h2>
-<p><strong>Teorema 2.8. Técnica de la familia exponencial.</strong> Si <span class="math inline">\(X\)</span> es una variable aleatoria cuyo dominio no depende de un parámetro desconocido <span class="math inline">\(\theta\)</span> y la función de densidad/probabilidad de X dado <span class="math inline">\(\theta\)</span> pertenece a la familia exponencial, es decir que tiene la forma: <span class="math display">\[f_{X}(x|\theta) = b(x)c(\theta)e^{-a(x)d(\theta)}, \qquad a(x) \neq 1\]</span> entonces <span class="math inline">\(U = \sum_{i=1}^{n} a(X_{i})\)</span> es un estadístico suficiente para estimar <span class="math inline">\(\theta\)</span>.</p>
-<p><strong>Prueba.</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{i}\)</span> pertenece a la familia exponencial. Entonces se cumple,</p>
-<p><span class="math display">\[\mathcal{L}(\theta) = \prod_{i=1}^{n} b(X_{i})c(\theta)e^{-a(X_{i})d(\theta)} = c(\theta)^{n} \prod_{i=1}^{n} b(X_{i}) e^{-d(\theta)\sum_{i=1}^{n} a(X_{i}) }\]</span></p>
+<section id="distribución-de-los-emv-en-muestras-grandes." class="slide level2">
+<h2>Distribución de los EMV en muestras grandes.</h2>
+<p><strong>Teorema:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con función de densidad <span class="math inline">\(f(x|\theta)\)</span>, de tal forma que <span class="math inline">\(f(x|\theta)\)</span> satiface ciertas condiciones de “regularidad”. Para cada muestra de tamaño <span class="math inline">\(n\)</span>, sea <span class="math inline">\(\hat{\theta}_n\)</span> el EMV de <span class="math inline">\(\theta\)</span>. Tenemos que para <span class="math inline">\(n\)</span> suficientemente grande, la distribución de <span class="math inline">\(\hat{\theta}_n\)</span> converge a una distirbución normal con media <span class="math inline">\(\theta\)</span> y variancia <span class="math inline">\(1/[I(\theta)]\)</span>. En otras palabras,</p>
+<p><span class="math display">\[\left[I(\theta)\right]^{1/2}(\hat{\theta}_n - \theta) \stackrel{d}{\longrightarrow} N(0,1)\]</span></p>
+<p>Nota: Recuerde que <span class="math inline">\(I(\theta)\)</span> es conocida como la Información de Fisher.</p>
+<p><span class="math display">\[I(\theta) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x|\theta))}{\partial \theta^{2}}\right)\right]\]</span></p>
 </section>
-<section id="suficiencia-para-familias-exponenciales-1" class="slide level2">
-<h2>Suficiencia para familias exponenciales</h2>
-<p>Si tomamos como</p>
-<p><span class="math display">\[\begin{align}
-U &amp;= \sum_{i=1}^{n} a(X_{i}) \\
-u(X_{1}, X_{2}, \ldots , X_{n}) &amp;= \prod_{i=1}^{n} b(X_{i}) \\
-v(U,\theta) &amp;= c(\theta)^{n} e^{-d(\theta)U}
-\end{align}\]</span></p>
-<p>entonces, por la técnica de factorización, se cumple que <span class="math inline">\(U\)</span> es suficiente para <span class="math inline">\(\theta\)</span>.</p>
+<section id="distribución-de-los-emv-en-muestras-grandes.-1" class="slide level2">
+<h2>Distribución de los EMV en muestras grandes.</h2>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con distribución normal con media 0 y desviación estándar <span class="math inline">\(\sigma\)</span> desconocida. Encuentre la distribución asintótica del EMV de <span class="math inline">\(\sigma\)</span>.</p>
+<p><strong>Solución:</strong> Demostrar que el EMV de <span class="math inline">\(\sigma\)</span> es:</p>
+<p><span class="math display">\[\hat{\sigma}^{2} = \left[\frac{\sum\limits_{i=1}^n X_{j}^2}{n}\right]^{1/2}.\]</span> Luego, la función de densidad es: <span class="math display">\[
+f(x|\sigma)= \frac{1}{\sqrt{2\pi}\sigma}  e^{-\frac{ x^2}{2\sigma^2}}
+\]</span></p>
 </section>
-<section id="suficiencia-1" class="slide level2">
-<h2>Suficiencia</h2>
-<p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_1,X_2,...,X_n\)</span> una m.a. tal que <span class="math inline">\(X_i \sim Poisson(\lambda)\)</span>, encuentre el estadístico suficiente utilizando la técnica de la familia exponencial.</p>
-<p><strong>Solución.</strong> Lo primero consiste en demostrar que la función de probabilidad de una Poisson tiene la forma de la familia exponencial. Viendo la función de probabilidad de una Poisson, <span class="math inline">\(f(x|\lambda) = \frac{\lambda^{x}e^{-\lambda}}{x!}\)</span>, esta pareciera no cumplir la forma de la familia exponencial, no obstante podemos realizar algunas operaciones algebraicas para alcanzar esa forma:</p>
+<section class="slide level2">
+
+<p>y su log función de densidad es: <span class="math display">\[\ln f(x|\sigma) = -\frac{1}{2} \ln(2\pi) - \ln(\sigma) -\frac{x^2}{2\sigma^2}\]</span></p>
+<p><span class="math display">\[\Rightarrow \frac{\partial \ln f(x|\sigma)}{\partial \sigma} = - \frac{1}{\sigma} +\frac{x^2}{\sigma^3}\]</span></p>
+<p><span class="math display">\[\Rightarrow \frac{\partial^2 \ln f(x|\sigma)}{\partial \sigma^2} = \frac{1}{\sigma^2} -\frac{3x^2}{\sigma^4}\]</span></p>
+<p><span class="math display">\[I(\sigma) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x|\sigma))}{\partial \sigma^{2}}\right)\right]=nE\left(-\frac{1}{\sigma^2} +\frac{3X^2}{\sigma^4}\right)=n\left[\frac{1}{\sigma^2} -\frac{3E(X^2)}{\sigma^4}\right]=\frac{2n}{\sigma^2}.\]</span></p>
+<p>Se concluye que la distribución asintótica del EMV de <span class="math inline">\(\sigma\)</span> es normal con media <span class="math inline">\(\sigma\)</span> y variancia <span class="math inline">\(\frac{\sigma^2}{2n}\)</span>, o bien</p>
+<p><span class="math display">\[\left[\frac{2n}{\sigma^2} \right]^{1/2}(\hat{\sigma}_n - \sigma) \stackrel{d}{\longrightarrow} N(0,1)\]</span></p>
+</section>
+<section id="método-delta" class="slide level2">
+<h2>Método Delta</h2>
+<p><strong>Teorema:</strong> Si <span class="math inline">\(X_1,X_2,\dots\)</span> es una secuencia de variables aleatorias y con alguna distribución continua. Sea <span class="math inline">\(\theta\in \mathbb R\)</span> y <span class="math inline">\(\{a_n\}\)</span> sucesión de números positivos tal que <span class="math inline">\(a_n \rightarrow \infty\)</span>.<br>
+Suponga que <span class="math inline">\(a_n(\hat{\theta}-\theta) \xrightarrow{d} N(0,\sigma^{2})\)</span>. Si <span class="math inline">\(g\)</span> es una función tal que <span class="math inline">\(g^{\prime}(\theta)\ne 0\)</span>, entonces</p>
+<p><span class="math display">\[a_n\left[g(\hat{\theta})-g(\theta)\right] \xrightarrow{d} N\left(0,\sigma^2 \left[g^{\prime}\left(\theta\right)\right]^{2}\right)\]</span></p>
+</section>
+<section id="método-delta-1" class="slide level2">
+<h2>Método Delta</h2>
+<p><strong>Ejemplo</strong>. <span class="math inline">\(X_1,X_2,\dots\)</span> una muestra aleatoria cuya población tiene media <span class="math inline">\(\mu \neq 0\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>. ¿Cuál es la distribución asintótica de <span class="math inline">\(\mu^{-1}\)</span>?</p>
+<p>Sea <span class="math inline">\(g(\mu) = \dfrac 1\mu\)</span> con <span class="math inline">\(\mu\neq0\)</span>. <span class="math inline">\(g\)</span> una función tal que <span class="math inline">\(g'(\mu)\neq 0\)</span>. Por el TLC, <span class="math display">\[ \sqrt{n}(\overline{X}_{n} -\mu)\xrightarrow{d}N(0,\sigma^{2})\]</span></p>
+<p>Entonces por el método Delta <span class="math inline">\(\sqrt{n}\left[g(\bar X_n)-g(\mu)\right]\xrightarrow{d}N\left(0,\sigma^2 \left(g^{\prime}(\mu)\right)^{2}\right)\)</span></p>
+<p>Para la función <span class="math inline">\(g\)</span> seleccionada se tiene que <span class="math inline">\(g'(\mu) = -\dfrac{1}{\mu^2}\)</span>. Entonces por el método Delta</p>
+<p><span class="math display">\[ \sqrt{n}\bigg[\dfrac{1}{\overline{X}_n}-\dfrac 1\mu\bigg]\xrightarrow{d}N\left(0,\dfrac{\sigma ^2}{\mu ^4}\right) \]</span></p>
+</section>
+<section id="método-delta-2" class="slide level2">
+<h2>Método Delta</h2>
+<p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con distribución normal con media 0 y variancia <span class="math inline">\(\sigma^2\)</span> desconocida. Encuentre la distribución asintótica del EMV de <span class="math inline">\(\sigma\)</span>.</p>
+<p><strong>Solución:</strong> Ya se demostró que el EMV de <span class="math inline">\(\sigma^2\)</span> es</p>
+<p><span class="math display">\[\hat{\sigma}^{2} = \frac{\sum_{i=1}^n X_{j}^2}{n}\]</span> Por el principio de invariancia, tenemos que <span class="math inline">\(\sqrt{\hat{\sigma}^2}\)</span> es el EMV de <span class="math inline">\(\sigma\)</span>.</p>
+<p>Tomando <span class="math inline">\(\omega=\sigma^2\)</span>, el logarítmo de la función de densidad es</p>
+<p><span class="math display">\[\ln f(x,\omega) = -\frac{1}{2} \ln(2\pi) -\frac{1}{2} \ln(\omega) -\frac{x_j^2}{2\omega}\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Recuerde que tomando <span class="math inline">\(\omega=\sigma^2\)</span> <span class="math display">\[\frac{\partial^{2} \ell(\omega)}{\partial \omega^{2}} = \frac{1}{2\omega^2} - \frac{x^2}{\omega^3},\]</span> Entonces,</p>
+<p><span class="math display">\[I(\sigma) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x|\omega))}{\partial \omega}\right)\right]= nE\left(-\frac{1}{2\omega^2} +\frac{X^2}{\omega^3}\right)=n\left[-\frac{1}{\omega^2} +\frac{E(X^2)}{\omega^3}\right]=\frac{n}{2\omega^2}=\frac{n}{2\sigma^4}.\]</span> Finalmente, tenemos que <span class="math display">\[\left[\frac{n}{2\sigma^4} \right]^{1/2}(\hat{\sigma}^2_n - \sigma^2) \stackrel{d}{\longrightarrow} N(0,1)\]</span> En otras palabras,</p>
+<p><span class="math display">\[n^{1/2}(\hat{\sigma}^2_n - \sigma^2) \stackrel{d}{\longrightarrow} N(0,2\sigma^4)\]</span></p>
+</section>
+<section class="slide level2">
+
+<p><span class="math display">\[n^{1/2}(\hat{\sigma}^2_n - \sigma^2) \stackrel{d}{\longrightarrow} N(0,2\sigma^4)\]</span> Aplicando el Método Delta, sea <span class="math inline">\(g(\omega)=\sqrt{\omega}\)</span>. Su derivada es</p>
+<p><span class="math display">\[g'(\omega)=\frac{1}{2\sqrt{\omega}}\]</span> Entonces,</p>
+<p><span class="math display">\[n^{1/2}(\hat{\sigma}_n - \sigma) \stackrel{d}{\longrightarrow} N\left(0,2\sigma^4 \left[ \frac{1}{2\sqrt{\sigma^2}} \right]^2 \right)=N\left(0,\frac{\sigma^2}{2} \right)\]</span></p>
+<p>Es decir, la distribución asintótica de <span class="math inline">\(\hat{\sigma}_n\)</span> es una normal con media <span class="math inline">\(\sigma\)</span> y con variancia <span class="math inline">\(\frac{\sigma^2}{2n}\)</span>.</p>
+</section>
+<section id="estabilización-de-la-varianza" class="slide level2">
+<h2>Estabilización de la varianza</h2>
+<p>Es posible definir la función <span class="math inline">\(g\)</span> de modo que la varianza no dependa del parámetro desconocido.</p>
+<p><span class="math display">\[\begin{equation*}
+g(\mu)=\int_{a}^{\mu} \frac{d x}{s(x)^{1 / 2}}
+\end{equation*}\]</span></p>
+<p>donde <span class="math inline">\(s(x)\)</span> es toda la expresión de la varianza y <span class="math inline">\(a\)</span> es cualquier valor que haga la integral finita y fácil de calcular.</p>
+</section>
+<section id="estabilización-de-la-varianza-1" class="slide level2">
+<h2>Estabilización de la varianza</h2>
+<p><strong>Ejemplo:</strong></p>
+<p>Suponga que <span class="math inline">\(X_1, X_2, ..., X_n\)</span> es una muestra aleatoria Poisson con parámetro <span class="math inline">\(\theta\)</span>. Sea <span class="math inline">\(\overline{X}\)</span> la media muestral.</p>
+<p>Sabemos que <span class="math inline">\(\mu = \sigma ^2 =\theta\)</span>.</p>
+<p><span class="math display">\[n^{1 / 2}\left(\bar{X}_{n}-\theta\right) \stackrel{d}{\longrightarrow} N(0,\theta)\]</span></p>
+<p><strong>OJO: el paramétro <span class="math inline">\(\theta\)</span> es desconocido!</strong></p>
+<p>La varianza asintótica es <span class="math inline">\(\theta\)</span>.</p>
+</section>
+<section id="estabilización-de-la-varianza-2" class="slide level2">
+<h2>Estabilización de la varianza</h2>
+<p>Entonces la</p>
+<p><span class="math display">\[\begin{equation*}
+g(\theta)=\int_{0}^{\theta} \frac{d x}{x^{1 / 2}}=2 \theta^{1 / 2}
+\end{equation*}\]</span></p>
+<p>Aplicando el método Delta, se tiene que</p>
+<p><span class="math display">\[g'(\theta) = 2\frac{1}{2} \frac{1}{\theta ^{1 / 2}} = \frac{1}{\theta ^{1 / 2}} \]</span></p>
+<p>Por lo que obtenemos</p>
 <p><span class="math display">\[\begin{align*}
-f(x|\lambda) &amp;= \frac{\lambda^{x}e^{-\lambda}}{x!} = e^{\ln\left(\frac{\lambda^{x}e^{-\lambda}}{x!}\right)}= e^{\ln(\lambda^{x}) + \ln(e^{-\lambda}) - \ln(x!)}\\
-&amp;= e^{x\ln(\lambda) - \lambda - \ln(x!)} = e^{-\lambda}e^{x\ln(\lambda)}\frac{1}{x!}
+n^{1 / 2}\left(g(\bar{X}_{n})-g(\theta)\right)  
+&amp;\stackrel{d}{\longrightarrow} N\left(0,\theta \left(\frac{1}{\theta ^{1 / 2}} \right)^{2} \right) \\  
+n^{1 / 2}\left(2(\bar{X}_{n})^{1/2}-2(\theta)^{1/2}\right)  
+&amp;\stackrel{d}{\longrightarrow} N(0,1)
 \end{align*}\]</span></p>
-</section>
-<section id="suficiencia-2" class="slide level2">
-<h2>Suficiencia</h2>
-<p>Podemos ver que esta expresión tiene la forma de la familia exponencial con</p>
-<p><span class="math inline">\(\begin{matrix} a(x)=x &amp; c(\lambda )={ e }^{ -\lambda } \\ b(x)=\frac { 1 }{ x! } &amp; d(\lambda )=-\ln { (\lambda ) } \end{matrix}\)</span></p>
-<p>Por lo tanto podemos concluir que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente mínimo para <span class="math inline">\(\lambda\)</span>.</p>
-<p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población con función de densidad:</p>
-<p><span class="math inline">\(f_{X}(x) = \begin{cases}\frac{\alpha x^{\alpha-1}}{\theta} e^{-\frac{x^{\alpha}}{\theta}} \quad si \quad x &gt; 0 \\ 0 \quad si \quad x \leq 0 \end{cases}\)</span></p>
-<p>Encuentre un estadístico suficiente para <span class="math inline">\(\theta\)</span>.</p>
-</section>
-<section id="suficiencia-3" class="slide level2">
-<h2>Suficiencia</h2>
-<p><strong>Solución.</strong> Podemos apreciar de la función de densidad anterior lo siguiente:</p>
-<p><span class="math inline">\(\begin{matrix} a(x) = x^{\alpha} &amp; c(\theta) = \frac{1}{\theta} \\ b(x) = \alpha x^{\alpha-1} &amp; d(\theta) = \frac{1}{\theta} \end{matrix}\)</span></p>
-<p>Por lo tanto, por la técnica de la familia exponencial, el estadístico</p>
-<p><span class="math display">\[U = \sum_{j=1}^{n} X_{j}^{\alpha}\]</span></p>
-<p>es suficiente para <span class="math inline">\(\theta\)</span>.</p>
-<p>Supongamos que para este caso si quisieramos saber cuál sería un estadístico suficiente para <span class="math inline">\(\alpha\)</span>. De las técnicas vistas hasta el momento no es posible obtener una respuesta, no obstante veremos posteriormente una estrategia para resolver este problema.</p>
-<!-- ## Completitud -->
-<!-- **Definición 2.8:** *Completitud*. Sea $U$ un estadístico de una muestra aleatoria $X_{1}, X_{2}, ... , X_{n}$ con función de densidad/probabilidad $f_{X}(x|\theta)$ si $a \leq u \leq b$ y $\alpha_{1} \leq \theta \leq \alpha_{2}$ y sea $g(u)$ una función continua en $[a,b]$.    -->
-<!-- Se dice que el estadístico $U$ es **completo** para la distribución $f_{X}(x|\theta)$ si se cumple que    -->
-<!-- si $E(g(U)) = 0 \quad \forall \theta \in [\alpha_{1}, \alpha_{2}]$   entonces $g(U) = 0$ con probabilidad 1.  -->
-<!-- - Con un estadístico que no es completo puede pasar que $g(U) \neq 0$ para algún $\theta$, pero que  $E(g(U))=0$.  -->
-<!-- - Es decir, que existe "algo más" aparte del estadístico $U$ que hace que la esperanza sea igual a 0.  -->
-<!-- - Un estadístico completo, no tiene ese "algo más" y concuerda si $g(U) = 0$ con $E(g(U))=0$.  -->
-<!-- - Un estadístico completo, puede que no aporte información relevante sobre el parametro. Solo dice que es congruente.  -->
-<!-- - Para que un estadístico completo, sea útil, debe ser suficiente.  -->
-<!-- ## Completitud -->
-<!-- **Ejemplo:** Sea $U = \sum_{j=1}^{n} X_{j}$ un estadístico suficiente de una muestra aleatoria de una población Bernoulli con probabilidad de éxito $p$. Demuestre que U es un estadístico completo si el espacio paramétrico de $p$ es $] 0,1 [$. -->
-<!-- **Solución:** Sabemos de antemano que el estadístico $U = \sum_{j=1}^{n} X_{j}$ tiene distribución Binomial(n,p). Con esto procedemos a encontrar $E(g(U))$ para cualquier función $g(\cdot)$.  -->
-<!-- \begin{align*} -->
-<!-- E(g(U))  -->
-<!-- &= \sum_{u=0}^{n} g(u) \binom{n}{u} p^{u}\left(1-p\right)^{n-u} \\ -->
-<!-- &= \left(1-p\right)^{n} \sum_{u=0}^{n} g(u) \binom{n}{u} \left(\frac{p}{1-p}\right)^{u} -->
-<!-- \end{align*} -->
-<!-- Observe que como el dominio de $p$ no incluye el 0 o 1 entonces esta expresión solo puede ser cero si y solo si  -->
-<!-- $$\sum_{u=0}^{n} g(u) \binom{n}{u} \left(\frac{p}{1-p}\right)^{u} = 0$$ -->
-<!-- Como esta expresión es un polinomio de $\left(\frac{p}{1-p}\right)$ entonces esta solo puede ser cero si sus coeficientes son cero, y esto solo va a suceder si y solo si $g(u) = 0$.  -->
-<!-- Por lo tanto concluimos que $U$ es un estadístico completo para la familia de distribuciones Bernoulli.  -->
-<!-- En general, vamos a estar trabajando con estadísticos completos en este curso y no nos vamos a estar deteniendo en las demostraciones de que estos lo sean pues ya sale de los propósitos del curso. No obstante, esta propiedad tendrá mayor uso con los teoremas siguientes.  -->
-</section>
-<section id="estimadores-rao-blackwell" class="slide level2">
-<h2>Estimadores Rao-Blackwell</h2>
-<p><strong>Teorema 2.9:</strong> <em>Teorema de Rao-Blackwell</em>.</p>
-<p>Sea <span class="math inline">\(U = T(X_{1}, X_{2}, ... , X_{n})\)</span> es un estadístico suficiente para estimar <span class="math inline">\(\theta\)</span> y sea <span class="math inline">\(\hat{\theta}\)</span> un estimador cualquiera de <span class="math inline">\(\theta\)</span>. Si definimos otro estimador como <span class="math inline">\(\hat{\theta}^{*}=E(\hat{\theta}|U)\)</span> se cumple que <span class="math inline">\(ECM(\hat{\theta}^{*}) \leq ECM(\hat{\theta})\)</span>. Es decir, a partir de un estimador <span class="math inline">\(\hat{\theta}\)</span> se puede encontrar un estimador <span class="math inline">\(\hat{\theta}^{*}\)</span> óptimo.</p>
-<p><strong>NOTA:</strong> ¿Es el mismo señor Rao de Cramer-Rao? SI!</p>
-<p><strong>NOTA:</strong> se puede demostrar que si <span class="math inline">\(\hat{\theta}\)</span> es insesgado, entonces el estimador mejorado <span class="math inline">\(\hat{\theta}^{*}\)</span> también será insesgado.</p>
-</section>
-<section id="estimadores-rao-blackwell-1" class="slide level2">
-<h2>Estimadores Rao-Blackwell</h2>
-<p><strong>Ejemplo:</strong> Suponga que una operadora de llamadas recibe llamadas de acuerdo a un proceso Poisson con promedio de llamadas por minuto, <span class="math inline">\(\lambda\)</span>. Se obtiene una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> de las llamadas telefónicas que llegaron en <span class="math inline">\(n\)</span> periodos sucesivos de un minuto. Para estimar la probabilidad de que el siguiente periodo de un minuto pase sin llamadas ( <span class="math inline">\(e^{-\lambda}\)</span> ) se utiliza el siguiente estimador:</p>
-<p><span class="math display">\[\hat{\lambda} = \begin{cases} 1 \quad si \quad X_{1} = 0 \\0 \quad en \quad otros \quad casos \end{cases}\]</span></p>
-<p>Es decir, se estima la probabilidad en 1 si no se recibieron llamadas en el primer minuto y cero en el caso contrario. Con base en esto, obtenga el estimador de Rao-Blackwell.</p>
-</section>
-<section id="estimadores-rao-blackwell-2" class="slide level2">
-<h2>Estimadores Rao-Blackwell</h2>
-<p><strong>Solución:</strong> <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente para <span class="math inline">\(\lambda\)</span>, por lo que encontramos el estimador de Rao-Blackwell a partir de este estadístico:</p>
-<p><span class="math display">\[\begin{align*}
-\hat{\lambda}^{*} = E\left(\hat{\lambda}\mid U = u \right)
-&amp;= P\left(X_{1} = 0 \mid \sum_{j=1}^{n} X_{j} = u\right) \\
-&amp;=\frac{P\left(X_{1} = 0 , \sum_{j=1}^{n} X_{j} = u\right)}{P\left(\sum_{j=1}^{n} X_{j} = u\right)}
-=\frac{P\left(\sum_{j=2}^{n} X_{j} = u\right)}{P\left(\sum_{j=1}^{n} X_{j} = u\right)} \\
-&amp;= \dfrac{e^{-\lambda}\frac{((n-1)\lambda)^{u}e^{-(n-1)\lambda}}{u!} }{\frac{(n\lambda)^{u}e^{-n\lambda}}{u!}}\\
-&amp;= \left(\frac{n-1}{n}\right)^{u} = \left(1-\frac{1}{n}\right)^{u}
-\end{align*}\]</span></p>
-<p>Por lo tanto <span class="math inline">\(\hat{\lambda}^{*} = \left(1-\frac{1}{n}\right)^{\sum_{j=1}^{n}X_{j}}\)</span> es un estimador suficiente con menor ECM que <span class="math inline">\(\hat{\lambda}\)</span>.</p>
-</section>
-<section id="teorema-de-lehmann-scheffé" class="slide level2">
-<h2>Teorema de Lehmann-Scheffé</h2>
-<p><strong>Teorema 2.10.</strong>: <em>Teorema de Lehmann-Scheffé</em>. Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población con función de densidad/probabilidad <span class="math inline">\(f_{X}(x|\theta)\)</span>. Si <span class="math inline">\(U = T(X_{1}, X_{2}, ... , X_{n})\)</span> es un estadístico suficiente y <em>completo</em><sup>1</sup> para <span class="math inline">\(\theta\)</span> y además se cumple que <span class="math inline">\(E(h(U))\)</span> es insesgado para estimar <span class="math inline">\(\theta\)</span> entonces <span class="math inline">\(h(U)\)</span> es el único estimador insesgado de varianza mínima para <span class="math inline">\(\theta\)</span>.</p>
-<p><strong>Prueba:</strong></p>
-<p>Se omite.</p>
-<!-- Sabemos por el Teorema de Rao-Blackwell que si $\hat{\theta}$ es un estimador insesgado de $\theta$ entonces $\hat{\theta}^{*} = E(\hat{\theta}|U)$ es un estimador insesgado de varianza mínima para $\theta$. -->
-<!-- Para demostrar unicidad supongamos que tenemos otro estimador $\hat{\phi}^{*}$ que es insesgado y de varianza mínima para $\theta$. Por lo tanto se debe cumplir lo siguiente: -->
-<!-- $$E(\hat{\theta}^{*}) = E(\hat{\phi}^{*}) = \theta \Rightarrow E(\hat{\theta}^{*}) - E(\hat{\phi}^{*}) = E(\hat{\theta}^{*} - \hat{\phi}^{*}) = E(g(U))= 0$$ -->
-<!-- Como se cumple que $f_{X}(x|\theta)$ es una familia completa en el estadístico suficiente $U$ entonces se cumple que $g(U) = 0$, es decir $\hat{\theta}^{*} - \hat{\phi}^{*} = 0$, que es equivalente a decir $\hat{\theta}^{*} = \hat{\phi}^{*}$. Por lo tanto concluimos que solo existe un único estimador insesgado de varianza mínima.  -->
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Asumimos que todos los estadísticos que usamos en este curso son completos.</p></li></ol></aside></section>
-<section id="estimadores-insesgados-de-varianza-mínima-eivm" class="slide level2">
-<h2>Estimadores Insesgados de Varianza Mínima (EIVM)</h2>
-<p>Con los resultados anteriores, para distribuciones completas, si tenemos un estadístico <span class="math inline">\(U\)</span> que es suficiente para estimar <span class="math inline">\(\theta\)</span> entonces solo debemos encontrar una función <span class="math inline">\(h(\cdot)\)</span> que sea insesgada y por lo tanto obtendremos un <strong>estimador insesgado de varianza mínima</strong>, el cual es único.</p>
-<p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Bernoulli(p)\)</span>. Encuentre un EIVM para <span class="math inline">\(p\)</span>.</p>
-<p><strong>Solución.</strong> Ya habiamos demostrado con anterioridad que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente y completo en una distribución Bernoulli. Para encontrar el EIVM solo debemos encontrar una función de <span class="math inline">\(U\)</span> que sea insesgada para <span class="math inline">\(p\)</span>.</p>
-<p><span class="math display">\[E(U) = E\left(\sum_{j=1}^{n} X_{j}\right) = np \Rightarrow \hat{p} = \frac{U}{n} = \frac{\sum\limits_{j=1}^{n} X_{j}}{n}\]</span></p>
-<p>es un EIVM para <span class="math inline">\(p\)</span>.</p>
-</section>
-<section id="estimadores-insesgados-de-varianza-mínima-eivm-1" class="slide level2">
-<h2>Estimadores Insesgados de Varianza Mínima (EIVM)</h2>
-<p><strong>Ejemplo.</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_{j} \sim Exp(\beta)\)</span>. Demuestre que <span class="math inline">\(\overline{X}\)</span> es un EIVM para <span class="math inline">\(\beta\)</span>.</p>
-<p><strong>Solución.</strong> Suponiendo que la exponencial es una familia completa, debemos encontrar un estadístico suficiente para <span class="math inline">\(\beta\)</span>. Recordemos la función de densidad:</p>
-<p><span class="math inline">\(f_{X}(x) = \frac{1}{\beta}e^{-\frac{x}{\beta}}\)</span>. En este caso es evidente la forma de la familia exponencial:</p>
-<p><span class="math inline">\(\begin{matrix} a(x) = x &amp; c(\beta) = \frac{1}{\beta} &amp; b(x) = 1 &amp; d(\beta) = \frac{1}{\beta} \end{matrix}\)</span></p>
-<p>Por lo tanto decimos que <span class="math inline">\(U = \sum_{j=1}^{n} X_{j}\)</span> es un estadístico suficiente minimal para <span class="math inline">\(\beta\)</span>. Por lo tanto, <span class="math inline">\(E(U) = E\left(\sum_{j=1}^{n} X_{j}\right) = n\beta\)</span>.</p>
-<p>Concluimos, por el Teorema de Rao-Blackwell y Lehmann-Scheffé que <span class="math inline">\(\overline{X}\)</span> es un EIVM para <span class="math inline">\(\beta\)</span>.</p>
-</section>
-<section id="ejercicios" class="slide level2">
-<h2>Ejercicios:</h2>
-<ol type="1">
-<li>Sea <span class="math inline">\(Y_1, ..., Y_n\)</span> una muestra independiente e idénticamente distribuida de una <span class="math inline">\(N(\mu, \sigma^2)\)</span>. Entonces:</li>
-</ol>
-<ol type="a">
-<li><p>Si <span class="math inline">\(\mu\)</span> es desconocido y <span class="math inline">\(\sigma^2\)</span> es conocida, entonces muestre que <span class="math inline">\(\bar{Y}\)</span> es suficiente para <span class="math inline">\(\mu\)</span>.</p></li>
-<li><p>Si <span class="math inline">\(\mu\)</span> es conocido y <span class="math inline">\(\sigma^2\)</span> es desconocida, entonces muestre que <span class="math inline">\(\sum_{i=1}^{n} (Y_i - \mu)^2\)</span> es suficiente para <span class="math inline">\(\sigma^2\)</span>.</p></li>
-<li><p>Si <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span> son desconocidas, muestre que <span class="math inline">\(\sum_{i=1}^{n} Y_i\)</span> y <span class="math inline">\(\sum_{i=1}^{n} Y_i^2\)</span> son conjuntamente suficientes para <span class="math inline">\(\mu\)</span> y <span class="math inline">\(\sigma^2\)</span>.</p></li>
-</ol>
-<ol start="2" type="1">
-<li>Sea <span class="math inline">\(Y_1, ..., Y_n\)</span> una muestra independiente e idénticamente distribuida con función de densidad <span class="math display">\[
-f(y|\theta)= \left\lbrace
-\begin{aligned}
-\frac{3 y^2}{\theta^3}, &amp; &amp; 0\leq y \leq  \theta  \\
-0, &amp; &amp;  otro~caso.
-\end{aligned}
-\right.
-\]</span> Muestre que <span class="math inline">\(Y_{(n)}=max \{ X_1 ,...,X_n \}\)</span> es suficiente para <span class="math inline">\(\theta\)</span>.</li>
-</ol>
-</section>
-<section id="ejercicios-1" class="slide level2">
-<h2>Ejercicios</h2>
-<h3 id="por-qué-demostrar-que-un-estimador-es-eivm-es-importante">¿Por qué demostrar que un estimador es EIVM es importante?</h3>
-<h3 id="práctica-hasta-eivm.">Práctica hasta EIVM.</h3>
-</section></section>
-<section id="qué-discutimos-hoy" class="title-slide slide level1 center">
-<h1>¿Qué discutimos hoy?</h1>
-<ul>
-<li>Suficiencia
-<ul>
-<li>Técnica de suficiencia</li>
-<li>Técnica de la familia exponencial</li>
-</ul></li>
-<li>Teorema Rao-Blackwell</li>
-<li>Teorema de Lehmann-Scheffé</li>
-<li>Estimadores Insesgados de Varianza Mínima (EIVM)</li>
-</ul>
+<p><strong>Después de la transformación, la distribución asintótica (normal) no depende del paramétro.</strong></p>
 <div class="footer footer-default">
 
 </div>
-</section>
-
+</section></section>
 
     </div>
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="XS3310-I24_06_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="XS3310-I24_06_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="XS3310-I24_08_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

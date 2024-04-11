@@ -31,4 +31,5 @@ y ejercicios</a>
 |                        | [Clase05b](XS3310-I24_05b.html) |
 |                        | [Clase06](XS3310-I24_06.html)   |
 |                        | [Clase07](XS3310-I24_07.html)   |
+|                        | [Clase07](XS3310-I24_08.html)   |
 |                        |                                 |
