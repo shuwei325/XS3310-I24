@@ -357,7 +357,7 @@ Prof.&nbsp;Shu Wei Chou Chen
 </section>
 <section id="información-de-fisher." class="slide level2">
 <h2>Información de Fisher.</h2>
-<p><strong>Definición:</strong> La información de Fisher de una muestra aleatoria <span class="math inline">\(X_1,...,X_n\)</span> se define como <span class="math display">\[I(\theta) = \left[nE\left(\frac{\partial\ln f_{X}(x)}{\partial \theta}\right)^2\right].\]</span> Bajo el supuesto de que la segunda derivada de <span class="math inline">\(\ln f_{X}(x)\)</span> existe y que se puede intercambiar el orden de las derivadas con las integrales<sup>1</sup>, entonces <span class="math inline">\(I(\theta)\)</span> se puede expresar como:</p>
+<p><strong>Definición 2.11:</strong> La información de Fisher de una muestra aleatoria <span class="math inline">\(X_1,...,X_n\)</span> se define como <span class="math display">\[I(\theta) = \left[nE\left(\frac{\partial\ln f_{X}(x)}{\partial \theta}\right)^2\right].\]</span> Bajo el supuesto de que la segunda derivada de <span class="math inline">\(\ln f_{X}(x)\)</span> existe y que se puede intercambiar el orden de las derivadas con las integrales<sup>1</sup>, entonces <span class="math inline">\(I(\theta)\)</span> se puede expresar como:</p>
 <p><span class="math display">\[I(\theta) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x))}{\partial \theta^{2}}\right)\right].\]</span></p>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Condición de regularidades.</p></li></ol></aside></section>
 <section id="información-de-fisher.-1" class="slide level2">
@@ -375,7 +375,7 @@ Prof.&nbsp;Shu Wei Chou Chen
 </section>
 <section id="distribución-de-los-emv-en-muestras-grandes." class="slide level2">
 <h2>Distribución de los EMV en muestras grandes.</h2>
-<p><strong>Teorema:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con función de densidad <span class="math inline">\(f(x|\theta)\)</span>, de tal forma que <span class="math inline">\(f(x|\theta)\)</span> satiface ciertas condiciones de “regularidad”. Para cada muestra de tamaño <span class="math inline">\(n\)</span>, sea <span class="math inline">\(\hat{\theta}_n\)</span> el EMV de <span class="math inline">\(\theta\)</span>. Tenemos que para <span class="math inline">\(n \rightarrow \infty\)</span>, la distribución de <span class="math inline">\(\hat{\theta}_n\)</span> converge a una distirbución normal con media <span class="math inline">\(\theta\)</span> y variancia <span class="math inline">\(1/[I(\theta)]\)</span>. En otras palabras,</p>
+<p><strong>Teorema 2.11:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con función de densidad <span class="math inline">\(f(x|\theta)\)</span>, de tal forma que <span class="math inline">\(f(x|\theta)\)</span> satiface ciertas condiciones de “regularidad”. Para cada muestra de tamaño <span class="math inline">\(n\)</span>, sea <span class="math inline">\(\hat{\theta}_n\)</span> el EMV de <span class="math inline">\(\theta\)</span>. Tenemos que para <span class="math inline">\(n \rightarrow \infty\)</span>, la distribución de <span class="math inline">\(\hat{\theta}_n\)</span> converge a una distirbución normal con media <span class="math inline">\(\theta\)</span> y variancia <span class="math inline">\(1/[I(\theta)]\)</span>. En otras palabras,</p>
 <p><span class="math display">\[\left[I(\theta)\right]^{1/2}(\hat{\theta}_n - \theta) \stackrel{d}{\longrightarrow} N(0,1)\]</span></p>
 <p><strong>Nota:</strong> Recuerde que <span class="math inline">\(I(\theta)\)</span> es la Información de Fisher.</p>
 <p><span class="math display">\[I(\theta) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x|\theta))}{\partial \theta^{2}}\right)\right].\]</span></p>
@@ -399,7 +399,7 @@ f(x|\sigma)= \frac{1}{\sqrt{2\pi}\sigma}  e^{-\frac{ x^2}{2\sigma^2}}.
 </section>
 <section id="método-delta" class="slide level2">
 <h2>Método Delta</h2>
-<p><strong>Teorema:</strong> Si <span class="math inline">\(X_1,X_2,\dots\)</span> es una secuencia de variables aleatorias y con alguna distribución continua. Sea <span class="math inline">\(\theta\in \mathbb R\)</span> y <span class="math inline">\(\{a_n\}\)</span> sucesión de números positivos tal que <span class="math inline">\(a_n \rightarrow \infty\)</span>.<br>
+<p><strong>Teorema 2.12:</strong> Si <span class="math inline">\(X_1,X_2,\dots\)</span> es una secuencia de variables aleatorias y con alguna distribución continua. Sea <span class="math inline">\(\theta\in \mathbb R\)</span> y <span class="math inline">\(\{a_n\}\)</span> sucesión de números positivos tal que <span class="math inline">\(a_n \rightarrow \infty\)</span>.<br>
 Suponga que <span class="math inline">\(a_n(\hat{\theta}-\theta) \xrightarrow{d} N(0,\sigma^{2})\)</span>. Si <span class="math inline">\(g\)</span> es una función tal que <span class="math inline">\(g^{\prime}(\theta)\ne 0\)</span>, entonces</p>
 <p><span class="math display">\[a_n\left[g(\hat{\theta})-g(\theta)\right] \xrightarrow{d} N\left(0,\sigma^2 \left[g^{\prime}\left(\theta\right)\right]^{2}\right)\]</span></p>
 </section>
