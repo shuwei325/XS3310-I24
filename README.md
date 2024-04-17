@@ -20,16 +20,20 @@ este repositorio es para el material de clase.
 <a href="https://docs.google.com/spreadsheets/d/1MAGOqFPWk_utN8ucXHEQULb13s6497u2-gBMvLd5IVg/edit?usp=sharing">Cronograma
 y ejercicios</a>
 
-| Tema                   | Clases                          |
-|------------------------|---------------------------------|
-| 1\. Introducción       | [Clase01](XS3310-I24_01.html)   |
-|                        | [Clase02](XS3310-I24_02.html)   |
-|                        | [Clase03](XS3310-I24_03.html)   |
-| 2\. Estimación Puntual | [Clase04](XS3310-I24_04.html)   |
-|                        | [Clase04b](XS3310-I24_04b.html) |
-|                        | [Clase05](XS3310-I24_05.html)   |
-|                        | [Clase05b](XS3310-I24_05b.html) |
-|                        | [Clase06](XS3310-I24_06.html)   |
-|                        | [Clase07](XS3310-I24_07.html)   |
-|                        | [Clase08](XS3310-I24_08.html)   |
-|                        |                                 |
+| Tema                         | Clases                          |
+|------------------------------|---------------------------------|
+| 1\. Introducción             | [Clase01](XS3310-I24_01.html)   |
+|                              | [Clase02](XS3310-I24_02.html)   |
+|                              | [Clase03](XS3310-I24_03.html)   |
+| 2\. Estimación Puntual       | [Clase04](XS3310-I24_04.html)   |
+|                              | [Clase04b](XS3310-I24_04b.html) |
+|                              | [Clase05](XS3310-I24_05.html)   |
+|                              | [Clase05b](XS3310-I24_05b.html) |
+|                              | [Clase06](XS3310-I24_06.html)   |
+|                              | [Clase07](XS3310-I24_07.html)   |
+|                              | [Clase08](XS3310-I24_08.html)   |
+| 2\. Estimación por intervalo | [Clase09](XS3310-I24_09.html)   |
+|                              | [Clase10](XS3310-I24_10.html)   |
+|                              | [Clase11](XS3310-I24_11.html)   |
+
+<!-- |                             |       [Clase12](XS3310-I24_12.html)   |  -->

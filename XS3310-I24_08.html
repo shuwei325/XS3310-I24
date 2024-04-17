@@ -364,23 +364,28 @@ Prof.&nbsp;Shu Wei Chou Chen
 <h2>Información de Fisher.</h2>
 <p><strong>Ejemplo:</strong> Encuentre la información de Fisher de una muestra aleatoria cuya población es Bernoulli con parámetro <span class="math inline">\(p\)</span>.</p>
 <p><strong>Solución:</strong></p>
-<p><span class="math display">\[\ln f_{X}(x)= x \ln p + (1-x) \ln (1-p)\]</span> <span class="math display">\[\frac{\partial\ln f_{X}(x)}{\partial \theta}=\frac{x}{p}-\frac{1-x}{1-p}\]</span></p>
+<p><span class="math display">\[\ln f_{X}(x)= x \ln p + (1-x) \ln (1-p)\]</span> <span class="math display">\[\frac{\partial\ln f_{X}(x)}{\partial \theta}=\frac{x}{p}-\frac{1-x}{1-p}=\frac{x-p}{p(1-p)}\]</span> <span class="math display">\[E\left[ \left( \frac{\partial\ln f_{X}(x)}{\partial \theta}\right)^2 \right]=E\left[\frac{x^2-2xp+p^2}{p^2(1-p)^2}\right]=\frac{1}{p^2(1-p)^2}\left(p-2p^2+p^2\right)=\frac{1}{p(1-p)},\]</span> pues <span class="math inline">\(E(X^2)=Var(X)+[E(X)]^2=pq+p^2=p\)</span>.</p>
+<p><span class="math display">\[\Rightarrow I(\theta) = \left[nE\left(\frac{\partial\ln f_{X}(x)}{\partial \theta}\right)^2\right]=\frac{n}{p(1-p)}.\]</span></p>
+</section>
+<section class="slide level2">
+
+<p>Por otro lado,</p>
 <p><span class="math display">\[\frac{\partial^{2}\ln(f_{X}(x))}{\partial \theta^{2}}=-\left[\frac{x}{p^2}+\frac{1-x}{(1-p)^2} \right]\]</span></p>
-<p><span class="math display">\[\Rightarrow I(\theta) = \left[nE\left(\frac{\partial\ln f_{X}(x)}{\partial \theta}\right)^2\right]=n E \left[\frac{x}{p^2}+\frac{1-x}{(1-p)^2} \right]=\frac{1}{p}+\frac{1}{1-p}=\frac{1}{p(1-p)}.\]</span></p>
+<p><span class="math display">\[\Rightarrow I(\theta) = \left[nE\left(\frac{\partial\ln f_{X}(x)}{\partial \theta}\right)^2\right]=n E \left[\frac{x}{p^2}+\frac{1-x}{(1-p)^2} \right]=n\left[\frac{1}{p}+\frac{1}{1-p}\right]=\frac{n}{p(1-p)}.\]</span> Ambos coinciden y es el inverso de la variancia de <span class="math inline">\(\bar{X}\)</span>.</p>
 </section>
 <section id="distribución-de-los-emv-en-muestras-grandes." class="slide level2">
 <h2>Distribución de los EMV en muestras grandes.</h2>
-<p><strong>Teorema:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con función de densidad <span class="math inline">\(f(x|\theta)\)</span>, de tal forma que <span class="math inline">\(f(x|\theta)\)</span> satiface ciertas condiciones de “regularidad”. Para cada muestra de tamaño <span class="math inline">\(n\)</span>, sea <span class="math inline">\(\hat{\theta}_n\)</span> el EMV de <span class="math inline">\(\theta\)</span>. Tenemos que para <span class="math inline">\(n\)</span> suficientemente grande, la distribución de <span class="math inline">\(\hat{\theta}_n\)</span> converge a una distirbución normal con media <span class="math inline">\(\theta\)</span> y variancia <span class="math inline">\(1/[I(\theta)]\)</span>. En otras palabras,</p>
+<p><strong>Teorema:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con función de densidad <span class="math inline">\(f(x|\theta)\)</span>, de tal forma que <span class="math inline">\(f(x|\theta)\)</span> satiface ciertas condiciones de “regularidad”. Para cada muestra de tamaño <span class="math inline">\(n\)</span>, sea <span class="math inline">\(\hat{\theta}_n\)</span> el EMV de <span class="math inline">\(\theta\)</span>. Tenemos que para <span class="math inline">\(n \rightarrow \infty\)</span>, la distribución de <span class="math inline">\(\hat{\theta}_n\)</span> converge a una distirbución normal con media <span class="math inline">\(\theta\)</span> y variancia <span class="math inline">\(1/[I(\theta)]\)</span>. En otras palabras,</p>
 <p><span class="math display">\[\left[I(\theta)\right]^{1/2}(\hat{\theta}_n - \theta) \stackrel{d}{\longrightarrow} N(0,1)\]</span></p>
-<p>Nota: Recuerde que <span class="math inline">\(I(\theta)\)</span> es conocida como la Información de Fisher.</p>
-<p><span class="math display">\[I(\theta) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x|\theta))}{\partial \theta^{2}}\right)\right]\]</span></p>
+<p><strong>Nota:</strong> Recuerde que <span class="math inline">\(I(\theta)\)</span> es la Información de Fisher.</p>
+<p><span class="math display">\[I(\theta) = \left[nE\left(-\frac{\partial^{2}\ln(f_{X}(x|\theta))}{\partial \theta^{2}}\right)\right].\]</span></p>
 </section>
 <section id="distribución-de-los-emv-en-muestras-grandes.-1" class="slide level2">
 <h2>Distribución de los EMV en muestras grandes.</h2>
 <p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria sobre una población con distribución normal con media 0 y desviación estándar <span class="math inline">\(\sigma\)</span> desconocida. Encuentre la distribución asintótica del EMV de <span class="math inline">\(\sigma\)</span>.</p>
 <p><strong>Solución:</strong> Demostrar que el EMV de <span class="math inline">\(\sigma\)</span> es:</p>
 <p><span class="math display">\[\hat{\sigma}^{2} = \left[\frac{\sum\limits_{i=1}^n X_{j}^2}{n}\right]^{1/2}.\]</span> Luego, la función de densidad es: <span class="math display">\[
-f(x|\sigma)= \frac{1}{\sqrt{2\pi}\sigma}  e^{-\frac{ x^2}{2\sigma^2}}
+f(x|\sigma)= \frac{1}{\sqrt{2\pi}\sigma}  e^{-\frac{ x^2}{2\sigma^2}}.
 \]</span></p>
 </section>
 <section class="slide level2">
@@ -426,6 +431,7 @@ Suponga que <span class="math inline">\(a_n(\hat{\theta}-\theta) \xrightarrow{d}
 <p><span class="math display">\[g'(\omega)=\frac{1}{2\sqrt{\omega}}\]</span> Entonces,</p>
 <p><span class="math display">\[n^{1/2}(\hat{\sigma}_n - \sigma) \stackrel{d}{\longrightarrow} N\left(0,2\sigma^4 \left[ \frac{1}{2\sqrt{\sigma^2}} \right]^2 \right)=N\left(0,\frac{\sigma^2}{2} \right)\]</span></p>
 <p>Es decir, la distribución asintótica de <span class="math inline">\(\hat{\sigma}_n\)</span> es una normal con media <span class="math inline">\(\sigma\)</span> y con variancia <span class="math inline">\(\frac{\sigma^2}{2n}\)</span>.</p>
+<p><strong>Nota:</strong> Este resultado coincide con el resultado de la diapositiva 9.</p>
 </section>
 <section id="estabilización-de-la-varianza" class="slide level2">
 <h2>Estabilización de la varianza</h2>
@@ -460,10 +466,16 @@ n^{1 / 2}\left(2(\bar{X}_{n})^{1/2}-2(\theta)^{1/2}\right)
 &amp;\stackrel{d}{\longrightarrow} N(0,1)
 \end{align*}\]</span></p>
 <p><strong>Después de la transformación, la distribución asintótica (normal) no depende del paramétro.</strong></p>
+</section></section>
+<section id="qué-discutimos-hoy" class="title-slide slide level1 center">
+<h1>¿Qué discutimos hoy?</h1>
+<p>Propiedades de muestras grandes del EMV y Método Delta.</p>
+<p>Hasta aquí termina el tema 2.</p>
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
+
 
     </div>
   </div>
