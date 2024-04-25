@@ -91,7 +91,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#veamos-qué-pasaría-con-n-grande-n150." id="toc-veamos-qué-pasaría-con-n-grande-n150." class="nav-link" data-scroll-target="#veamos-qué-pasaría-con-n-grande-n150."><span class="header-section-number">1.3</span> Veamos qué pasaría con n grande (n=150).</a></li>
   <li><a href="#veamos-qué-pasaría-con-n-grande-n300." id="toc-veamos-qué-pasaría-con-n-grande-n300." class="nav-link" data-scroll-target="#veamos-qué-pasaría-con-n-grande-n300."><span class="header-section-number">1.4</span> Veamos qué pasaría con n grande (n=300).</a></li>
   </ul></li>
-  <li><a href="#comportamiento-del-emv-de-la-desviación-estándar-de-una-población-normal" id="toc-comportamiento-del-emv-de-la-desviación-estándar-de-una-población-normal" class="nav-link" data-scroll-target="#comportamiento-del-emv-de-la-desviación-estándar-de-una-población-normal"><span class="header-section-number">2</span> Comportamiento del EMV de la desviación estándar de una población normal</a></li>
+  <li><a href="#comportamiento-del-emv-de-la-desviación-estándar-de-una-población-normal" id="toc-comportamiento-del-emv-de-la-desviación-estándar-de-una-población-normal" class="nav-link" data-scroll-target="#comportamiento-del-emv-de-la-desviación-estándar-de-una-población-normal"><span class="header-section-number">2</span> Comportamiento del EMV de la desviación estándar de una población normal</a>
+  <ul class="collapse">
+  <li><a href="#visualización-variando-n" id="toc-visualización-variando-n" class="nav-link" data-scroll-target="#visualización-variando-n"><span class="header-section-number">2.1</span> Visualización variando <span class="math inline">\(n\)</span></a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -152,11 +155,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(media_X)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.499121</code></pre>
+<pre><code>[1] 0.4962818</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(media_X)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.01235493</code></pre>
+<pre><code>[1] 0.01264798</code></pre>
 </div>
 </div>
 <p>Observe que teóricamente <span class="math inline">\(E(\bar{X})=0.5\)</span> y <span class="math inline">\(Var(\bar{X})=\frac{\beta^2}{n}=\frac{0.5^2}{20}=0.0125\)</span>. El TLC nos garantiza que <span class="math display">\[Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \overset{d}{\rightarrow} N(0,1).\]</span> Es decir, <span class="math inline">\(Z\)</span> se aproxima cada vez a la normal estándar cuando <span class="math inline">\(n\rightarrow \infty\)</span>. Por ejemplo, con solo <span class="math inline">\(n=20\)</span>, tenemos</p>
@@ -170,11 +173,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Z)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.007861934</code></pre>
+<pre><code>[1] -0.03325625</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Z)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.9883946</code></pre>
+<pre><code>[1] 1.011838</code></pre>
 </div>
 </div>
 <p>De la misma forma, puedo calcular</p>
@@ -192,11 +195,11 @@ Z_a=n^{\frac{1}{2}}(\bar{X}-\mu) \overset{d}{\rightarrow} N(0,\sigma^2)
 </div>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.003930967</code></pre>
+<pre><code>[1] -0.01662812</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2470987</code></pre>
+<pre><code>[1] 0.2529596</code></pre>
 </div>
 </div>
 </section>
@@ -207,12 +210,12 @@ Z_a=n^{\frac{1}{2}}(\bar{X}-\mu) \overset{d}{\rightarrow} N(0,\sigma^2)
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(<span class="fu">cbind</span>(media_X,inv_media_X))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       media_X inv_media_X
-[1,] 0.4455646    2.244344
-[2,] 0.4585123    2.180967
-[3,] 0.6388522    1.565307
-[4,] 0.4321656    2.313928
-[5,] 0.5409491    1.848603
-[6,] 0.3435712    2.910605</code></pre>
+[1,] 0.4649204    2.150906
+[2,] 0.5897773    1.695555
+[3,] 0.4131797    2.420254
+[4,] 0.4549265    2.198157
+[5,] 0.3540132    2.824753
+[6,] 0.5687349    1.758289</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(inv_media_X)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -220,11 +223,11 @@ Z_a=n^{\frac{1}{2}}(\bar{X}-\mu) \overset{d}{\rightarrow} N(0,\sigma^2)
 </div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(media_X)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.499121</code></pre>
+<pre><code>[1] 0.4962818</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(media_X)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.01235493</code></pre>
+<pre><code>[1] 0.01264798</code></pre>
 </div>
 </div>
 <p>Usando el resultado con el Método Delta (diapositiva 11 de la clase 8).</p>
@@ -239,11 +242,11 @@ Z_a=n^{\frac{1}{2}}(\bar{X}-\mu) \overset{d}{\rightarrow} N(0,\sigma^2)
 </div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4740469</code></pre>
+<pre><code>[1] 0.5415072</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.640926</code></pre>
+<pre><code>[1] 4.815359</code></pre>
 </div>
 </div>
 </section>
@@ -269,11 +272,11 @@ Z_a=n^{\frac{1}{2}}(\bar{X}-\mu) \overset{d}{\rightarrow} N(0,\sigma^2)
 </div>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1111955</code></pre>
+<pre><code>[1] 0.1431849</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 4.118139</code></pre>
+<pre><code>[1] 4.089688</code></pre>
 </div>
 </div>
 </section>
@@ -299,11 +302,11 @@ Z_a=n^{\frac{1}{2}}(\bar{X}-\mu) \overset{d}{\rightarrow} N(0,\sigma^2)
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.02619344</code></pre>
+<pre><code>[1] 0.1319572</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.995165</code></pre>
+<pre><code>[1] 3.788877</code></pre>
 </div>
 </div>
 </section>
@@ -335,11 +338,11 @@ Z_a=n^{\frac{1}{2}}(\bar{X}-\mu) \overset{d}{\rightarrow} N(0,\sigma^2)
 </div>
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(sd_MV_X)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.377022</code></pre>
+<pre><code>[1] 1.383205</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(sd_MV_X)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.03461691</code></pre>
+<pre><code>[1] 0.03225485</code></pre>
 </div>
 </div>
 <p>Sabemos que para muestras grandes, la distirbución de <span class="math inline">\(\hat{\sigma}\)</span> converge a una distirbución normal con media <span class="math inline">\(\sigma=\sqrt{2} \approx 1.41\)</span> y variancia <span class="math inline">\(1/[I(\sigma)]=\left(\frac{2n}{ \sigma^2}\right)^{-1}=\left( \frac{2 \cdot 30}{2} \right)^{-1} =1/30\approx 0.0334\)</span>.</p>
@@ -355,13 +358,55 @@ Z_a=n^{\frac{1}{2}}(\bar{X}-\mu) \overset{d}{\rightarrow} N(0,\sigma^2)
 </div>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.2037048</code></pre>
+<pre><code>[1] -0.1698389</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(Za)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.038507</code></pre>
+<pre><code>[1] 0.9676455</code></pre>
 </div>
 </div>
+<section id="visualización-variando-n" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="visualización-variando-n"><span class="header-section-number">2.1</span> Visualización variando <span class="math inline">\(n\)</span></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>,<span class="dv">90</span>,<span class="dv">100</span>)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>sd_MV_estimador <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>sd_MV_X <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(N)){</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>K){</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="at">n=</span>N[n],<span class="at">mean=</span><span class="dv">10</span>,<span class="at">sd=</span><span class="fu">sqrt</span>(<span class="dv">2</span>)) </span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>    sd_MV_X[i] <span class="ot">&lt;-</span> <span class="fu">sd_MV</span>(x)</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>  sd_MV_X <span class="ot">&lt;-</span> <span class="fu">unlist</span>(sd_MV_X)</span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>  Za <span class="ot">=</span> <span class="fu">sqrt</span>(<span class="dv">2</span><span class="sc">*</span>N[n]<span class="sc">/</span><span class="dv">2</span>)<span class="sc">*</span>(sd_MV_X<span class="sc">-</span><span class="fu">sqrt</span>(<span class="dv">2</span>))</span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>    sd_MV_estimador[[n]]<span class="ot">=</span> <span class="fu">data.frame</span>(Za,<span class="at">n=</span>N[n])</span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">=</span> rlist<span class="sc">::</span><span class="fu">list.rbind</span>(sd_MV_estimador)</span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(hrbrthemes)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'hrbrthemes' was built under R version 4.3.3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(viridis)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'viridis' was built under R version 4.3.3</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: viridisLite</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>resultados, <span class="fu">aes</span>(<span class="at">x=</span>Za, <span class="at">color=</span><span class="fu">as.factor</span>(n))) <span class="sc">+</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">adjust=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_classic</span>()<span class="sc">+</span> <span class="fu">scale_color_viridis</span>(<span class="at">discrete =</span> <span class="cn">TRUE</span>, <span class="at">option =</span> <span class="st">"D"</span>)</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>p2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="lab02_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+</section>
 </section>
 
 </main>
