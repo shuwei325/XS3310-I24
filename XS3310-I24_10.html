@@ -409,7 +409,7 @@ code {
 <p><strong>Teorema 3.1:</strong></p>
 <ol type="1">
 <li><p>Si <span class="math inline">\(X\)</span> tiene una distribución <span class="math inline">\(F\)</span> con <span class="math inline">\(m\)</span> y <span class="math inline">\(n\)</span> grados de libertad, entonces <span class="math inline">\(Y=1/X\)</span> también tiene una distribución <span class="math inline">\(F\)</span> con <span class="math inline">\(n\)</span> y <span class="math inline">\(m\)</span> grados de libertad.</p></li>
-<li><p>Si <span class="math inline">\(X\)</span> tiene una distribución t con <span class="math inline">\(m\)</span> grados de libertad, entonces <span class="math inline">\(X^2\)</span> tieneuna distribución <span class="math inline">\(F\)</span> con <span class="math inline">\(1\)</span> y <span class="math inline">\(m\)</span> grados de libertad.</p></li>
+<li><p>Si <span class="math inline">\(X\)</span> tiene una distribución t con <span class="math inline">\(m\)</span> grados de libertad, entonces <span class="math inline">\(X^2\)</span> tiene una distribución <span class="math inline">\(F\)</span> con <span class="math inline">\(1\)</span> y <span class="math inline">\(m\)</span> grados de libertad.</p></li>
 </ol>
 </section>
 <section id="ic-para-poblaciones-normales" class="slide level2">
@@ -425,7 +425,7 @@ code {
 <h2>Intervalos de confianza para <span class="math inline">\(\mu\)</span> (<span class="math inline">\(\sigma^2\)</span> conocido)</h2>
 <p>Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Normal con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>, donde <span class="math inline">\(\mu\)</span> es desconocido pero <span class="math inline">\(\sigma^2\)</span> es conocido. Vamos a construir un intervalo de confianza bilateral para <span class="math inline">\(\mu\)</span> con probabilidad <span class="math inline">\(1-\alpha\)</span>.</p>
 <ul>
-<li><p>Comosidere el pivote a <span class="math inline">\(Z = \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}}\)</span>, ya que <span class="math inline">\(Z \sim N(0,1)\)</span>. Luego procedemos a encontrar los valroes <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> que satisfacen <span class="math inline">\(P(a \leq Z \leq b) = 1-\alpha\)</span> y <span class="math inline">\(P(Z &lt; a) = P(Z &gt; b) = \frac{\alpha}{2}\)</span>.</p></li>
+<li><p>Comosidere el pivote a <span class="math inline">\(Z = \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}}\)</span>, ya que <span class="math inline">\(Z \sim N(0,1)\)</span>. Luego procedemos a encontrar los valores <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> que satisfacen <span class="math inline">\(P(a \leq Z \leq b) = 1-\alpha\)</span> y <span class="math inline">\(P(Z &lt; a) = P(Z &gt; b) = \frac{\alpha}{2}\)</span>.</p></li>
 <li><p>Tenemos que</p></li>
 </ul>
 <p><span class="math inline">\(P(z_{\frac{\alpha}{2}} \leq Z \leq z_{1-\frac{\alpha}{2}}) = 1-\alpha\)</span></p>
@@ -482,7 +482,7 @@ code {
 <section id="intervalos-de-confianza-para-mu_1---mu_2-sigma_12-y-sigma_22-conocidas" class="slide level2">
 <h2>Intervalos de confianza para <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> (<span class="math inline">\(\sigma_1^2\)</span> y <span class="math inline">\(\sigma_2^2\)</span> conocidas)</h2>
 <ul>
-<li><p>Ahora supongamos que tenemos dos poblaciones Normales e independientes y que obtenemos una muestra de cada una.</p></li>
+<li><p>Ahora supongamos que tenemos dos poblaciones normales e independientes y que obtenemos una muestra de cada una.</p></li>
 <li><p>Sean <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> y <span class="math inline">\(Y_{1}, Y_{2}, ... , Y_{m}\)</span> estas dos muestras aleatorias, tal que <span class="math inline">\(X_{j} \sim N(\mu_{1}, \sigma^{2}_{1})\)</span> y <span class="math inline">\(Y_{i} \sim N(\mu_{2}, \sigma^{2}_{2})\)</span>, donde <span class="math inline">\(\mu_{1}\)</span> y <span class="math inline">\(\mu_2\)</span> son parámetros desconocidos y <span class="math inline">\(\sigma^{2}_{1}\)</span> y <span class="math inline">\(\sigma^{2}_{2}\)</span> son parámetros conocidos. Nos interesa construir un intervalo bilateral, con una confianza del <span class="math inline">\((1-\alpha)\%\)</span>, para <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</p></li>
 <li><p>Recordemos que <span class="math inline">\(\overline{X} \sim N\left(\mu_{1}, \dfrac{\sigma^{2}_{1}}{n}\right)\)</span> y <span class="math inline">\(\overline{Y} \sim N\left(\mu_{2}, \dfrac{\sigma^{2}_{2}}{m}\right)\)</span>. Además, <span class="math inline">\(\overline{X} - \overline{Y}\)</span> se distribuye Normal con media <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> y variancia <span class="math inline">\(\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}\)</span>.</p></li>
 <li><p>Estandarizando dicha variable, tenemos un pivote:</p></li>
@@ -498,14 +498,14 @@ code {
 <ul>
 <li>El IC para <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> está dado por <span class="math inline">\((\overline{X} - \overline{Y}) \pm z_{1-\frac{\alpha}{2}} \sqrt{\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}}\)</span>.</li>
 </ul>
-<p><strong>Nota:</strong> Si fuese el caso donde las variancias poblaciones son conocidas (<em>i.e.</em> <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2} = \sigma^{2}\)</span>) Entonces podriamos escribir el intervalo como:</p>
+<p><strong>Nota:</strong> Si fuese el caso donde las variancias poblaciones son iguales (<em>i.e.</em> <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2} = \sigma^{2}\)</span>) Entonces podriamos escribir el intervalo como:</p>
 <p><span class="math display">\[(\overline{X} - \overline{Y}) \pm z_{1-\frac{\alpha}{2}} \cdot \sigma \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}.\]</span></p>
 </section>
 <section id="intervalos-de-confianza-para-mu_1---mu_2-sigma_12sigma_22-desconocida" class="slide level2">
 <h2>Intervalos de confianza para <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> (<span class="math inline">\(\sigma_1^2=\sigma_2^2\)</span> desconocida)</h2>
 <ul>
 <li><p>¿Por qué es importante el supuesto de homoscedasticidad (<span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2} = \sigma^{2}\)</span>)? Para poder encontrar un pivote satisfactorio.</p></li>
-<li><p>Considere <span class="math display">\[T = \dfrac{Z}{\sqrt{\dfrac{W}{v}}}\]</span> donde <span class="math inline">\(Z \sim N(0,1)\)</span> y <span class="math inline">\(W \sim \chi^{2}(v)\)</span>. Para este caso podemos usar la misma <span class="math inline">\(Z\)</span> que usamos anteriormente:</p></li>
+<li><p>Considere <span class="math display">\[T = \dfrac{Z}{\sqrt{\dfrac{W}{v}}}\]</span> donde <span class="math inline">\(Z \sim N(0,1)\)</span> y <span class="math inline">\(W \sim \chi^{2}_{(v)}\)</span>. Para este caso podemos usar la misma <span class="math inline">\(Z\)</span> que usamos anteriormente:</p></li>
 </ul>
 <p><span class="math display">\[Z = \dfrac{(\overline{X} - \overline{Y}) - (\mu_{1} - \mu_{2})}{\sigma \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}}\]</span></p>
 </section>
@@ -532,9 +532,7 @@ code {
 <li><p>El procedimiento a seguir es similar al otro caso donde teniamos una t-student y luego de desarrollarlo obtenemos el intervalo</p></li>
 </ul>
 <p><span class="math display">\[\displaystyle (\overline{X} - \overline{Y}) \pm t_{1-\frac{\alpha}{2}, n+m-2} \cdot S_{p} \sqrt{\frac{1}{n} + \dfrac{1}{m}}\]</span></p>
-<ul>
-<li>Concluimos que con una confianza del <span class="math inline">\((1-\alpha)\%\)</span> el intervalo <span class="math inline">\(\displaystyle (\overline{X} - \overline{Y}) \pm t_{\frac{1-\alpha}{2}, n+m-2} \cdot S_{p} \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}\)</span> contiene el verdadero valor de <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</li>
-</ul>
+<p>Concluimos que con una probabilidad de <span class="math inline">\(1-\alpha\)</span> el intervalo <span class="math inline">\((\overline{X} - \overline{Y}) \pm t_{\frac{\alpha}{2}, n+m-2} \cdot S_{p} \sqrt{\frac{1}{n} + \frac{1}{m}}\)</span> contiene el verdadero valor de <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</p>
 </section>
 <section id="pivotes-para-distribuciones-con-forma-posición-escala" class="slide level2">
 <h2>Pivotes para distribuciones con forma posición-escala</h2>
