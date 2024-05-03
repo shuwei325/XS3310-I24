@@ -8,7 +8,7 @@
 <link href="XS3310-I24_10_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="XS3310-I24_10_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="XS3310-I24_10_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Prof.&nbsp;Shu Wei Chou Chen">
   <title>Estimación por intervalo-2</title>
@@ -156,7 +156,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -392,13 +393,21 @@ code {
 <div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="XS3310-I24_10_files/figure-revealjs/unnamed-chunk-4-1.png" width="480"></p>
+</figure>
+</div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
+<div>
+<figure>
 <p><img data-src="XS3310-I24_10_files/figure-revealjs/unnamed-chunk-5-1.png" width="480"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -425,7 +434,7 @@ code {
 <h2>Intervalos de confianza para <span class="math inline">\(\mu\)</span> (<span class="math inline">\(\sigma^2\)</span> conocido)</h2>
 <p>Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria de una población Normal con media <span class="math inline">\(\mu\)</span> y variancia <span class="math inline">\(\sigma^2\)</span>, donde <span class="math inline">\(\mu\)</span> es desconocido pero <span class="math inline">\(\sigma^2\)</span> es conocido. Vamos a construir un intervalo de confianza bilateral para <span class="math inline">\(\mu\)</span> con probabilidad <span class="math inline">\(1-\alpha\)</span>.</p>
 <ul>
-<li><p>Comosidere el pivote a <span class="math inline">\(Z = \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}}\)</span>, ya que <span class="math inline">\(Z \sim N(0,1)\)</span>. Luego procedemos a encontrar los valores <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> que satisfacen <span class="math inline">\(P(a \leq Z \leq b) = 1-\alpha\)</span> y <span class="math inline">\(P(Z &lt; a) = P(Z &gt; b) = \frac{\alpha}{2}\)</span>.</p></li>
+<li><p>Comosidere el pivote a <span class="math inline">\(Z = \dfrac{\bar{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}}\)</span>, ya que <span class="math inline">\(Z \sim N(0,1)\)</span>. Luego procedemos a encontrar los valores <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span> que satisfacen <span class="math inline">\(P(a \leq Z \leq b) = 1-\alpha\)</span> y <span class="math inline">\(P(Z &lt; a) = P(Z &gt; b) = \frac{\alpha}{2}\)</span>.</p></li>
 <li><p>Tenemos que</p></li>
 </ul>
 <p><span class="math inline">\(P(z_{\frac{\alpha}{2}} \leq Z \leq z_{1-\frac{\alpha}{2}}) = 1-\alpha\)</span></p>
@@ -441,11 +450,11 @@ code {
 <section class="slide level2">
 
 <ul>
-<li>Con estos valores podemos proceder a despejar <span class="math inline">\(\mu\)</span> de la expresión <span class="math inline">\(P(a \leq Z \leq b) = 1-\alpha\)</span>: <span class="math display">\[P(a \leq Z \leq b) = P\left(-z_{1-\frac{\alpha}{2}} \leq \dfrac{\overline{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}} \leq z_{1-\frac{\alpha}{2}} \right)\]</span></li>
+<li>Con estos valores podemos proceder a despejar <span class="math inline">\(\mu\)</span> de la expresión <span class="math inline">\(P(a \leq Z \leq b) = 1-\alpha\)</span>: <span class="math display">\[P(a \leq Z \leq b) = P\left(-z_{1-\frac{\alpha}{2}} \leq \dfrac{\bar{X} - \mu}{\dfrac{\sigma}{\sqrt{n}}} \leq z_{1-\frac{\alpha}{2}} \right)\]</span></li>
 </ul>
-<p><span class="math display">\[= P\left( \overline{X} - z_{1-\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}} \leq \mu \leq \overline{X} + z_{1-\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}} \right) = 1-\alpha\]</span></p>
+<p><span class="math display">\[= P\left( \bar{X} - z_{1-\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}} \leq \mu \leq \bar{X} + z_{1-\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}} \right) = 1-\alpha\]</span></p>
 <ul>
-<li>Por lo tanto, con confianza del <span class="math inline">\((1-\alpha)\%\)</span>, el intervalo <span class="math inline">\(\overline{X} \pm z_{1-\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}}\)</span> contiene al valor de <span class="math inline">\(\mu\)</span>.</li>
+<li>Por lo tanto, con confianza del <span class="math inline">\((1-\alpha)\%\)</span>, el intervalo <span class="math inline">\(\bar{X} \pm z_{1-\frac{\alpha}{2}} \dfrac{\sigma}{\sqrt{n}}\)</span> contiene al valor de <span class="math inline">\(\mu\)</span>.</li>
 </ul>
 </section>
 <section id="intervalos-de-confianza-para-mu-sigma2-desconocido" class="slide level2">
@@ -453,11 +462,11 @@ code {
 <ul>
 <li>En este caso, debemos hacer uso de un nuevo pivote. Considere:</li>
 </ul>
-<p><span class="math display">\[T = \dfrac{\overline{X} - \mu}{\dfrac{s}{\sqrt{n}}}\]</span></p>
+<p><span class="math display">\[T = \dfrac{\bar{X} - \mu}{\dfrac{s}{\sqrt{n}}}\]</span></p>
 <ul>
 <li>Recordemos que esta variable aleatoria se distribuye como una t-student con <span class="math inline">\(n-1\)</span> grados de libertad y cumple las condiciones de un pivote.
 <ul>
-<li>Está en términos de la muestra aleatoria (a través de <span class="math inline">\(\overline{X}\)</span> y <span class="math inline">\(S\)</span>) y del parámetro desconocido <span class="math inline">\(\mu\)</span> y</li>
+<li>Está en términos de la muestra aleatoria (a través de <span class="math inline">\(\bar{X}\)</span> y <span class="math inline">\(S\)</span>) y del parámetro desconocido <span class="math inline">\(\mu\)</span> y</li>
 <li>Adicionalmente su distribución es conocida y no depende de <span class="math inline">\(\mu\)</span>.</li>
 </ul></li>
 <li>Ahora procedemos a encontrar los valores de <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>.</li>
@@ -472,10 +481,10 @@ code {
 <img data-src="XS3310-I24_10_files/figure-revealjs/unnamed-chunk-7-1.png" width="672" class="r-stretch"></section>
 <section class="slide level2">
 
-<p><span class="math display">\[P(a \leq T \leq b) =P(t_{\frac{\alpha}{2},n-1} \leq T \leq t_{1-\frac{\alpha}{2},n-1}) = P\left(-t_{1-\frac{\alpha}{2},n-1} \leq \dfrac{\overline{X} - \mu}{\dfrac{S}{\sqrt{n}}} \leq t_{1-\frac{\alpha}{2},n-1} \right).\]</span></p>
+<p><span class="math display">\[P(a \leq T \leq b) =P(t_{\frac{\alpha}{2},n-1} \leq T \leq t_{1-\frac{\alpha}{2},n-1}) = P\left(-t_{1-\frac{\alpha}{2},n-1} \leq \dfrac{\bar{X} - \mu}{\dfrac{S}{\sqrt{n}}} \leq t_{1-\frac{\alpha}{2},n-1} \right).\]</span></p>
 <ul>
-<li><p>Si despejamos el valor de <span class="math inline">\(\mu\)</span>, obtenemos el intervalo <span class="math inline">\(\overline{X} \pm t_{\frac{\alpha}{2}, n-1} \dfrac{s}{\sqrt{n}}\)</span>.</p></li>
-<li><p>Por lo tanto podemos concluir que con una confianza del <span class="math inline">\((1-\alpha)\%\)</span> el intervalo <span class="math inline">\(\overline{X} \pm t_{\frac{\alpha}{2}, n-1} \dfrac{s}{\sqrt{n}}\)</span> contiene el verdadero valor de <span class="math inline">\(\mu\)</span>.</p></li>
+<li><p>Si despejamos el valor de <span class="math inline">\(\mu\)</span>, obtenemos el intervalo <span class="math inline">\(\bar{X} \pm t_{\frac{\alpha}{2}, n-1} \dfrac{s}{\sqrt{n}}\)</span>.</p></li>
+<li><p>Por lo tanto podemos concluir que con una confianza del <span class="math inline">\((1-\alpha)\%\)</span> el intervalo <span class="math inline">\(\bar{X} \pm t_{1-\frac{\alpha}{2}, n-1} \dfrac{s}{\sqrt{n}}\)</span> contiene el verdadero valor de <span class="math inline">\(\mu\)</span>.</p></li>
 </ul>
 </section>
 <section id="intervalos-de-confianza-para-mu_1---mu_2-sigma_12-y-sigma_22-conocidas" class="slide level2">
@@ -483,22 +492,22 @@ code {
 <ul>
 <li><p>Ahora supongamos que tenemos dos poblaciones normales e independientes y que obtenemos una muestra de cada una.</p></li>
 <li><p>Sean <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> y <span class="math inline">\(Y_{1}, Y_{2}, ... , Y_{m}\)</span> estas dos muestras aleatorias, tal que <span class="math inline">\(X_{j} \sim N(\mu_{1}, \sigma^{2}_{1})\)</span> y <span class="math inline">\(Y_{i} \sim N(\mu_{2}, \sigma^{2}_{2})\)</span>, donde <span class="math inline">\(\mu_{1}\)</span> y <span class="math inline">\(\mu_2\)</span> son parámetros desconocidos y <span class="math inline">\(\sigma^{2}_{1}\)</span> y <span class="math inline">\(\sigma^{2}_{2}\)</span> son parámetros conocidos. Nos interesa construir un intervalo bilateral, con una confianza del <span class="math inline">\((1-\alpha)\%\)</span>, para <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</p></li>
-<li><p>Recordemos que <span class="math inline">\(\overline{X} \sim N\left(\mu_{1}, \dfrac{\sigma^{2}_{1}}{n}\right)\)</span> y <span class="math inline">\(\overline{Y} \sim N\left(\mu_{2}, \dfrac{\sigma^{2}_{2}}{m}\right)\)</span>. Además, <span class="math inline">\(\overline{X} - \overline{Y}\)</span> se distribuye Normal con media <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> y variancia <span class="math inline">\(\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}\)</span>.</p></li>
+<li><p>Recordemos que <span class="math inline">\(\bar{X} \sim N\left(\mu_{1}, \dfrac{\sigma^{2}_{1}}{n}\right)\)</span> y <span class="math inline">\(\bar{Y} \sim N\left(\mu_{2}, \dfrac{\sigma^{2}_{2}}{m}\right)\)</span>. Además, <span class="math inline">\(\bar{X} - \bar{Y}\)</span> se distribuye Normal con media <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> y variancia <span class="math inline">\(\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}\)</span>.</p></li>
 <li><p>Estandarizando dicha variable, tenemos un pivote:</p></li>
 </ul>
-<p><span class="math display">\[Z = \dfrac{(\overline{X} - \overline{Y}) - (\mu_{1} - \mu_{2})}{\sqrt{\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}}}\]</span></p>
+<p><span class="math display">\[Z = \dfrac{(\bar{X} - \bar{Y}) - (\mu_{1} - \mu_{2})}{\sqrt{\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}}}\]</span></p>
 </section>
 <section class="slide level2">
 
 <ul>
 <li>Siguiendo el mismo paso del primer caso de esta sección, obtener que <span class="math inline">\(a = -z_{1-\frac{\alpha}{2}}\)</span> y <span class="math inline">\(b = z_{1-\frac{\alpha}{2}}\)</span>. Ahora procedemos a despejar nuestro parámetro de interés, <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>, de la expresión <span class="math inline">\(P(a \leq Z \leq b) = 1-\alpha\)</span>.</li>
 </ul>
-<p><span class="math display">\[P(a \leq Z \leq b) = P\left(-z_{1-\frac{\alpha}{2}} \leq \dfrac{(\overline{X} - \overline{Y}) - (\mu_{1} - \mu_{2})}{\sqrt{\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}}} \leq z_{1-\frac{\alpha}{2}} \right)=1-\alpha.\]</span></p>
+<p><span class="math display">\[P(a \leq Z \leq b) = P\left(-z_{1-\frac{\alpha}{2}} \leq \dfrac{(\bar{X} - \bar{Y}) - (\mu_{1} - \mu_{2})}{\sqrt{\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}}} \leq z_{1-\frac{\alpha}{2}} \right)=1-\alpha.\]</span></p>
 <ul>
-<li>El IC para <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> está dado por <span class="math inline">\((\overline{X} - \overline{Y}) \pm z_{1-\frac{\alpha}{2}} \sqrt{\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}}\)</span>.</li>
+<li>El IC para <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> está dado por <span class="math inline">\((\bar{X} - \bar{Y}) \pm z_{1-\frac{\alpha}{2}} \sqrt{\dfrac{\sigma^{2}_{1}}{n} + \dfrac{\sigma^{2}_{2}}{m}}\)</span>.</li>
 </ul>
 <p><strong>Nota:</strong> Si fuese el caso donde las variancias poblaciones son iguales (<em>i.e.</em> <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2} = \sigma^{2}\)</span>) Entonces podriamos escribir el intervalo como:</p>
-<p><span class="math display">\[(\overline{X} - \overline{Y}) \pm z_{1-\frac{\alpha}{2}} \cdot \sigma \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}.\]</span></p>
+<p><span class="math display">\[(\bar{X} - \bar{Y}) \pm z_{1-\frac{\alpha}{2}} \cdot \sigma \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}.\]</span></p>
 </section>
 <section id="intervalos-de-confianza-para-mu_1---mu_2-sigma_12sigma_22-desconocida" class="slide level2">
 <h2>Intervalos de confianza para <span class="math inline">\(\mu_{1} - \mu_{2}\)</span> (<span class="math inline">\(\sigma_1^2=\sigma_2^2\)</span> desconocida)</h2>
@@ -506,7 +515,7 @@ code {
 <li><p>¿Por qué es importante el supuesto de homoscedasticidad (<span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2} = \sigma^{2}\)</span>)? Para poder encontrar un pivote satisfactorio.</p></li>
 <li><p>Considere <span class="math display">\[T = \dfrac{Z}{\sqrt{\dfrac{W}{v}}}\]</span> donde <span class="math inline">\(Z \sim N(0,1)\)</span> y <span class="math inline">\(W \sim \chi^{2}_{(v)}\)</span>. Para este caso podemos usar la misma <span class="math inline">\(Z\)</span> que usamos anteriormente:</p></li>
 </ul>
-<p><span class="math display">\[Z = \dfrac{(\overline{X} - \overline{Y}) - (\mu_{1} - \mu_{2})}{\sigma \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}}\]</span></p>
+<p><span class="math display">\[Z = \dfrac{(\bar{X} - \bar{Y}) - (\mu_{1} - \mu_{2})}{\sigma \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}}\]</span></p>
 </section>
 <section class="slide level2">
 
@@ -522,7 +531,7 @@ code {
 <li>Para simplificar un poco esta expresión vamos a definir <span class="math inline">\(S^{2}_{p} = \dfrac{(n-1)S^{2}_{1} + (m-1)S^{2}_{2}}{(n+m-2)}\)</span>, por lo tanto <span class="math display">\[\dfrac{W}{v} = \dfrac{S^{2}_{p}}{\sigma^{2}}\]</span></li>
 <li>Ya con esto podemos definir una t-student, la cual tendría la forma:</li>
 </ul>
-<p><span class="math display">\[T = \dfrac{(\overline{X} - \overline{Y}) - (\mu_{1} - \mu_{2})}{S_{p} \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}}\]</span></p>
+<p><span class="math display">\[T = \dfrac{(\bar{X} - \bar{Y}) - (\mu_{1} - \mu_{2})}{S_{p} \sqrt{\dfrac{1}{n} + \dfrac{1}{m}}}\]</span></p>
 </section>
 <section class="slide level2">
 
@@ -530,8 +539,8 @@ code {
 <li><p>Esta es una t-student con <span class="math inline">\(n+m-2\)</span> grados de libertad y la podemos usar como pivote pues cumple todas las condiciones y ya no está en términos de parámetros desconocidos.</p></li>
 <li><p>El procedimiento a seguir es similar al otro caso donde teniamos una t-student y luego de desarrollarlo obtenemos el intervalo</p></li>
 </ul>
-<p><span class="math display">\[\displaystyle (\overline{X} - \overline{Y}) \pm t_{1-\frac{\alpha}{2}, n+m-2} \cdot S_{p} \sqrt{\frac{1}{n} + \dfrac{1}{m}}\]</span></p>
-<p>Concluimos que con una probabilidad de <span class="math inline">\(1-\alpha\)</span> el intervalo <span class="math inline">\((\overline{X} - \overline{Y}) \pm t_{\frac{\alpha}{2}, n+m-2} \cdot S_{p} \sqrt{\frac{1}{n} + \frac{1}{m}}\)</span> contiene el verdadero valor de <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</p>
+<p><span class="math display">\[\displaystyle (\bar{X} - \bar{Y}) \pm t_{1-\frac{\alpha}{2}, n+m-2} \cdot S_{p} \sqrt{\frac{1}{n} + \dfrac{1}{m}}\]</span></p>
+<p>Concluimos que con una probabilidad de <span class="math inline">\(1-\alpha\)</span> el intervalo <span class="math inline">\((\bar{X} - \bar{Y}) \pm t_{1-\frac{\alpha}{2}, n+m-2} \cdot S_{p} \sqrt{\frac{1}{n} + \frac{1}{m}}\)</span> contiene el verdadero valor de <span class="math inline">\(\mu_{1} - \mu_{2}\)</span>.</p>
 </section>
 <section id="pivotes-para-distribuciones-con-forma-posición-escala" class="slide level2">
 <h2>Pivotes para distribuciones con forma posición-escala</h2>
@@ -599,8 +608,10 @@ code {
 <h1>¿Qué discutimos hoy?</h1>
 <p>Estimación por intervalos, método del pivote. Fórmulas para las estimaciones por intervalo más comunes (media, diferencias de medias para distribuciones normales),</p>
 <p>Intervalos de confianza para variancias, y para muestras grandes.</p>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section>
     </div>
@@ -629,7 +640,6 @@ code {
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -815,42 +825,80 @@ code {
       });
     </script>
     
+
     <script>
+
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
       // slide changes (different for each slide format).
+
       (function () {
+
         // dispatch for htmlwidgets
+
         function fireSlideEnter() {
+
           const event = window.document.createEvent("Event");
+
           event.initEvent("slideenter", true, true);
+
           window.document.dispatchEvent(event);
+
         }
+
+    
 
         function fireSlideChanged(previousSlide, currentSlide) {
+
           fireSlideEnter();
 
+    
+
           // dispatch for shiny
+
           if (window.jQuery) {
+
             if (previousSlide) {
+
               window.jQuery(previousSlide).trigger("hidden");
+
             }
+
             if (currentSlide) {
+
               window.jQuery(currentSlide).trigger("shown");
+
             }
+
           }
+
         }
+
+    
 
         // hookup for slidy
+
         if (window.w3c_slidy) {
+
           window.w3c_slidy.add_observer(function (slide_num) {
+
             // slide_num starts at position 1
+
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
           });
+
         }
 
+    
+
       })();
+
     </script>
+
+    
 
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -928,10 +976,27 @@ code {
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -941,8 +1006,17 @@ code {
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -956,7 +1030,11 @@ code {
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
