@@ -32,8 +32,10 @@ y ejercicios</a>
 |                              | [Clase06](XS3310-I24_06.html)   |
 |                              | [Clase07](XS3310-I24_07.html)   |
 |                              | [Clase08](XS3310-I24_08.html)   |
-| 2\. Estimación por intervalo | [Clase09](XS3310-I24_09.html)   |
+| 3\. Estimación por intervalo | [Clase09](XS3310-I24_09.html)   |
 |                              | [Clase10](XS3310-I24_10.html)   |
 |                              | [Clase11](XS3310-I24_11.html)   |
-
-<!-- |                             |       [Clase12](XS3310-I24_12.html)   |  -->
+| 4\. Contraste de hipótesis   | [Clase12](XS3310-I24_02.html)   |
+|                              | [Clase13](XS3310-I24_13.html)   |
+|                              | [Clase14](XS3310-I24_14.html)   |
+|                              | [Clase15](XS3310-I24_15.html)   |
