@@ -572,8 +572,8 @@ code {
 <p><strong>Solución:</strong> Para muestras grandes, por el TLC,</p>
 <p><span class="math display">\[Z_{n} = \frac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \xrightarrow{\text{d}} N(0,1).\]</span></p>
 <p>Luego, por el T. Slutsky,</p>
-<p><span class="math display">\[Z_{n} = \frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}} \xrightarrow{\text{d}} N(0,1).\]</span> Es decir, si <span class="math inline">\(n\)</span> es suficientemente grande,</p>
-<p><span class="math display">\[P(a \leq Z_n \leq b) \approx P(-Z_{1-\frac{\alpha}{2}} \leq Z_n \leq Z_{1-\frac{\alpha}{2}} ) \approx 1-\alpha.\]</span></p>
+<p><span class="math display">\[Z_{n}^* = \frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}} \xrightarrow{\text{d}} N(0,1).\]</span> Es decir, si <span class="math inline">\(n\)</span> es suficientemente grande,</p>
+<p><span class="math display">\[P(a \leq Z_n^* \leq b) \approx P(-Z_{1-\frac{\alpha}{2}} \leq Z_n \leq Z_{1-\frac{\alpha}{2}} ) \approx 1-\alpha.\]</span></p>
 </section>
 <section class="slide level2">
 
@@ -584,7 +584,7 @@ code {
 </section>
 <section class="slide level2">
 
-<p><strong>Ejemplo:</strong> Suponga que tienen datos de tiempos de espera en minutos en un banco con <span class="math inline">\(n=25\)</span> clientes. La distribución del tiempo se observa que sigue una distribución <span class="math inline">\(Poisson(\theta)\)</span> con <span class="math inline">\(\bar{X} = 5\)</span>. Cual es el intervalo de confianza para <span class="math inline">\(\theta\)</span> a un 95%.</p>
+<p><strong>Ejemplo:</strong> Suponga que tienen datos de tiempos de espera en minutos en un banco con <span class="math inline">\(n=25\)</span> clientes. La distribución del tiempo se observa que sigue una distribución <span class="math inline">\(Poisson(\theta)\)</span> con <span class="math inline">\(\bar{X} = 5\)</span>. ¿Cual es el intervalo de confianza para <span class="math inline">\(\theta\)</span> a un <span class="math inline">\(95\%\)</span>?</p>
 <p><strong>Solución:</strong> Recuerde que si <span class="math inline">\(X\)</span> es <span class="math inline">\(Poisson(\theta)\)</span>, entonces <span class="math inline">\(E[X] = Var(X) = \theta\)</span>.</p>
 <p>Por el TLC se tiene que</p>
 <p><span class="math display">\[\begin{equation} \bar{X} \pm z_{\alpha / 2}\left(\frac{\sigma}{\sqrt{n}}\right) \approx \bar{X} \pm z_{\alpha / 2}\left(\frac{\sqrt{\theta}}{\sqrt{n}}\right) \approx  \bar{X} \pm z_{\alpha / 2}\left(\frac{\sqrt{\bar{X}}}{\sqrt{n}}\right)\end{equation}\]</span></p>
