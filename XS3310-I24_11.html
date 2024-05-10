@@ -434,9 +434,9 @@ code {
 <h2>Ejemplo de un IC para <span class="math inline">\(\mu\)</span> (<span class="math inline">\(\sigma^2\)</span> desconocida)</h2>
 <p><strong>Ejemplo:</strong> Se toma el tiempo en milisegundos para que los nervios se recuperen después de administrar una droga a 4 ratones: <span class="math inline">\(1.7, 1.6, 1.8, 1.9\)</span>. Suponga que la población es nornal, entonces calcule un intervalo de confianza para el promedio este tiempo a un 90% de confianza.</p>
 <p><strong>Solución:</strong> Para este caso tenemos que <span class="math inline">\(\bar{X} = 1.75\)</span> y <span class="math inline">\(S^{2} = 0.017\)</span> y <span class="math inline">\(S = \sqrt{0.017} = 0.13\)</span>.</p>
-<p>En este caso vamos a tomar una <span class="math inline">\(t_{0.05,3} = 2.353 \ (\alpha/2 = 0.1/2 = 0.05\)</span>)</p>
+<p>En este caso vamos a tomar una <span class="math inline">\(t_{0.95,3} = 2.353 \ (\alpha/2 = 0.1/2 = 0.05\)</span>)</p>
 <p><span class="math display">\[\begin{align*}
-&amp; P\left(\bar{X}- t_{0.05,3} \cdot  \frac{s}{\sqrt{4}} \leq \mu \leq \bar{X}+ t_{0.05,3} \cdot  \frac{s}{\sqrt{n}}\right) \\
+&amp; P\left(\bar{X}- t_{0.95,3} \cdot  \frac{s}{\sqrt{4}} \leq \mu \leq \bar{X}+ t_{0.95,3} \cdot  \frac{s}{\sqrt{n}}\right) \\
 &amp; = P\left(1.75- 2.353 \cdot \frac{0.13}{2}  \leq \mu \leq 1.75+ 2.353 \cdot  \frac{0.13}{2} \right) \\
 &amp;= P\left(1.597  \leq \mu \leq 1.903 \right) = 0.9.
 \end{align*}\]</span></p>
@@ -453,9 +453,9 @@ code {
 <p><strong>Solución:</strong></p>
 <p>Intervalo de confianza del <span class="math inline">\(95 \%\)</span> :</p>
 <p><span class="math inline">\(1-\alpha=0.95 \Rightarrow \alpha=1-0,95=0,05\)</span></p>
-<p>Buscamos en el la tabla de normales aquel valor que cumpla <span class="math inline">\(P(Z\leq z_{\alpha / 2}) = 0.05/2 = 0.025\)</span></p>
-<p>Obtenemos que <span class="math inline">\(\Rightarrow z_{\alpha / 2}=z_{0.025}=1.96\)</span></p>
-<p><span class="math display">\[\begin{align*}&amp;\left(\left(\overline{\mathrm{X}}_{1}-\overline{\mathrm{X}}_{2}\right)-z_{\alpha / 2}\sqrt{\frac{\sigma_{1}^{2}}{\mathrm{n}_{1}}+\frac{\sigma_{2}^{2}}{\mathrm{n}_{2}}},\left(\overline{\mathrm{X}}_{1}-\overline{\mathrm{X}}_{2}\right)+z_{\alpha / 2}\sqrt{\frac{\sigma_{1}^{2}}{\mathrm{n}_{1}}+\frac{\sigma_{2}^{2}}{\mathrm{n}_{2}}}\right)\\&amp;=\left((3.8-3.4)-1.96 \sqrt{\frac{0.6^{2}}{320}+\frac{0.8^{2}}{240}},(3.8-3.4)+1.96\sqrt{\frac{0.6^{2}}{320}+\frac{0.8^{2}}{240}}\right)\\&amp;=[0.279,0.520]\end{align*}\]</span></p>
+<p>Buscamos en el la tabla de normales aquel valor que cumpla <span class="math inline">\(P(Z\leq z_{1-\alpha / 2}) = 1-0.05/2 = 0.975\)</span></p>
+<p>Obtenemos que <span class="math inline">\(\Rightarrow z_{1-\alpha / 2}=z_{0.975}=1.96\)</span></p>
+<p><span class="math display">\[\begin{align*}&amp;\left(\left(\overline{\mathrm{X}}_{1}-\overline{\mathrm{X}}_{2}\right)-z_{1-\alpha / 2}\sqrt{\frac{\sigma_{1}^{2}}{\mathrm{n}_{1}}+\frac{\sigma_{2}^{2}}{\mathrm{n}_{2}}},\left(\overline{\mathrm{X}}_{1}-\overline{\mathrm{X}}_{2}\right)+z_{1-\alpha / 2}\sqrt{\frac{\sigma_{1}^{2}}{\mathrm{n}_{1}}+\frac{\sigma_{2}^{2}}{\mathrm{n}_{2}}}\right)\\&amp;=\left((3.8-3.4)-1.96 \sqrt{\frac{0.6^{2}}{320}+\frac{0.8^{2}}{240}},(3.8-3.4)+1.96\sqrt{\frac{0.6^{2}}{320}+\frac{0.8^{2}}{240}}\right)\\&amp;=[0.279,0.520]\end{align*}\]</span></p>
 </section>
 <section id="ic-para-poblaciones-normales" class="slide level2">
 <h2>IC para poblaciones normales</h2>
@@ -573,12 +573,12 @@ code {
 <p><span class="math display">\[Z_{n} = \frac{\overline{X}-\mu}{\frac{\sigma}{\sqrt{n}}} \xrightarrow{\text{d}} N(0,1).\]</span></p>
 <p>Luego, por el T. Slutsky,</p>
 <p><span class="math display">\[Z_{n}^* = \frac{\overline{X}-\mu}{\frac{S}{\sqrt{n}}} \xrightarrow{\text{d}} N(0,1).\]</span> Es decir, si <span class="math inline">\(n\)</span> es suficientemente grande,</p>
-<p><span class="math display">\[P(a \leq Z_n^* \leq b) \approx P(-Z_{1-\frac{\alpha}{2}} \leq Z_n \leq Z_{1-\frac{\alpha}{2}} ) \approx 1-\alpha.\]</span></p>
+<p><span class="math display">\[P(a \leq Z_n^* \leq b) \approx P(-Z_{1-\frac{\alpha}{2}} \leq Z^*_n \leq Z_{1-\frac{\alpha}{2}} ) \approx 1-\alpha.\]</span></p>
 </section>
 <section class="slide level2">
 
 <p>El intervalo tiene la forma: <span class="math display">\[\begin{equation}\bar{x} \pm z_{\alpha / 2}\left(\frac{\sigma}{\sqrt{n}}\right) \approx \bar{x} \pm z_{\alpha / 2}\left(\frac{s}{\sqrt{n}}\right)\end{equation}\]</span></p>
-<p>De la tabla de normales se deduce que <span class="math inline">\(z_{\alpha/2} = z_{0.05} = 1.645\)</span>.</p>
+<p>De la tabla de normales se deduce que <span class="math inline">\(z_{1-\alpha/2} = z_{0.95} = 1.645\)</span>.</p>
 <p>Por lo tanto el intervalo es</p>
 <p><span class="math display">\[\begin{align*}&amp; \left[ 33-1.645\left(\frac{16}{8}\right), 33+1.645\left(\frac{16}{8}\right) \right]= \left[29.71, 36.29\right]\end{align*}\]</span></p>
 </section>
