@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="es"><head>
 <script src="XS3310-I24_13_files/libs/clipboard/clipboard.min.js"></script>
 <script src="XS3310-I24_13_files/libs/quarto-html/tabby.min.js"></script>
 <script src="XS3310-I24_13_files/libs/quarto-html/popper.min.js"></script>
@@ -422,18 +422,24 @@ code {
 <p>Por otra parte la probabilidad de cometer el <em>error tipo II</em>, denotada como <span class="math inline">\(\beta(\delta)\)</span>, se define como:</p>
 <p><span class="math display">\[\beta(\delta) = P(\text{no rechazar } H_{0} \text{ cuando} H_{0} \text{ es falsa}  ) = P\left( \textbf{X} \in RC_{\delta}^{c} | \theta \in \Omega_1 \right)\]</span> <span class="math display">\[= 1 - P\left( \textbf{X} \in RC_{\delta} | \theta \in \Omega_1 \right) = 1 - \operatorname{Potencia}(\theta |\theta \in \Omega_1 ).\]</span></p>
 </section>
-<section id="tamaño-del-contraste" class="slide level2">
-<h2>Tamaño del contraste</h2>
+<section id="error-tipo-i-y-error-tipo-ii-1" class="slide level2">
+<h2>Error Tipo I y Error Tipo II</h2>
 <p>En el ejemplo anterior podemos observar que solo tenemos un valor para la probabilidad de cada tipo de error. En ese caso:</p>
 <p><span class="math inline">\(\alpha(1) = \operatorname{Potencia}(1) = 0.023\)</span></p>
 <p><span class="math inline">\(\beta(-1) = 1 - \operatorname{Potencia}(-1) = 1 - 0.977 = 0.023\)</span></p>
 <p>Por pura coincidencia ambos errores tienen la misma probabilidad en el ejemplo anterior. A continuación veremos otra forma de describir un contraste.</p>
+</section>
+<section id="tamaño-del-contraste" class="slide level2">
+<h2>Tamaño del contraste</h2>
 <p><strong>Definición 4.7:</strong> <em>Tamaño del contraste</em>. Para las hipótesis dadas: <span class="math inline">\(H_{0}: \theta \in \Omega_{0}\)</span> y <span class="math inline">\(H_{1}: \theta \in \Omega_{1}\)</span>, sea un contraste <span class="math inline">\(\delta\)</span>. Se denomina el <em>tamaño del contraste</em> al valor <span class="math inline">\(\alpha_c\)</span> dado por: <span class="math display">\[\alpha_c = \sup_{\theta \in \Omega_0} \operatorname{Potencia}_\delta(\theta).\]</span></p>
 <p>Es decir, el tamaño de un contraste es la máxima probabilidad de cometer un Error Tipo I.</p>
 <ul>
 <li>Para la mayoría de los contrastes su tamaño se va a encontrar en los límites de <span class="math inline">\(\Omega_{0}\)</span>. De no ser ese el caso podríamos derivar <span class="math inline">\(\alpha(\delta)\)</span> y ver si alcanza algún máximo dentro de su dominio.</li>
 </ul>
-</section>
+
+<img data-src="XS3310-I24_13_files/figure-revealjs/unnamed-chunk-3-1.png" width="384" class="r-stretch quarto-figure-center"><p class="caption">
+Figura&nbsp;1: Ilustración de una función de potencia.
+</p></section>
 <section id="contrastes-de-hipótesis-4" class="slide level2">
 <h2>Contrastes de hipótesis</h2>
 <p><strong>Ejemplo:</strong> Suponga que se selecciona una muestra aleatoria <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> sobre una distribución Uniforme en <span class="math inline">\((0,\theta)\)</span>, con <span class="math inline">\(\theta\)</span> desconocido y mayor a cero. Con esta muestra se desea contrastar las hipótesis:</p>
@@ -478,7 +484,7 @@ code {
 <h2>Contrastes de hipótesis</h2>
 <p>Podemos graficar la forma de esta función para un tamaño de muestra dado. La siguiente figura muestra la forma de la Potencia con <span class="math inline">\(n = 10\)</span>, con <span class="math inline">\(\Omega_{0}\)</span> delimitado por las líneas rojas punteadas.</p>
 
-<img data-src="XS3310-I24_13_files/figure-revealjs/unnamed-chunk-3-1.png" width="480" class="r-stretch"></section>
+<img data-src="XS3310-I24_13_files/figure-revealjs/unnamed-chunk-4-1.png" width="480" class="r-stretch"></section>
 <section id="contrastes-de-hipótesis-9" class="slide level2">
 <h2>Contrastes de hipótesis</h2>
 <ul>
@@ -508,18 +514,31 @@ code {
 </section>
 <section id="contrastes-de-hipótesis-12" class="slide level2">
 <h2>Contrastes de hipótesis</h2>
-<p>Otro punto importante de destacar es que en la práctica usualmente utilizamos la hipótesis nula puntual <span class="math inline">\(H_{0}: \theta = \theta_0\)</span> ya que esta no pierde generalidad. Supongamos que se quiere contrastar <span class="math inline">\(H_{0}: \theta \leq \theta_0\)</span> contra <span class="math inline">\(H_{1}: \theta &gt; \theta_0\)</span>. En casi todos los casos la función potencia de un contraste es monótona en todo el dominio de <span class="math inline">\(\theta\)</span>; en este caso sería una función creciente. Ya que el tamaño se define como la máxima potencia en <span class="math inline">\(\Omega_{0}\)</span> esto va a suceder en su extremo derecho, el cual es <span class="math inline">\(\theta_0\)</span>. Esto ocasiona que el contraste tenga el mismo tamaño a que si la hipótesis nula hubiera sido <span class="math inline">\(H_{0}: \theta = \theta_0\)</span>. Por lo tanto en la práctica es más común encontrar la hipótesis nula formulada en <span class="math inline">\(\theta_0\)</span>, siendo este el valor de <span class="math inline">\(\Omega_{0}\)</span> más próximo a <span class="math inline">\(\Omega_{1}\)</span>.</p>
+<ul>
+<li>Otro punto importante de destacar es que en la práctica usualmente utilizamos la hipótesis nula puntual <span class="math inline">\(H_{0}: \theta = \theta_0\)</span> ya que esta no pierde generalidad.</li>
+<li>Supongamos que se quiere contrastar <span class="math inline">\(H_{0}: \theta \leq \theta_0\)</span> contra <span class="math inline">\(H_{1}: \theta &gt; \theta_0\)</span>. En casi todos los casos la función potencia de un contraste es monótona en todo el dominio de <span class="math inline">\(\theta\)</span>; en este caso sería una función creciente.</li>
+<li>Ya que el tamaño se define como la máxima potencia en <span class="math inline">\(\Omega_{0}\)</span> esto va a suceder en su extremo derecho, el cual es <span class="math inline">\(\theta_0\)</span>. Esto ocasiona que el contraste tenga el mismo tamaño a que si la hipótesis nula hubiera sido <span class="math inline">\(H_{0}: \theta = \theta_0\)</span>.</li>
+<li>Por lo tanto en la práctica es más común encontrar la hipótesis nula formulada en <span class="math inline">\(\theta_0\)</span>, siendo este el valor de <span class="math inline">\(\Omega_{0}\)</span> más próximo a <span class="math inline">\(\Omega_{1}\)</span>.</li>
+</ul>
 </section>
 <section id="valor-p" class="slide level2">
 <h2>Valor p</h2>
 <p>El Valor p es una herramienta que se puede utilizar para contrastar hipótesis que tiene características que pueden solucionar algunos problemas con los contrastes anteriores. Por ejemplo, no todos los contrastes van a tener un tamaño de contraste exacto (como en los casos donde las variables aleatorias son discretas.) Por otro lado, ni el tamaño ni la potencia están directamente relacionados con los datos observados. El valor p corrige estos problemas. Para propósitos del curso definiremos el valor p como:</p>
-<p><strong>Definición 4.8:</strong> <em>Valor p</em> Sea <span class="math inline">\(T = T(X_{1}, X_{2}, ... , X_{n})\)</span> un estadístico y considere <span class="math inline">\(H_{0}: \theta = \theta_0\)</span> contra <span class="math inline">\(H_{1}: \theta &lt; \theta_0\)</span> (o <span class="math inline">\(H_{1}: \theta &gt; \theta_0\)</span>). Suponga que el contraste rechaza <span class="math inline">\(H_0\)</span> si <span class="math inline">\(T \leq k\)</span> (o <span class="math inline">\(T&gt;k\)</span>). Sea <span class="math inline">\(t = T(x_{1}, x_{2}, ... , x_{n})\)</span> un valor observado de <span class="math inline">\(T\)</span>. Se define el <em>valor p</em>, denotado <span class="math inline">\(\operatorname{pval}(t)\)</span>, como:</p>
+<p><strong>Definición 4.8: Valor p.</strong> Sea <span class="math inline">\(T = T(X_{1}, X_{2}, ... , X_{n})\)</span> un estadístico y considere <span class="math inline">\(H_{0}: \theta = \theta_0\)</span> contra <span class="math inline">\(H_{1}: \theta &lt; \theta_0\)</span> (o <span class="math inline">\(H_{1}: \theta &gt; \theta_0\)</span>). Suponga que el contraste rechaza <span class="math inline">\(H_0\)</span> si <span class="math inline">\(T \leq k\)</span> (o <span class="math inline">\(T&gt;k\)</span>). Sea <span class="math inline">\(t = T(x_{1}, x_{2}, ... , x_{n})\)</span> un valor observado de <span class="math inline">\(T\)</span>. Se define el <em>valor p</em>, denotado <span class="math inline">\(\operatorname{pval}(t)\)</span>, como:</p>
 <p><span class="math display">\[\operatorname{pval}(t) = P(T\leq t | \theta = \theta_0), \text{ o } \operatorname{pval}(t) = P(T &gt; t | \theta = \theta_0),\]</span> respectivamente.</p>
 </section>
 <section id="valor-p-1" class="slide level2">
 <h2>Valor p</h2>
-<p>Nótese que de esta manera no hay ningún problema si la distribución de T es discreta o continua, pues la probabilidad puede ser calculada sin ningún problema. Formalmente, el valor p se conoce como la probabilidad, bajo la hipótesis nula, de observar nuestro estadístico de prueba o un valor más extremo. Esto significa que si el valor p es grande entonces nuestro estadístico de prueba es un valor muy común de T y se sitúa en el centro de la distribución, brindando así evidencia a favor de la hipótesis nula. Por otra parte, si el valor p es pequeño entonces el estadístico de prueba es un valor poco común de T, situándose en las colas de su distribución, y por lo tanto brindando evidencia en contra de <span class="math inline">\(H_0\)</span> y a favor de <span class="math inline">\(H_1\)</span>. Existe la posibilidad de que el valor de t haya sido un punto extremo de la distribución de T bajo <span class="math inline">\(H_0\)</span>, pero esto se considera algo como sumamente improbable.</p>
-<p>Como altos valores p dan evidencia a favor de <span class="math inline">\(H_0\)</span> y bajos valores dan evidencia en contra, sería posible idear un contraste de hipótesis que consista en rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(\operatorname{pval}(t) &lt; \alpha\)</span>. Si la distribución de T es continua entonces el valor de α sería un tamaño de contraste exacto. En la práctica así es cómo se utiliza el valor p, comparándolo contra el nivel de significancia (tamaño del contraste) y decidiendo si se rechaza o no la hipótesis nula.</p>
+<ul>
+<li>Nótese que de esta manera no hay ningún problema si la distribución de <span class="math inline">\(T\)</span> es discreta o continua, pues la probabilidad puede ser calculada sin ningún problema.</li>
+<li>Formalmente, el valor p se conoce como la probabilidad, bajo la hipótesis nula, de observar nuestro estadístico de prueba o un valor más extremo.
+<ul>
+<li>Si el valor p es grande entonces nuestro estadístico de prueba es un valor muy común de <span class="math inline">\(T\)</span> y se sitúa en el centro de la distribución, brindando así evidencia a favor de la hipótesis nula.</li>
+<li>Si el valor p es pequeño entonces el estadístico de prueba es un valor poco común de T, situándose en las colas de su distribución, y por lo tanto brindando evidencia en contra de <span class="math inline">\(H_0\)</span> y a favor de <span class="math inline">\(H_1\)</span>.</li>
+</ul></li>
+<li>Como altos valores p dan evidencia a favor de <span class="math inline">\(H_0\)</span> y bajos valores dan evidencia en contra, sería posible idear un contraste de hipótesis que consista en rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(\operatorname{pval}(t) &lt; \alpha\)</span>. Si la distribución de T es continua entonces el valor de α sería un tamaño de contraste exacto.</li>
+<li>En la práctica así es cómo se utiliza el valor p, comparándolo contra el nivel de significancia (tamaño del contraste) y decidiendo si se rechaza o no la hipótesis nula.</li>
+</ul>
 </section>
 <section id="valor-p-2" class="slide level2">
 <h2>Valor p</h2>
@@ -883,12 +902,12 @@ code {
         // flash "checked"
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
-        button.setAttribute("title", "Copied!");
+        button.setAttribute("title", "Copiado");
         let tooltip;
         if (window.bootstrap) {
           button.setAttribute("data-bs-toggle", "tooltip");
           button.setAttribute("data-bs-placement", "left");
-          button.setAttribute("data-bs-title", "Copied!");
+          button.setAttribute("data-bs-title", "Copiado");
           tooltip = new bootstrap.Tooltip(button, 
             { trigger: "manual", 
               customClass: "code-copy-button-tooltip",
