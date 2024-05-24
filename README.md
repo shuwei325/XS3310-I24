@@ -20,23 +20,24 @@ este repositorio es para el material de clase.
 <a href="https://docs.google.com/spreadsheets/d/1MAGOqFPWk_utN8ucXHEQULb13s6497u2-gBMvLd5IVg/edit?usp=sharing">Cronograma
 y ejercicios</a>
 
-\|—————————–\|—————————————\| \| Tema \| Clases \|
-\|—————————–\|—————————————\| \| 1. Introducción \|
-[Clase01](XS3310-I24_01.html) \|  
-\| \| [Clase02](XS3310-I24_02.html) \|  
-\| \| [Clase03](XS3310-I24_03.html) \|  
-\| 2. Estimación Puntual \| [Clase04](XS3310-I24_04.html) \|  
-\| \| [Clase04b](XS3310-I24_04b.html) \| \| \|
-[Clase05](XS3310-I24_05.html) \|  
-\| \| [Clase05b](XS3310-I24_05b.html) \|  
-\| \| [Clase06](XS3310-I24_06.html) \|  
-\| \| [Clase07](XS3310-I24_07.html) \|  
-\| \| [Clase08](XS3310-I24_08.html) \| \| 3. Estimación por intervalo \|
-[Clase09](XS3310-I24_09.html) \|  
-\| \| [Clase10](XS3310-I24_10.html) \| \| \|
-[Clase11](XS3310-I24_11.html) \| \| 4. Contraste de hipótesis \|
-[Clase12](XS3310-I24_12.html) \|  
-\| \| [Clase13](XS3310-I24_13.html) \| \| \|
-[Clase14](XS3310-I24_14.html) \| \| \| [Clase15](XS3310-I24_15.html) \|
-\| 5. Estad. no paramétrica \| [Clase16](XS3310-I24_16.html) \|  
-\| \| [Clase17](XS3310-I24_17.html) \|
+| Tema                         | Clases                          |
+|------------------------------|---------------------------------|
+| 1\. Introducción             | [Clase01](XS3310-I24_01.html)   |
+|                              | [Clase02](XS3310-I24_02.html)   |
+|                              | [Clase03](XS3310-I24_03.html)   |
+| 2\. Estimación Puntual       | [Clase04](XS3310-I24_04.html)   |
+|                              | [Clase04b](XS3310-I24_04b.html) |
+|                              | [Clase05](XS3310-I24_05.html)   |
+|                              | [Clase05b](XS3310-I24_05b.html) |
+|                              | [Clase06](XS3310-I24_06.html)   |
+|                              | [Clase07](XS3310-I24_07.html)   |
+|                              | [Clase08](XS3310-I24_08.html)   |
+| 3\. Estimación por intervalo | [Clase09](XS3310-I24_09.html)   |
+|                              | [Clase10](XS3310-I24_10.html)   |
+|                              | [Clase11](XS3310-I24_11.html)   |
+| 4\. Contraste de hipótesis   | [Clase12](XS3310-I24_12.html)   |
+|                              | [Clase13](XS3310-I24_13.html)   |
+|                              | [Clase14](XS3310-I24_14.html)   |
+|                              | [Clase15](XS3310-I24_15.html)   |
+| 5\. Estad. no paramétrica    | [Clase16](XS3310-I24_16.html)   |
+|                              | [Clase17](XS3310-I24_17.html)   |

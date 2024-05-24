@@ -28,7 +28,7 @@ La información del curso está en [Mediación Virtual](https://mv1.mediacionvir
 
 <a href="https://docs.google.com/spreadsheets/d/1MAGOqFPWk_utN8ucXHEQULb13s6497u2-gBMvLd5IVg/edit?usp=sharing">Cronograma y ejercicios</a>
 
-|-----------------------------|---------------------------------------|
+
 | Tema                        |  Clases                               |
 |-----------------------------|---------------------------------------|
 | 1. Introducción             |       [Clase01](XS3310-I24_01.html)   |       
