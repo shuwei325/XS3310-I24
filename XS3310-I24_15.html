@@ -543,11 +543,45 @@ code {
 <h2>Contraste de Wald</h2>
 <p>Por otro lado, si utilizamos el contraste de razón de verosimilitud, tenemos que <span class="math display">\[V=\frac{2n\bar{X}}{\theta_0}=\frac{2\cdot7\cdot 5}{1}=70&gt;\chi^2_{0.975,2\cdot7}=26.11.\]</span> Finalmente, por el teorema de Wilks, <span class="math display">\[G = -2\ln(\lambda) = -2n\left[  \ln(\bar{X}) - \ln(\theta_0) + 1 - \frac{\bar{X}}{\theta_0} \right]\]</span> <span class="math display">\[=-2\cdot 7 \left( \ln(3.5) - \ln(1) +1 - \frac{3.5}{1} \right)=33.47.\]</span> Como <span class="math inline">\(G=33.467&gt;\chi^2_{(1-\alpha_0,1)}=3.8415\)</span>, el teorema de Wilks sugiere rechazar la hipótesis nula con nivel de significancia de <span class="math inline">\(0.05\)</span>.</p>
 </section>
+<section id="lab04" class="slide level2">
+<h2>Lab04</h2>
+<p><a href="lab04.html">Lab04</a></p>
+</section>
+<section id="qué-discutimos-hoy" class="slide level2">
+<h2>¿Qué discutimos hoy?</h2>
+<ul>
+<li>Contrastes de razón de verosimilitud.</li>
+<li>Teorema de Wilks.</li>
+<li>Estadístico de Wald.</li>
+</ul>
+</section>
 <section id="ejercicio" class="slide level2">
 <h2>Ejercicio:</h2>
 
-<img data-src="figs/ejercicio.png" class="r-stretch"><h3 id="qué-discutimos-hoy">¿Qué discutimos hoy?</h3>
-<p>Contrastes de hipótesis: cociente y razón de verosimilitud.</p>
+<img data-src="figs/ejercicio_hipotesis.png" class="r-stretch"></section>
+<section class="slide level2">
+
+<ol type="1">
+<li>Suponga que <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> denotan una muestra aleatoria de la distribución de Poisson con media <span class="math inline">\(\lambda\)</span>.</li>
+</ol>
+<ol type="a">
+<li>Encuentre el estimador de máxima verosimilitud <span class="math inline">\(\hat{\lambda}\)</span> para <span class="math inline">\(\lambda\)</span>.</li>
+<li>Suponga que se desea contrastar las hipótesis <span class="math inline">\(H_0: \lambda=\lambda_0\)</span> contra <span class="math inline">\(H_0: \lambda \neq \lambda_0\)</span>. Encuentre el estadístico de Wald y establezca la región crítica del contraste de Wald con <span class="math inline">\(\alpha=0.05\)</span>.</li>
+<li>Simule en R una muestra aleatoria de tamaño <span class="math inline">\(10\)</span> con distribución Poisson de <span class="math inline">\(\lambda=15\)</span>. Luego contrasta las hipótesis <span class="math inline">\(H_0: \lambda=10\)</span> contra <span class="math inline">\(H_0: \lambda \neq 10\)</span>, usando el contraste encontrado en b.</li>
+<li>Repita el ejercicio c, pero con la muestra simulada con <span class="math inline">\(\lambda=11\)</span>.</li>
+</ol>
+</section>
+<section class="slide level2">
+
+<ol start="2" type="1">
+<li>Suponga que <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> denotan una muestra aleatoria de una población distribuida exponencialmente con media <span class="math inline">\(\theta\)</span>.</li>
+</ol>
+<ol type="a">
+<li>Encuentre el estimador de máxima verosimilitud de la variacia poblacional <span class="math inline">\(\theta^2\)</span>.</li>
+<li>Suponga que se desea contrastar las hipótesis <span class="math inline">\(H_0: \theta^2=4\)</span> contra <span class="math inline">\(H_0: \lambda \neq 4\)</span>. Encuentre el estadístico de Wald y establezca la región crítica del contraste de Wald con <span class="math inline">\(\alpha=0.01\)</span>.</li>
+<li>Simule en R una muestra aleatoria de tamaño <span class="math inline">\(15\)</span> con distribución exponencial de <span class="math inline">\(\theta=1\)</span>. Luego contrasta las hipótesis <span class="math inline">\(H_0: \theta^2=4\)</span> contra <span class="math inline">\(H_0: \theta^2 \neq 4\)</span>, usando el contraste encontrado en b.</li>
+<li>Repita el ejercicio c, pero con una muestra simulada de tamaño <span class="math inline">\(5\)</span>.</li>
+</ol>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 

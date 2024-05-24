@@ -28,7 +28,7 @@ La información del curso está en [Mediación Virtual](https://mv1.mediacionvir
 
 <a href="https://docs.google.com/spreadsheets/d/1MAGOqFPWk_utN8ucXHEQULb13s6497u2-gBMvLd5IVg/edit?usp=sharing">Cronograma y ejercicios</a>
 
-
+|-----------------------------|---------------------------------------|
 | Tema                        |  Clases                               |
 |-----------------------------|---------------------------------------|
 | 1. Introducción             |       [Clase01](XS3310-I24_01.html)   |       
@@ -48,5 +48,6 @@ La información del curso está en [Mediación Virtual](https://mv1.mediacionvir
 |                             |       [Clase13](XS3310-I24_13.html)   | 
 |                             |       [Clase14](XS3310-I24_14.html)   | 
 |                             |       [Clase15](XS3310-I24_15.html)   | 
-
-
+| 5. Estad. no paramétrica    |       [Clase16](XS3310-I24_16.html)   |  
+|                             |       [Clase17](XS3310-I24_17.html)   | 
+|-----------------------------|---------------------------------------|
