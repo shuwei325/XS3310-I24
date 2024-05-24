@@ -50,4 +50,4 @@ La información del curso está en [Mediación Virtual](https://mv1.mediacionvir
 |                             |       [Clase15](XS3310-I24_15.html)   | 
 | 5. Estad. no paramétrica    |       [Clase16](XS3310-I24_16.html)   |  
 |                             |       [Clase17](XS3310-I24_17.html)   | 
-|-----------------------------|---------------------------------------|
+

@@ -39,4 +39,4 @@ y ejercicios</a>
 \| \| [Clase13](XS3310-I24_13.html) \| \| \|
 [Clase14](XS3310-I24_14.html) \| \| \| [Clase15](XS3310-I24_15.html) \|
 \| 5. Estad. no paramétrica \| [Clase16](XS3310-I24_16.html) \|  
-\| \| [Clase17](XS3310-I24_17.html) \| \|—————————–\|—————————————\|
+\| \| [Clase17](XS3310-I24_17.html) \|
