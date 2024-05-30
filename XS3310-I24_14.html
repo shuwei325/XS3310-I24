@@ -468,7 +468,7 @@ code {
 <h2>Contrastes uniformemente más potentes</h2>
 <p><strong>Ejemplo:</strong> Sea <span class="math inline">\(X_{1}, X_{2}, ... , X_{n}\)</span> una muestra aleatoria tal que <span class="math inline">\(X_j \sim N(\mu,1)\)</span>. Demuestre que <span class="math inline">\(\mathcal{L}(\mu)\)</span> tiene un CVM en el estadístico <span class="math inline">\(\bar{X}\)</span>.</p>
 <p><strong>Solución:</strong> Sea <span class="math inline">\(\mu_0 &lt; \mu_1\)</span>. Anteriormente habíamos trabajado una expresión para este cociente de verosimilitudes:</p>
-<p><span class="math inline">\(\frac{\mathcal{L}(\mu_0)}{\mathcal{L}(\mu_1)} = e^{ n\bar{x}(\mu_0 - \mu_1 ) } \cdot e^{ -\frac{1}{2}( \mu_{0}^2 - \mu_{1}^2 ) }\)</span></p>
+<p><span class="math inline">\(\frac{\mathcal{L}(\mu_0)}{\mathcal{L}(\mu_1)} = e^{ n\bar{x}(\mu_0 - \mu_1 ) } \cdot e^{ -\frac{n}{2}( \mu_{0}^2 - \mu_{1}^2 ) }\)</span></p>
 <p>Lo que nos interesa es demostrar que esta es una función monótona de <span class="math inline">\(\bar{X}\)</span>. Observemos que la cantidad <span class="math inline">\(e^{ -\frac{1}{2}( \mu_{0}^2 - \mu_{1}^2 )}\)</span> no depende de <span class="math inline">\(\bar{X}\)</span>, por lo que puede ser tratada como una constante. Por otro lado la expresión <span class="math inline">\(e^{ n\bar{x}(\mu_0 - \mu_1 )}\)</span> es una función de <span class="math inline">\(\bar{X}\)</span>, y sabemos que la exponencial es siempre creciente si su exponente es positivo o siempre decreciente si su exponente es negativo. En este caso, como <span class="math inline">\(\mu_0-\mu_1&lt;0\)</span>, el CVM es decreciente en <span class="math inline">\(\bar{X}\)</span>.</p>
 <p>Por lo tanto, concluimos que <span class="math inline">\(\mathcal{L}(\mu)\)</span> tiene un CVM en <span class="math inline">\(\bar{X}\)</span>.</p>
 </section>
@@ -476,7 +476,7 @@ code {
 <h2>Contrastes uniformemente más potentes</h2>
 <p><strong>Teorema 4.2:</strong> Si la distribución tiene un CVM en el estadístico <span class="math inline">\(T\)</span>, entonces el contraste UMP para <span class="math inline">\(H_{0}: \theta = \theta_0\)</span> contra <span class="math inline">\(H_{1}: \theta &gt; \theta_0\)</span> o <span class="math inline">\(H_{1}: \theta &lt; \theta_0\)</span> existe y este se puede expresar en términos de <span class="math inline">\(T\)</span>, en lugar del cociente <span class="math inline">\(\frac{\mathcal{L}(\theta_0)}{\mathcal{L}(\theta_1)}\)</span>.</p>
 <p><strong>Nota:</strong> Este teorema nos facilita la obtención del contraste UMP pues nos garantiza que la regla de decisión que depende del estadístico <span class="math inline">\(T\)</span>. Además, al ser el cociente de verosimilitudes una función monótona de <span class="math inline">\(T\)</span> entonces existe una relación directa entre la hipótesis alternativa y la regla de decisión.</p>
-<p>Específicamente, en el caso cuando tenemos <span class="math display">\[H_{0}: \theta = \theta_0,~~~~ \text{contra}~~~~ H_{1}: \theta &gt; \theta_0.\]</span> Y <strong>el cociente de verosimilitudes es monótonamente creciente</strong>, entonces el contraste UMP para un nivel de significancia <span class="math inline">\(\alpha_0\)</span> consiste en rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(T&gt;k\)</span>. Para el caso de <span class="math inline">\(H_{1}: \theta &lt; \theta_0\)</span>, el contraste es <span class="math inline">\(T&gt;k\)</span>. Luego, el valor de <span class="math inline">\(k\)</span> se encuentra fijando el tamaño del contraste en <span class="math inline">\(\alpha_0\)</span>. Por otro lado, si <strong>el cociente de verosimilitudes es monótonamente decreciente</strong>, la regla sería inversa.</p>
+<p>Específicamente, en el caso cuando tenemos <span class="math display">\[H_{0}: \theta = \theta_0,~~~~ \text{contra}~~~~ H_{1}: \theta &gt; \theta_0.\]</span> Y <strong>el cociente de verosimilitudes es monótonamente decreciente</strong>, entonces el contraste UMP para un nivel de significancia <span class="math inline">\(\alpha_0\)</span> consiste en rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(T&gt;k\)</span>. Para el caso de <span class="math inline">\(H_{1}: \theta &lt; \theta_0\)</span>, el contraste es <span class="math inline">\(T&lt;k\)</span>. Luego, el valor de <span class="math inline">\(k\)</span> se encuentra fijando el tamaño del contraste en <span class="math inline">\(\alpha_0\)</span>. Por otro lado, si <strong>el cociente de verosimilitudes es monótonamente creciente</strong>, la regla sería inversa.</p>
 </section>
 <section id="contrastes-uniformemente-más-potentes-6" class="slide level2">
 <h2>Contrastes uniformemente más potentes</h2>
@@ -486,6 +486,16 @@ code {
 <p>Utilizando software podemos encontrar que <span class="math inline">\(\sqrt{n}(c - \mu_0 ) = z_{\alpha_0} = - z_{1 - \alpha_0}\)</span>. Despejando obtenemos que <span class="math inline">\(c = \mu_0 - \frac{z_{1 - \alpha_0}}{\sqrt{n}}\)</span>. Por lo tanto, el contraste UMP consiste en rechazar <span class="math inline">\(H_0\)</span> si <span class="math inline">\(\bar{X} &lt; \mu_0 - \frac{z_{1 - \alpha_0}}{\sqrt{n}}\)</span>.</p>
 </section>
 <section id="ejercicio" class="slide level2">
+<h2>Ejercicio:</h2>
+<p>Un banco asegura que el tiempo de espera del cliente en las cajas sigue una distribución exponencial con media <span class="math inline">\(\beta_0\)</span>. El gerente recibió quejas de los clientes de que el tiempo promedio de espera debe ser más. Decidió recolectar una muestra aleatoria de <span class="math inline">\(n\)</span> clientes para ver contrastar dos hipótesis: <span class="math inline">\(H_0: \beta=\beta_0\)</span> contra <span class="math inline">\(H_1: \beta&gt;\beta_0\)</span>.</p>
+<ol type="1">
+<li>Encuentre el contraste uniformemente más potente de tamaño <span class="math inline">\(\alpha_0\)</span> para contrastar estas hipótesis.</li>
+<li>Suponga que <span class="math inline">\(\beta_0=5\)</span> y <span class="math inline">\(\alpha_0=0.05\)</span>. Grafique la función potencia del contraste encontrado en 1.</li>
+<li>Suponga que el tiempo promedio verdadero es <span class="math inline">\(\beta_0=15\)</span>. Simule una muestra aleatoria de tamaño <span class="math inline">\(n=10\)</span>. Concluya el problema.</li>
+<li>Repita el ejercicio 3 pero suponiendo que el tiempo promedio verdadero es <span class="math inline">\(\beta_0=11\)</span>. Simule una muestra aleatoria de tamaño <span class="math inline">\(n=10\)</span>. Concluya el problema.</li>
+</ol>
+</section>
+<section id="ejercicio-1" class="slide level2">
 <h2>Ejercicio:</h2>
 
 <img data-src="figs/ejercicios_CUMP.png" class="r-stretch"></section>
