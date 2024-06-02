@@ -529,8 +529,8 @@ code {
 <ul>
 <li>Para una muestra <span class="math inline">\(X_1, \dots, X_n\)</span> de variables aleatorias con valores reales, independientes con distribución <span class="math inline">\(P\)</span>, definimos la distribución <span class="math inline">\(\hat{P}\)</span> como:</li>
 </ul>
-<p><span class="math display">\[\hat{P}(A) = \frac{1}{n}\sum_{i=1}^{n} 1_A(X_i),\]</span> para <span class="math inline">\(A \subseteq \mathbb{R}\)</span> y <span class="math inline">\(1_A(X_i)\)</span> es la función indicadora definida como:</p>
-<p><span class="math display">\[1_A(X_i)=\left\lbrace \begin{aligned}
+<p><span class="math display">\[\hat{P}(A) = \frac{1}{n}\sum_{i=1}^{n} I_A(X_i),\]</span> para <span class="math inline">\(A \subseteq \mathbb{R}\)</span> y <span class="math inline">\(I_A(X_i)\)</span> es la función indicadora definida como:</p>
+<p><span class="math display">\[I_A(X_i)=\left\lbrace \begin{aligned}
                 1 &amp; \text{,  si  } X_i \in A,  \\
                 0 &amp; \text{,  si  } X_i \notin A.
 \end{aligned} \right.\]</span></p>
@@ -617,7 +617,7 @@ code {
 <li><p>Sea <span class="math inline">\(A \subseteq \mathbb{R}\)</span> (tal que <span class="math inline">\(P(A)\)</span> está definido), entonces tenemos: <span class="math inline">\(\hat{P}(A) \xrightarrow{d} P(A)\)</span> cuando <span class="math inline">\(n \rightarrow \infty\)</span>.</p></li>
 <li><p>Este resultado es una consecuencia directa de La Ley de los Grandes Números, ya que:</p></li>
 </ul>
-<p><span class="math display">\[n \hat{P}(A) = \sum_{i=0}^{n} 1_A(X_i) \sim Bin(n, P(A))\]</span></p>
+<p><span class="math display">\[n \hat{P}(A) = \sum_{i=0}^{n} I_A(X_i) \sim Bin(n, P(A))\]</span></p>
 <p>por lo que <span class="math inline">\(\hat{P}(A)\)</span> tiende a su valor esperado <span class="math inline">\(P(A)\)</span> cuando <span class="math inline">\(n \rightarrow \infty\)</span>. Este resultado puede formalizarse mediante:</p>
 <p><span class="math display">\[\sup_{A\in I}|\hat{P}(A)-P(A)| \rightarrow 0 \quad \text{as} \quad n \rightarrow \infty\]</span> donde <span class="math inline">\(I\)</span> es el conjunto de intervalos en <span class="math inline">\(\mathbb{R}\)</span>. En otras palabras, la distribución <span class="math inline">\(P(A)\)</span> puede ser aproximada por <span class="math inline">\(\hat{P}(A)\)</span> igual de bien para toda <span class="math inline">\(A\in I\)</span>.</p>
 </section>
@@ -746,15 +746,18 @@ code {
 <section id="laboratorio" class="slide level2">
 <h2>Laboratorio</h2>
 </section>
-<section id="lab05" class="slide level2">
-<h2>Lab05</h2>
-<p><a href="lab05.html">Lab05</a></p>
+<section id="lab05a" class="slide level2">
+<h2>Lab05a</h2>
+<p><a href="lab05a.html">Lab05a</a></p>
 </section>
 <section id="qué-discutimos-hoy" class="slide level2">
 <h2>¿Qué discutimos hoy?</h2>
 <ul>
-<li>Repaso de modelos estadísticos</li>
+<li>Repaso:
+<ul>
+<li>modelos estadísticos</li>
 <li>Estadística paramétrica y no paramétrica</li>
+</ul></li>
 <li>Distribución empírica</li>
 <li>Bootstrap</li>
 </ul>

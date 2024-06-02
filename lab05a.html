@@ -8,7 +8,7 @@
 
 <meta name="author" content="Shu Wei Chou Chen">
 
-<title>lab05: Bootstrap</title>
+<title>lab05a: Bootstrap</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,18 +58,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="lab05_files/libs/clipboard/clipboard.min.js"></script>
-<script src="lab05_files/libs/quarto-html/quarto.js"></script>
-<script src="lab05_files/libs/quarto-html/popper.min.js"></script>
-<script src="lab05_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="lab05_files/libs/quarto-html/anchor.min.js"></script>
-<link href="lab05_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="lab05_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="lab05_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="lab05_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="lab05_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="lab05_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="lab05_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="lab05a_files/libs/clipboard/clipboard.min.js"></script>
+<script src="lab05a_files/libs/quarto-html/quarto.js"></script>
+<script src="lab05a_files/libs/quarto-html/popper.min.js"></script>
+<script src="lab05a_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="lab05a_files/libs/quarto-html/anchor.min.js"></script>
+<link href="lab05a_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="lab05a_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="lab05a_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="lab05a_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="lab05a_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="lab05a_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="lab05a_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -138,7 +138,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">lab05: Bootstrap</h1>
+<h1 class="title">lab05a: Bootstrap</h1>
 <p class="subtitle lead">XS3310 Teoría Estadística</p>
 </div>
 
@@ -235,14 +235,14 @@ window.Quarto = {
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>Tboot_b[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 75.00000 81.57143 69.00000 80.85714 99.85714 69.00000 48.71429 82.28571
- [9] 74.00000 77.28571</code></pre>
+<pre><code> [1] 133.71429  56.14286  82.57143  78.14286  64.85714  93.57143  72.42857
+ [8] 109.57143 126.28571  80.85714</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Tboot_b)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab05_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lab05a_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -252,7 +252,7 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(sesgo_bootstrap <span class="ot">&lt;-</span> <span class="fu">mean</span>(Tboot_b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 85.358</code></pre>
+<pre><code>[1] 87.20814</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>estimacion</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -260,7 +260,7 @@ window.Quarto = {
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sesgo_bootstrap<span class="sc">-</span>estimacion</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -1.499143</code></pre>
+<pre><code>[1] 0.351</code></pre>
 </div>
 </div>
 </section>
@@ -273,11 +273,11 @@ window.Quarto = {
 </div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(sdboot <span class="ot">&lt;-</span> <span class="fu">sd</span>(Tboot_b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 22.86764</code></pre>
+<pre><code>[1] 23.67553</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>estimacion <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>cuantil_z <span class="sc">*</span> sdboot</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  42.0374 131.6769</code></pre>
+<pre><code>[1]  40.45395 133.26034</code></pre>
 </div>
 </div>
 </section>
@@ -303,21 +303,21 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab05_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lab05a_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(z_star)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
--18.54908  -0.89331  -0.04085  -0.15957   0.69511  11.01066 </code></pre>
+-27.31959  -0.83372  -0.01468  -0.14706   0.73162   5.53566 </code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cuantil_t_empirico <span class="ot">&lt;-</span> <span class="fu">quantile</span>(z_star, <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>)</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>estimacion <span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>) <span class="sc">*</span>cuantil_t_empirico<span class="sc">*</span> sdboot</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  33.18474 140.52954</code></pre>
+<pre><code>[1]  33.07745 140.63683</code></pre>
 </div>
 </div>
 </section>
@@ -334,19 +334,19 @@ window.Quarto = {
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab05_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lab05a_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Tboot_b,<span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    2.5% 
-44.26429 </code></pre>
+43.85714 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Tboot_b, <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   97.5% 
-131.5893 </code></pre>
+136.8607 </code></pre>
 </div>
 </div>
 </section>
@@ -374,7 +374,7 @@ boot.ci(boot.out = X.boot, type = c("basic", "stud", "perc"))
 
 Intervals : 
 Level      Basic             Studentized          Percentile     
-95%   ( 38.29, 129.57 )   ( 25.95, 163.19 )   ( 44.14, 135.43 )  
+95%   ( 39.29, 128.43 )   ( 25.60, 162.36 )   ( 45.29, 134.42 )  
 Calculations and Intervals on Original Scale</code></pre>
 </div>
 </div>
@@ -401,8 +401,8 @@ Calculations and Intervals on Original Scale</code></pre>
 <span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>Tboot_b[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 53.777778 12.333333 49.968254 33.682540  7.365079 34.095238 69.730159
- [8] 12.174603  1.000000 77.126984</code></pre>
+<pre><code> [1]  20.61905  17.41270 -14.11111  61.04762  -6.00000  27.93651  50.77778
+ [8]  39.33333  40.71429  57.57143</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -410,7 +410,7 @@ Calculations and Intervals on Original Scale</code></pre>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="lab05_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="lab05a_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
@@ -420,11 +420,11 @@ Calculations and Intervals on Original Scale</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>(sdboot <span class="ot">&lt;-</span> <span class="fu">sd</span>(Tboot_b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 26.98896</code></pre>
+<pre><code>[1] 26.50141</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>estimacion <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>cuantil_z <span class="sc">*</span> sdboot</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -22.26246  83.53230</code></pre>
+<pre><code>[1] -21.30689  82.57674</code></pre>
 </div>
 </div>
 </section>
@@ -450,7 +450,7 @@ boot.ci(boot.out = bootstrap_diff, type = c("basic", "stud",
 
 Intervals : 
 Level      Basic             Studentized          Percentile     
-95%   (-22.74,  84.02 )   (-31.78, 102.40 )   (-22.75,  84.01 )  
+95%   (-21.99,  83.49 )   (-28.41, 104.36 )   (-22.22,  83.26 )  
 Calculations and Intervals on Original Scale</code></pre>
 </div>
 </div>
