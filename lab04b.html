@@ -117,6 +117,8 @@ window.Quarto = {
   <li><a href="#estadístico-de-razón-de-verosimilitud-exacto" id="toc-estadístico-de-razón-de-verosimilitud-exacto" class="nav-link" data-scroll-target="#estadístico-de-razón-de-verosimilitud-exacto"><span class="header-section-number">2.1</span> Estadístico de razón de verosimilitud exacto</a></li>
   <li><a href="#estadístico-de-razón-de-verosimilitud-asintótico" id="toc-estadístico-de-razón-de-verosimilitud-asintótico" class="nav-link" data-scroll-target="#estadístico-de-razón-de-verosimilitud-asintótico"><span class="header-section-number">2.2</span> Estadístico de razón de verosimilitud (asintótico)</a></li>
   <li><a href="#estadístico-de-wald" id="toc-estadístico-de-wald" class="nav-link" data-scroll-target="#estadístico-de-wald"><span class="header-section-number">2.3</span> Estadístico de Wald</a></li>
+  <li><a href="#con-n50-y-alpha0.05" id="toc-con-n50-y-alpha0.05" class="nav-link" data-scroll-target="#con-n50-y-alpha0.05"><span class="header-section-number">2.4</span> Con <span class="math inline">\(n=50\)</span> y <span class="math inline">\(\alpha=0.05\)</span></a></li>
+  <li><a href="#con-n50-y-alpha0.1" id="toc-con-n50-y-alpha0.1" class="nav-link" data-scroll-target="#con-n50-y-alpha0.1"><span class="header-section-number">2.5</span> Con <span class="math inline">\(n=50\)</span> y <span class="math inline">\(\alpha=0.1\)</span></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -162,7 +164,8 @@ window.Quarto = {
 <section id="paquetes" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Paquetes</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="ejemplo-con-la-distribución-exponencial" class="level1" data-number="2">
@@ -189,12 +192,12 @@ window.Quarto = {
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(RV)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Luego, aplicamos la misma función a cada elemento de la lista <code>X</code>, y verificamos que 38 de <span class="math inline">\(1000\)</span> se rechaza la hipótesis, o sea próximo al tramaño del contraste <span class="math inline">\(5\%\)</span>.</p>
+<p>Luego, aplicamos la misma función a cada elemento de la lista <code>X</code>, y verificamos que 44 de <span class="math inline">\(1000\)</span> se rechaza la hipótesis, o sea próximo al tramaño del contraste <span class="math inline">\(5\%\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>RV_resultado <span class="ot">&lt;-</span> <span class="fu">sapply</span>(X,RV)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">between</span>(RV_resultado,<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.025</span>,<span class="dv">2</span><span class="sc">*</span>n),<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.975</span>,<span class="dv">2</span><span class="sc">*</span>n)))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.038</code></pre>
+<pre><code>[1] 0.044</code></pre>
 </div>
 </div>
 </section>
@@ -213,11 +216,11 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sim2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(RV_wilks_resultado<span class="sc">&gt;</span><span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="dv">1</span>))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Encontramos que un 0.046 <span class="math inline">\(\%\)</span> de las <span class="math inline">\(K=1000\)</span> muestras rechaza la hipótesis, o sea próximo al tramaño del contraste <span class="math inline">\(5\%\)</span>.</p>
+<p>Encontramos que un 0.045 <span class="math inline">\(\%\)</span> de las <span class="math inline">\(K=1000\)</span> muestras rechaza la hipótesis, o sea próximo al tramaño del contraste <span class="math inline">\(5\%\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(RV_wilks_resultado<span class="sc">&gt;</span><span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="dv">1</span>))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.046</code></pre>
+<pre><code>[1] 0.045</code></pre>
 </div>
 </div>
 <p>Ambos resultados son muy próximos y nos damos cuenta que con <span class="math inline">\(n=10\)</span>, el resultado asintótico aproxima bastante bien.</p>
@@ -237,14 +240,68 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>sim3 <span class="ot">&lt;-</span> <span class="fu">sum</span>(estad_wald_resultado<span class="sc">&gt;</span><span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="dv">1</span>))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Encontramos que un 0.046 <span class="math inline">\(\%\)</span> de las <span class="math inline">\(K=1000\)</span> muestras rechaza la hipótesis, o sea próximo al tramaño del contraste <span class="math inline">\(5\%\)</span>.</p>
+<p>Encontramos que un 0.045 <span class="math inline">\(\%\)</span> de las <span class="math inline">\(K=1000\)</span> muestras rechaza la hipótesis, o sea próximo al tramaño del contraste <span class="math inline">\(5\%\)</span>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(estad_wald_resultado<span class="sc">&gt;</span><span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="dv">1</span>))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.106</code></pre>
+<pre><code>[1] 0.098</code></pre>
 </div>
 </div>
 <p>Los 3 resultados son muy próximos y nos damos cuenta que con <span class="math inline">\(n=10\)</span>, el resultado asintótico aproxima bastante bien.</p>
+</section>
+<section id="con-n50-y-alpha0.05" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="con-n50-y-alpha0.05"><span class="header-section-number">2.4</span> Con <span class="math inline">\(n=50\)</span> y <span class="math inline">\(\alpha=0.05\)</span></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>K){</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>  X[[i]] <span class="ot">&lt;-</span> <span class="fu">rexp</span>(n,<span class="dv">1</span>) </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>RV_resultado <span class="ot">&lt;-</span> <span class="fu">sapply</span>(X,RV)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">between</span>(RV_resultado,<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.025</span>,<span class="dv">2</span><span class="sc">*</span>n),<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.975</span>,<span class="dv">2</span><span class="sc">*</span>n)))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.046</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>RV_wilks_resultado <span class="ot">&lt;-</span> <span class="fu">sapply</span>(X,RV_wilks)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(RV_wilks_resultado<span class="sc">&gt;</span><span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="dv">1</span>))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.046</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>estad_wald_resultado <span class="ot">&lt;-</span> <span class="fu">sapply</span>(X,estad_wald)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(estad_wald_resultado<span class="sc">&gt;</span><span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="dv">1</span>))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.058</code></pre>
+</div>
+</div>
+</section>
+<section id="con-n50-y-alpha0.1" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="con-n50-y-alpha0.1"><span class="header-section-number">2.5</span> Con <span class="math inline">\(n=50\)</span> y <span class="math inline">\(\alpha=0.1\)</span></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>K){</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  X[[i]] <span class="ot">&lt;-</span> <span class="fu">rexp</span>(n,<span class="dv">1</span>) </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>RV_resultado <span class="ot">&lt;-</span> <span class="fu">sapply</span>(X,RV)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">between</span>(RV_resultado,<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.05</span>,<span class="dv">2</span><span class="sc">*</span>n),<span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.95</span>,<span class="dv">2</span><span class="sc">*</span>n)))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.112</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>RV_wilks_resultado <span class="ot">&lt;-</span> <span class="fu">sapply</span>(X,RV_wilks)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(RV_wilks_resultado<span class="sc">&gt;</span><span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.9</span>,<span class="dv">1</span>))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.114</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>estad_wald_resultado <span class="ot">&lt;-</span> <span class="fu">sapply</span>(X,estad_wald)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(estad_wald_resultado<span class="sc">&gt;</span><span class="fu">qchisq</span>(<span class="at">p=</span><span class="fl">0.9</span>,<span class="dv">1</span>))<span class="sc">/</span>K</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.121</code></pre>
+</div>
+</div>
 </section>
 </section>
 
