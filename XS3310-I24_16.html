@@ -619,7 +619,7 @@ code {
 </ul>
 <p><span class="math display">\[n \hat{P}(A) = \sum_{i=0}^{n} I_A(X_i) \sim Bin(n, P(A))\]</span></p>
 <p>por lo que <span class="math inline">\(\hat{P}(A)\)</span> tiende a su valor esperado <span class="math inline">\(P(A)\)</span> cuando <span class="math inline">\(n \rightarrow \infty\)</span>. Este resultado puede formalizarse mediante:</p>
-<p><span class="math display">\[\sup_{A\in I}|\hat{P}(A)-P(A)| \rightarrow 0 \quad \text{as} \quad n \rightarrow \infty\]</span> donde <span class="math inline">\(I\)</span> es el conjunto de intervalos en <span class="math inline">\(\mathbb{R}\)</span>. En otras palabras, la distribución <span class="math inline">\(P(A)\)</span> puede ser aproximada por <span class="math inline">\(\hat{P}(A)\)</span> igual de bien para toda <span class="math inline">\(A\in I\)</span>.</p>
+<p><span class="math display">\[\sup_{A\in I}|\hat{P}(A)-P(A)| \rightarrow 0 \quad \text{cuando} \quad n \rightarrow \infty\]</span> donde <span class="math inline">\(I\)</span> es el conjunto de intervalos en <span class="math inline">\(\mathbb{R}\)</span>. En otras palabras, la distribución <span class="math inline">\(P(A)\)</span> puede ser aproximada por <span class="math inline">\(\hat{P}(A)\)</span> igual de bien para toda <span class="math inline">\(A\in I\)</span>.</p>
 </section>
 <section id="el-principio-de-bootstrap" class="slide level2">
 <h2>El Principio de Bootstrap</h2>
@@ -678,9 +678,8 @@ code {
 <section class="slide level2">
 
 <ul>
-<li>En otras palabras, la idea es obtener <span class="math inline">\(B\)</span> réplicas de muestras de Bootstrap: <span class="math display">\[X^{*(1)}=\left[ X_1^{*(1)},...,X_n^{*(1)} \right] ~~~~\rightarrow  \hat{\theta}^{*(1)}=s\left(X^{*(1)}\right)\]</span> <span class="math display">\[X^{*(2)}=\left[ X_1^{*(2)},...,X_n^{*(2)}\right]~~~~\rightarrow  \hat{\theta}^{*(2)}=s\left(X^{*(2)}\right)\]</span></li>
+<li>En otras palabras, la idea es obtener <span class="math inline">\(B\)</span> réplicas de muestras de Bootstrap: <span class="math display">\[X^{*(1)}=\left[ X_1^{*(1)},...,X_n^{*(1)} \right] ~~~~\rightarrow  \hat{\theta}^{*(1)}=s\left(X^{*(1)}\right)\]</span> <span class="math display">\[X^{*(2)}=\left[ X_1^{*(2)},...,X_n^{*(2)}\right]~~~~\rightarrow  \hat{\theta}^{*(2)}=s\left(X^{*(2)}\right)\]</span> <span class="math display">\[\vdots\]</span> <span class="math display">\[X^{*(B)}=\left[ X_1^{*(B)},...,X_n^{*(B)}\right]~~~~\rightarrow  \hat{\theta}^{*(B)}=s\left(X^{*(B)}\right)\]</span> y obtener la distribución empírica de <span class="math inline">\(\hat{\theta}^*\)</span> como una aproximación de la distribución muestral de <span class="math inline">\(\hat{\theta}\)</span>:</li>
 </ul>
-<p><span class="math display">\[X^{*(B)}=\left[ X_1^{*(B)},...,X_n^{*(B)}\right]~~~~\rightarrow  \hat{\theta}^{*(B)}=s\left(X^{*(B)}\right)\]</span> y obtener la distribución empírica de <span class="math inline">\(\hat{\theta}^*\)</span> como una aproximación de la distribución muestral de <span class="math inline">\(\hat{\theta}\)</span>:</p>
 <p><span class="math display">\[P(\hat{\theta} \in A) = \hat{P}(\hat{\theta}^{*} \in A).\]</span></p>
 <ul>
 <li>Generalmente, nos interesa solamente una medida de esa distribución. Por ejemplo, su variancia.</li>
@@ -692,7 +691,7 @@ code {
 <ul>
 <li>Escoja B muestras bootstrap independientes <span class="math inline">\(X^{*(1)}, \dots, X^{*(B)}\)</span> de <span class="math inline">\(\hat{P}\)</span>: <span class="math inline">\(X_1^{*(b)}, \dots, X^{*(b)}_n \sim_{iid} \hat{P}\)</span> para <span class="math inline">\(b = 1, \dots, B\)</span>.</li>
 <li>Evalúe las repeticiones de bootstrap: <span class="math inline">\(\hat{\theta}^{*(b)}=s(X^{*(b)})\)</span>.</li>
-<li>Estime los errores estándar con la desviación estándar de las B repeticiones:</li>
+<li>Estime los errores estándares con la desviación estándar de las <span class="math inline">\(B\)</span> repeticiones:</li>
 </ul>
 <p><span class="math display">\[\widehat{\operatorname{ee}}_{boot} = \sqrt{\frac{1}{B-1}\sum_{b=1}^{B}\left(\hat{\theta}^{*(b)}-\hat{\theta}^{*(.)}\right)^2}\]</span></p>
 <p>donde <span class="math inline">\(\hat{\theta}^{*(.)} = \frac{1}{B}\sum\limits_{b=1}^{B}\hat{\theta}^{*(b)}\)</span>.</p>
@@ -742,9 +741,6 @@ code {
 <ol start="4" type="1">
 <li><strong>IC percentiles corregido por sesgo:</strong> La opción anterior asume que el área debajo de la curva en las dos colas es igual. Si el estimador <span class="math inline">\(\hat{\theta}\)</span> no es la mediana de la distribución bootstrap, entonces esta condición no se cumple. En este caso debemos corregirlo, y hay varias opciones que no serán vistas en esta ocasión.</li>
 </ol>
-</section>
-<section id="laboratorio" class="slide level2">
-<h2>Laboratorio</h2>
 </section>
 <section id="lab05a" class="slide level2">
 <h2>Lab05a</h2>
