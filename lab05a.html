@@ -235,8 +235,8 @@ window.Quarto = {
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>Tboot_b[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 133.71429  56.14286  82.57143  78.14286  64.85714  93.57143  72.42857
- [8] 109.57143 126.28571  80.85714</code></pre>
+<pre><code> [1]  84.00000  86.57143  99.57143  91.28571  90.00000  83.00000 105.42857
+ [8]  88.14286 115.57143  72.14286</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Tboot_b)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
@@ -250,17 +250,17 @@ window.Quarto = {
 <section id="sesgo-del-bootstrap" class="level3" data-number="2.2.1">
 <h3 data-number="2.2.1" class="anchored" data-anchor-id="sesgo-del-bootstrap"><span class="header-section-number">2.2.1</span> Sesgo del bootstrap</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(sesgo_bootstrap <span class="ot">&lt;-</span> <span class="fu">mean</span>(Tboot_b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(media_bootstrap <span class="ot">&lt;-</span> <span class="fu">mean</span>(Tboot_b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 87.20814</code></pre>
+<pre><code>[1] 86.69243</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>estimacion</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 86.85714</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sesgo_bootstrap<span class="sc">-</span>estimacion</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(sesgo_bootstrap <span class="ot">&lt;-</span> media_bootstrap<span class="sc">-</span>estimacion)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.351</code></pre>
+<pre><code>[1] -0.1647143</code></pre>
 </div>
 </div>
 </section>
@@ -273,11 +273,11 @@ window.Quarto = {
 </div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(sdboot <span class="ot">&lt;-</span> <span class="fu">sd</span>(Tboot_b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 23.67553</code></pre>
+<pre><code>[1] 22.59721</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>estimacion <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>cuantil_z <span class="sc">*</span> sdboot</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  40.45395 133.26034</code></pre>
+<pre><code>[1]  42.56742 131.14687</code></pre>
 </div>
 </div>
 </section>
@@ -310,14 +310,15 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(z_star)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Min.   1st Qu.    Median      Mean   3rd Qu.      Max. 
--27.31959  -0.83372  -0.01468  -0.14706   0.73162   5.53566 </code></pre>
+-16.08554  -0.82876   0.02683  -0.10469   0.76720  10.80232 </code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cuantil_t_empirico <span class="ot">&lt;-</span> <span class="fu">quantile</span>(z_star, <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>estimacion <span class="sc">+</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>) <span class="sc">*</span>cuantil_t_empirico<span class="sc">*</span> sdboot</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>cuantil_t_empirico <span class="ot">&lt;-</span> <span class="fu">quantile</span>(z_star, <span class="fu">c</span>(<span class="fl">0.05</span><span class="sc">/</span><span class="dv">2</span>, <span class="dv">1</span><span class="fl">-0.05</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>estimacion <span class="sc">+</span>cuantil_t_empirico<span class="sc">*</span> sdboot</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  33.07745 140.63683</code></pre>
+<pre><code>     2.5%     97.5% 
+ 10.24223 134.78094 </code></pre>
 </div>
 </div>
 </section>
@@ -341,12 +342,12 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Tboot_b,<span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    2.5% 
-43.85714 </code></pre>
+43.84643 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(Tboot_b, <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.05</span> <span class="sc">/</span> <span class="dv">2</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   97.5% 
-136.8607 </code></pre>
+134.4714 </code></pre>
 </div>
 </div>
 </section>
@@ -374,7 +375,7 @@ boot.ci(boot.out = X.boot, type = c("basic", "stud", "perc"))
 
 Intervals : 
 Level      Basic             Studentized          Percentile     
-95%   ( 39.29, 128.43 )   ( 25.60, 162.36 )   ( 45.29, 134.42 )  
+95%   ( 39.59, 130.29 )   ( 31.93, 165.10 )   ( 43.43, 134.12 )  
 Calculations and Intervals on Original Scale</code></pre>
 </div>
 </div>
@@ -401,8 +402,8 @@ Calculations and Intervals on Original Scale</code></pre>
 <span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb40-10"><a href="#cb40-10" aria-hidden="true" tabindex="-1"></a>Tboot_b[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1]  20.61905  17.41270 -14.11111  61.04762  -6.00000  27.93651  50.77778
- [8]  39.33333  40.71429  57.57143</code></pre>
+<pre><code> [1] 32.1269841 35.4920635 42.6190476 33.0952381 32.0158730  6.5555556
+ [7] 33.4920635  0.6031746  4.0793651 10.5714286</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -420,11 +421,11 @@ Calculations and Intervals on Original Scale</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>(sdboot <span class="ot">&lt;-</span> <span class="fu">sd</span>(Tboot_b))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 26.50141</code></pre>
+<pre><code>[1] 27.28183</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>estimacion <span class="sc">+</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)<span class="sc">*</span>cuantil_z <span class="sc">*</span> sdboot</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -21.30689  82.57674</code></pre>
+<pre><code>[1] -22.83648  84.10632</code></pre>
 </div>
 </div>
 </section>
@@ -450,7 +451,7 @@ boot.ci(boot.out = bootstrap_diff, type = c("basic", "stud",
 
 Intervals : 
 Level      Basic             Studentized          Percentile     
-95%   (-21.99,  83.49 )   (-28.41, 104.36 )   (-22.22,  83.26 )  
+95%   (-23.24,  80.38 )   (-29.88, 102.24 )   (-19.11,  84.51 )  
 Calculations and Intervals on Original Scale</code></pre>
 </div>
 </div>

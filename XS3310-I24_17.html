@@ -684,7 +684,7 @@ code {
 <li><p>Si <span class="math inline">\(x_0=0\)</span>, entonces los segmentos están dados por <span class="math inline">\(B_j = \left[ (j-1)h, jh \right],~~~ j \in \mathbb{Z}\)</span>.</p></li>
 <li><p>Suponga que queremos estimar la densidad de un <span class="math inline">\(x \in B_j\)</span>. La estimación usando el histograma para estimar <span class="math inline">\(f(x)\)</span> es <span class="math display">\[\hat{f}_h(x)=\frac{1}{nh} \sum_{i=1}^n \sum_{j} I(X_i \in B_j) I(x \in B_j)=\frac{1}{nh} \sum_{i=1}^n I(X_i \in B_j)\]</span></p></li>
 <li><p><span class="math inline">\(\hat{f}_h(x)\)</span> es sesgado para estimar <span class="math inline">\(f(x)\)</span>.</p></li>
-<li><p>Calculemos la esperanza del estimador <span class="math inline">\(\hat{f}_h(x)\)</span>. <span class="math display">\[E\left(\hat{f}_h(x)\right)=\frac{1}{nh}\sum_{i=1}^n E\left\lbrace I(X_i \in B_j) \right\rbrace=\frac{1}{nh} n E\left\lbrace I(X_i \in B_j) \right\rbrace=\]</span></p></li>
+<li><p>Calculemos la esperanza del estimador <span class="math inline">\(\hat{f}_h(x)\)</span>. <span class="math display">\[E\left(\hat{f}_h(x)\right)=\frac{1}{nh}\sum_{i=1}^n E\left\lbrace I(X_i \in B_j) \right\rbrace=\frac{1}{nh} n E\left\lbrace I(X_i \in B_j) \right\rbrace\]</span></p></li>
 </ul>
 </section>
 <section class="slide level2">
@@ -930,6 +930,49 @@ code {
 <li><p>No entraremos en detalles sobre los cálculos del sesgo, variancia y el ECM y ECMI.</p></li>
 <li><p>Se puede comprobar que el óptimo ancho del segmento es: <span class="math display">\[h_{opt} \sim n^{-1/5}.\]</span></p></li>
 </ul>
+</section>
+<section id="ejemplo-con-la-distribución-poisson" class="slide level2">
+<h2>Ejemplo con la distribución Poisson</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href=""></a>x<span class="ot">&lt;-</span><span class="fu">rpois</span>(<span class="at">n=</span><span class="dv">100</span>, <span class="at">lambda=</span> <span class="dv">10</span>)</span>
+<span id="cb44-2"><a href=""></a>df<span class="ot">&lt;-</span><span class="fu">data.frame</span>(x)</span>
+<span id="cb44-3"><a href=""></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb44-4"><a href=""></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>) <span class="sc">+</span></span>
+<span id="cb44-5"><a href=""></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="XS3310-I24_17_files/figure-revealjs/unnamed-chunk-29-1.png" width="576" class="r-stretch"></section>
+<section class="slide level2">
+
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href=""></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb45-2"><a href=""></a>  <span class="fu">geom_density</span>(<span class="at">kernel=</span><span class="st">"gaussian"</span>,<span class="at">bw=</span><span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb45-3"><a href=""></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="XS3310-I24_17_files/figure-revealjs/unnamed-chunk-30-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href=""></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> x)) <span class="sc">+</span></span>
+<span id="cb46-2"><a href=""></a>  <span class="fu">geom_density</span>(<span class="at">kernel=</span><span class="st">"gaussian"</span>,<span class="at">bw=</span><span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb46-3"><a href=""></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="XS3310-I24_17_files/figure-revealjs/unnamed-chunk-31-1.png" width="576"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="qué-discutimos-hoy" class="slide level2">
 <h2>¿Qué discutimos hoy?</h2>
